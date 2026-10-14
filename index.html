@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>TEOTECH · Diplomado en Transformación Digital</title>
-<meta name="description" content="Bienvenida al Diplomado en Transformación Digital del Instituto Luterano Latinoamericano. Empieza en 3 pasos desde tu celular.">
+<meta name="description" content="Bienvenida al Diplomado en Transformación Digital del Instituto Luterano Latinoamericano. Baja Hark Pro o trae tu propio agente y empieza en 3 pasos.">
 <meta property="og:title" content="TEOTECH · Diplomado en Transformación Digital">
-<meta property="og:description" content="Empieza aquí: entra al aula, crea tu repo y haz tu primera práctica. El agente propone, tú compruebas, tú decides.">
+<meta property="og:description" content="Empieza aquí: baja Hark Pro o trae tu agente, crea tu repo y haz tu primera práctica. El agente propone, tú compruebas, tú decides.">
 <meta property="og:url" content="https://yaeleureka-afk.github.io/">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#07060b">
@@ -82,6 +82,19 @@ h2{font:800 14px/1 var(--mono);letter-spacing:.12em;color:var(--gold);margin:28p
 .chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 12px}
 .chips button{border:1px solid var(--line);background:transparent;color:var(--ink2);border-radius:99px;padding:6px 10px;font:600 12px/1 var(--mono)}
 footer{margin-top:28px;padding-top:14px;border-top:1px solid var(--line);text-align:center;font:600 12px/1.6 var(--mono);color:var(--ink2)}
+.agents{margin-bottom:10px}
+.feat{display:flex;gap:14px;align-items:center;border:1px solid var(--line-hot);border-radius:16px;background:linear-gradient(135deg,rgba(212,175,55,.12),rgba(14,12,20,.92));padding:14px;margin-bottom:8px}
+.feat .ic{flex-shrink:0;width:44px;height:44px;border-radius:12px;background:#000;border:1px solid var(--line-hot);display:flex;align-items:center;justify-content:center;font:800 18px/1 var(--mono);color:var(--gold-hot)}
+.feat .t{display:block;font:800 17px/1.2 var(--sans);color:var(--ink)}
+.feat .d{display:block;font-size:14px;color:var(--ink2);margin-top:2px}
+.feat .tag2{display:inline-block;margin-top:6px;font:700 11px/1 var(--mono);color:var(--neon);border:1px solid rgba(0,255,170,.35);border-radius:99px;padding:4px 8px}
+.byo{font:700 12px/1.3 var(--mono);letter-spacing:.08em;color:var(--ink2);margin:12px 2px 8px}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ag a{border:1px solid var(--line);border-radius:14px;background:var(--card);padding:12px}
+.ag a:hover{border-color:var(--line-hot)}
+.ag .t{display:block;font:800 15px/1.2 var(--mono);color:var(--gold-hot)}
+.ag .d{display:block;font-size:13px;color:var(--ink2);margin-top:3px}
+.ag .ref{color:var(--neon)}
 footer b{color:var(--gold)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
@@ -106,17 +119,30 @@ footer b{color:var(--gold)}
     </div>
   </header>
 
-  <div class="bub"><div class="who">æ</div><div class="msg">Hola 👋 <b>Empieza aquí.</b> Son tres pasos y toman unos 15 minutos.</div></div>
+  <div class="bub"><div class="who">æ</div><div class="msg">Hola 👋 <b>Empieza aquí.</b> Tres pasos, unos 15 minutos. Avisos y el enlace de cada clase están en tu <a href="https://classroom.google.com/" style="color:var(--cyan);text-decoration:underline">Classroom</a>.</div></div>
 
   <h2>EMPIEZA AQUÍ</h2>
-  <a class="step first" href="https://classroom.google.com/">
+  <div class="step first" style="cursor:default">
     <span class="n">1</span>
-    <span><span class="t">Entra a tu Classroom</span><span class="d">Avisos, tareas y el enlace de cada clase.</span></span>
-    <span class="go">→</span>
-  </a>
+    <span><span class="t">Baja tu agente</span><span class="d">Te recomendamos Hark Pro en el celular. Si ya usas otro, tráelo.</span></span>
+  </div>
+  <div class="agents">
+    <a class="feat" href="https://hark.com/download">
+      <span class="ic">æ</span>
+      <span><span class="t">Hark Pro</span><span class="d">iPhone, Android y web · gratis</span><span class="tag2">RECOMENDADO PARA LA CLASE</span></span>
+      <span class="go" style="margin-left:auto;font:700 18px/1 var(--mono);color:var(--gold-hot)">→</span>
+    </a>
+    <div class="byo">O TRAE TU PROPIO HARNESS</div>
+    <div class="ag">
+      <a href="https://portal.nousresearch.com/r/yael"><span class="t">Hermes Agent</span><span class="d">Nous Research · código abierto</span><span class="d ref">nuestro enlace →</span></a>
+      <a href="https://pi.dev/"><span class="t">Pi</span><span class="d">Agente mínimo para la terminal</span></a>
+      <a href="https://openclaw.ai/"><span class="t">OpenClaw</span><span class="d">Tu agente en tus apps de chat</span></a>
+      <a href="https://claude.ai/download"><span class="t">Claude</span><span class="d">Anthropic · app y Claude Code</span></a>
+    </div>
+  </div>
   <a class="step" href="https://github.com/yaeleureka-afk/mi-diplomado">
     <span class="n">2</span>
-    <span><span class="t">Crea tu repo</span><span class="d">Abre la plantilla y toca <b>Use this template</b>. Nómbralo <code>mi-diplomado</code>.</span></span>
+    <span><span class="t">Crea tu repo</span><span class="d">Abre la plantilla y toca <b>Use this template</b>. Tu agente lee su <code>AGENTS.md</code>.</span></span>
     <span class="go">→</span>
   </a>
   <p class="small">¿Aún no tienes GitHub? <a href="https://github.com/signup">Crea tu cuenta gratis</a>.</p>
@@ -154,7 +180,7 @@ footer b{color:var(--gold)}
   <div class="term">
     <div class="bar"><span>TEO://TERM</span><span><b>HUMANO:PRESENTE</b></span></div>
     <div id="out"></div>
-    <div class="chips"><button data-c="empezar">empezar</button><button data-c="modulos">módulos</button><button data-c="regla">regla</button><button data-c="clase">clase</button><button data-c="ayuda">ayuda</button></div>
+    <div class="chips"><button data-c="empezar">empezar</button><button data-c="agentes">agentes</button><button data-c="modulos">módulos</button><button data-c="regla">regla</button><button data-c="clase">clase</button><button data-c="ayuda">ayuda</button></div>
     <form id="cf" autocomplete="off"><input id="ci" type="text" spellcheck="false" placeholder=">_ escribe o toca un comando" aria-label="Comando"><button type="submit">RUN</button></form>
   </div>
 
@@ -195,11 +221,12 @@ function ln(h,c){var d=document.createElement("div");d.className=c||"";d.innerHT
 function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
 ln("TEOTECH · æ://","s");ln("Toca <span class='g'>empezar</span> si es tu primera vez.","s");
 var C={
-  empezar:["1 · Entra a tu <a href='https://classroom.google.com/'>Classroom</a>","2 · Crea tu repo con <a href='https://github.com/yaeleureka-afk/mi-diplomado'>mi-diplomado</a> → Use this template","3 · Haz la práctica del <a href='https://yaeleureka-afk.github.io/diplomado-agentico/modulos/modulo-1.html'>Módulo 1</a>"],
+  empezar:["1 · Baja tu agente: <a href='https://hark.com/download'>Hark Pro</a> o trae el tuyo (escribe <span class='g'>agentes</span>)","2 · Crea tu repo con <a href='https://github.com/yaeleureka-afk/mi-diplomado'>mi-diplomado</a> → Use this template","3 · Haz la práctica del <a href='https://yaeleureka-afk.github.io/diplomado-agentico/modulos/modulo-1.html'>Módulo 1</a>"],
+  agentes:["<span class='g'>Hark Pro</span> · <a href='https://hark.com/download'>hark.com/download</a>","<span class='g'>Hermes</span> · curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash · <a href='https://portal.nousresearch.com/r/yael'>Nous Portal</a>","<span class='g'>Pi</span> · curl -fsSL https://pi.dev/install.sh | sh","<span class='g'>OpenClaw</span> · curl -fsSL https://openclaw.ai/install.sh | bash","<span class='g'>Claude</span> · <a href='https://claude.ai/download'>claude.ai/download</a>","Cualquiera sirve: todos leen tu AGENTS.md."],
   modulos:["<span class='g'>M1</span> Dirigir agentes","<span class='g'>M2</span> Contexto · AGENTS.md","<span class='g'>M3</span> Agentes con herramientas","<span class='g'>M4</span> Construir, revisar y publicar"],
   regla:["el agente propone → tú compruebas → <span class='g'>tú decides</span> → la comunidad aprende ♻️"],
   clase:["Martes 7 pm, hora de Texas · "+nextClass().toLowerCase(),"El enlace de cada clase está en tu Classroom."],
-  ayuda:["empezar · modulos · regla · clase · github · limpiar"],
+  ayuda:["empezar · agentes · modulos · regla · clase · github · limpiar"],
   github:["¿Sin cuenta? <a href='https://github.com/signup'>github.com/signup</a> · es gratis"]
 };
 C["módulos"]=C.modulos;C.help=C.ayuda;
