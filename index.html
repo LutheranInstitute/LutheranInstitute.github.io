@@ -160,6 +160,29 @@ body{padding-bottom:150px}
 #tp .bar i{display:block;height:100%;background:var(--neon);width:0;transition:width .3s}
 #tpo{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:20;display:none;border:1px solid var(--line-hot);background:var(--term);color:var(--gold-hot);border-radius:99px;padding:10px 14px;font:800 13px/1 var(--mono);cursor:pointer}
 @media (prefers-reduced-motion:reduce){.tick .tr{animation:none;padding-left:16px}.hl{animation:none}}
+
+.hero-org{display:flex;align-items:center;gap:8px;background:none;border:0;padding:0;cursor:pointer;text-align:left;width:100%}
+.hero-org .chev{margin-left:auto;font-size:14px;color:var(--gold-hot)}
+#herox{overflow:hidden;max-height:600px;transition:max-height .45s ease,opacity .35s ease}
+header.min #herox{max-height:0;opacity:0}
+header.min{padding-bottom:4px}
+#tp .tools{display:flex;gap:2px}
+#tp .tools button{font:700 13px/1 var(--mono);min-width:30px}
+#tp .txt.big{font-size:24px}
+#tp .ch{display:flex;flex-wrap:wrap;gap:8px;margin:-2px 0 12px}
+#tp .ch:empty{display:none}
+#tp .ch button{border:1px solid var(--line-hot);background:var(--feat);color:var(--ink);border-radius:14px;padding:11px 14px;font:700 14px/1.2 var(--sans);cursor:pointer;flex:1 1 40%;text-align:left}
+#tp .ch button b{display:block;color:var(--gold-hot);font:800 11px/1.4 var(--mono);letter-spacing:.08em}
+#tp .bt .lt{display:none}
+#tp .bt.act .lt{display:inline-block}
+#tp .dots{display:flex;gap:5px;margin-top:10px}
+#tp .dots i{flex:1;height:4px;border-radius:3px;background:var(--line)}
+#tp .dots i.cur{background:var(--gold-hot)}
+#tp .dots i.ok{background:var(--neon)}
+#tp .dots i.skip{background:var(--coral,#ff6b6b);opacity:.6}
+#tp .sum{font:500 14px/1.5 var(--sans);color:var(--ink2);margin:-4px 0 10px}
+#tp .sum a{color:var(--cyan);text-decoration:underline;cursor:pointer}
+details.sec.done>summary h2::after{content:" ✓";color:var(--neon)}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"EducationalOrganization","name":"Instituto Luterano Latinoamericano","alternateName":["Latin American Lutheran Institute","Lutheran Institute"],"foundingDate":"1996","founder":{"@type":"Person","name":"Rev. Moisés Méndez"},"address":{"@type":"PostalAddress","addressLocality":"Donna","addressRegion":"TX","addressCountry":"US"},"url":"https://yaeleureka-afk.github.io/","sameAs":["https://www.linkedin.com/company/institutoluterano/"],"knowsLanguage":["es","en"],"slogan":"Acelerar, éticamente."}
@@ -175,10 +198,12 @@ body{padding-bottom:150px}
   </div>
 
   <header>
-    <div class="hero-org">INSTITUTO LUTERANO LATINOAMERICANO</div>
+    <button type="button" class="hero-org" id="herot" aria-expanded="true" aria-controls="herox">INSTITUTO LUTERANO LATINOAMERICANO <span class="chev">▴</span></button>
+    <div id="herox">
     <h1>Sede de agentes.</h1>
     <p class="lead" data-es="Educación teológica y tecnológica para lugares de difícil acceso. Aquí viven nuestros agentes, nuestras clases y nuestras reglas. Acelerar, éticamente." data-en="Theological and technological education for hard-to-reach places. Our agents, our classes and our rules live here. Accelerate, ethically.">Educación teológica y tecnológica para lugares de difícil acceso. Aquí viven nuestros agentes, nuestras clases y nuestras reglas. Acelerar, éticamente.</p>
     <div class="facts"><span><b>1996</b> · Donna, Texas</span><span>#TEOTECH</span><span>#OPENCOURSEWARE</span><span>#EDUTECH</span><button class="lang" id="lang" type="button">EN</button></div>
+    </div>
     <div class="facts"><span class="th" role="group" aria-label="Tema"><button type="button" data-t="oscuro">OSCURO</button><button type="button" data-t="claro">CLARO</button><button type="button" data-t="latam">LATAM</button></span></div>
     <div class="cycle" aria-label="El ciclo">
       <div><div class="e">æ</div><div class="l">el agente propone</div></div>
@@ -295,11 +320,12 @@ body{padding-bottom:150px}
     <b>LA EVIDENCIA NO ES AUTORIDAD</b>
   </footer>
 </div>
-<div id="tp" aria-live="polite"><div class="box">
-  <div class="hd"><span>æ · TELEPROMPTER <span id="tpn"></span></span><button type="button" id="tpx" aria-label="Minimizar">✕</button></div>
+<div id="tp" aria-live="polite"><div class="box" id="tpbox">
+  <div class="hd"><span>æ · TELEPROMPTER <span id="tpn"></span></span><span class="tools"><button type="button" id="tpv" aria-label="Leer en voz alta" title="Voz">🔇</button><button type="button" id="tps" aria-label="Velocidad" title="Velocidad">1×</button><button type="button" id="tpa" aria-label="Tamaño de letra" title="Letra">A</button><button type="button" id="tpx" aria-label="Minimizar">✕</button></span></div>
   <div class="txt" id="tpt"></div>
-  <div class="bt"><button type="button" id="tpb">‹ Atrás</button><button type="button" id="tpr">↺</button><button type="button" class="nx" id="tpf">Siguiente ›</button></div>
-  <div class="bar"><i id="tpp"></i></div>
+  <div class="ch" id="tpc"></div>
+  <div class="bt"><button type="button" id="tpb">‹</button><button type="button" id="tpr" title="Elegir otro camino">☰</button><button type="button" class="lt" id="tpl">Luego</button><button type="button" class="nx" id="tpf">Siguiente ›</button></div>
+  <div class="dots" id="tpd"></div>
 </div></div>
 <button type="button" id="tpo">▶ GUÍA</button>
 <script>
@@ -335,44 +361,102 @@ function nextClass(){
   }catch(e){return "MARTES 7 PM TX";}
 }
 
-/* Teleprompter: te guía al paso del usuario */
-var TP=[
- {t:"Hola 👋 Soy el teleprompter æ. Te acompaño paso a paso, a tu ritmo. Toca Siguiente cuando termines de leer."},
- {t:"Paso 1: baja tu agente. Te recomendamos Hark Pro en el celular. Si ya usas otro, tráelo.",s:"empieza",e:".feat"},
- {t:"¿Primera vez con Hark Pro? La Clase 2 te enseña a usarlo. Ábrela cuando quieras y vuelve aquí.",s:"empieza",e:".agents .small"},
- {t:"Paso 2: si aún no tienes GitHub, crea tu cuenta gratis con un correo que abras en tu celular.",s:"empieza",e:"#gh-signup"},
- {t:"Ahora crea tu repo: abre la plantilla, toca Use this template y ponle mi-diplomado.",s:"empieza",e:'a.step[href*="mi-diplomado"]'},
- {t:"Paso 3: tu primera práctica. Hazle la misma pregunta a dos IA y compara las respuestas.",s:"empieza",e:'a.step[href*="modulo-1"]'},
- {t:"La regla de oro: el agente propone, tú compruebas, tú decides y anotas la evidencia.",s:"regla",e:".rule"},
- {t:"Cuando quieras publicar tu sitio, empieza por la Lección 00: tu presencia en internet.",s:"modulos",e:".mods .mod"},
- {t:"¡Listo! Nos vemos el martes a las 7 pm, hora de Texas. El enlace está en tu Classroom. Esto aprendí. Esto construí. Esto publiqué."}
-];
-var tpi=0,tpTimer=null,tpBox=document.getElementById("tp"),tpO=document.getElementById("tpo"),tpT=document.getElementById("tpt");
+/* Teleprompter æ v2: caminos, a tu paso */
+var DOC="https://yaeleureka-afk.github.io/diplomado-agentico/clases/d0-docentes/";
+var TRK={
+ alumno:{n:"ALUMNO",st:[
+  {t:"Perfecto. Son tres pasos, unos 15 minutos. Yo te marco dónde tocar; tú avanzas cuando estés listo."},
+  {id:"agente",t:"Paso 1: baja tu agente. Te recomendamos Hark Pro en el celular. Si ya usas otro, tráelo.",s:"empieza",e:".feat",act:1},
+  {t:"¿Primera vez con Hark Pro? La Clase 2 te enseña a usarlo. Ábrela cuando quieras y vuelve aquí.",s:"empieza",e:".agents .small"},
+  {id:"github",t:"Paso 2: crea tu cuenta de GitHub, gratis, con un correo que abras en tu celular.",s:"empieza",e:"#gh-signup",act:1},
+  {id:"repo",t:"Ahora tu repo: abre la plantilla, toca Use this template y ponle mi-diplomado.",s:"empieza",e:'a.step[href*="mi-diplomado"]',act:1},
+  {id:"practica",t:"Paso 3: tu primera práctica. Hazle la misma pregunta a dos IA y compara las respuestas.",s:"empieza",e:'a.step[href*="modulo-1"]',act:1},
+  {t:"La regla de oro: el agente propone, tú compruebas, tú decides y anotas la evidencia.",s:"regla",e:".rule"},
+  {t:"Cuando quieras publicar tu sitio, empieza por la Lección 00: tu presencia en internet.",s:"modulos",e:".mods .mod"},
+  {fin:1,t:"Nos vemos el martes a las 7 pm, hora de Texas. El enlace está en tu Classroom."}]},
+ docente:{n:"DOCENTE",st:[
+  {t:"Bienvenido, colega. Te muestro cómo está armada la sede y dónde está tu guion de clase."},
+  {id:"guia",t:"Tu guía docente: guion de 90 minutos, semáforo, regla de 2 minutos y soluciones rápidas.",e:'footer a[href*="d0-docentes"]',act:1},
+  {t:"Los roles: Yæl decide, Hark prepara, Hermes ejecuta. Nadie publica sin una persona que apruebe.",s:"agentes",e:".roles"},
+  {t:"Hermes æ es el superagente del instituto: solo ejecuta tarjetas aprobadas y deja evidencia.",s:"agentes",e:".roster"},
+  {t:"La regla de oro es la misma para alumnos y docentes. La evidencia no es autoridad.",s:"regla",e:".rule"},
+  {t:"Nunca publiques datos de alumnos, feligreses o clientes. Ni nombres, ni fotos, ni teléfonos."},
+  {t:"En la terminal puedes escribir clase, agentes o regla para repasar en vivo frente al grupo.",e:".term"},
+  {fin:1,t:"Gracias por enseñar con nosotros. Acelerar, éticamente."}]},
+ visita:{n:"VISITA",st:[
+  {t:"Bienvenido. En un minuto te cuento quiénes somos y qué hacemos."},
+  {t:"Desde 1996, desde Donna, Texas: educación teológica y tecnológica para lugares de difícil acceso.",e:"header h1"},
+  {t:"Nuestros programas: el Diplomado en Transformación Digital, Teología LATAM y clases abiertas.",s:"programas",e:".prog"},
+  {t:"Trabajamos con agentes de IA, pero siempre con una persona que decide.",s:"agentes",e:".roster"},
+  {t:"Después del diplomado, #emprende ayuda a convertir proyectos en negocios.",s:"latam",e:"#s-latam .grid"},
+  {t:"¿Eres un agente? Lee llms.txt y agent.json antes de actuar.",s:"maquinas",e:".machine"},
+  {fin:1,t:"Todo el material es abierto: puedes copiarlo y adaptarlo, citando la fuente."}]}
+};
+var SP=[{l:"½×",ms:420},{l:"1×",ms:260},{l:"2×",ms:120}];
+var tp={trk:null,i:0,done:{},skip:{},sp:1,voz:0,big:0,min:0};
+try{var sv=JSON.parse(localStorage.getItem("ill-tp2")||"null");if(sv)for(var k in sv)tp[k]=sv[k];}catch(e){}
+var tpTimer=null,tpBox=document.getElementById("tp"),tpO=document.getElementById("tpo"),tpT=document.getElementById("tpt"),tpC=document.getElementById("tpc");
 var rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
-function tpSave(){try{localStorage.setItem("ill-tp",String(tpi));}catch(e){}}
-function tpShow(on){tpBox.style.display=on?"flex":"none";tpO.style.display=on?"none":"block";document.body.style.paddingBottom=on?"150px":"24px";try{localStorage.setItem("ill-tp-min",on?"0":"1");}catch(e){}}
-function tpGo(i){tpi=Math.max(0,Math.min(TP.length-1,i));tpSave();var st=TP[tpi];
-  document.getElementById("tpn").textContent=(tpi+1)+"/"+TP.length;
-  document.getElementById("tpp").style.width=((tpi+1)/TP.length*100)+"%";
-  document.getElementById("tpb").disabled=tpi===0;
-  document.getElementById("tpf").textContent=tpi===TP.length-1?"Terminar ✓":"Siguiente ›";
-  clearInterval(tpTimer);
-  tpT.innerHTML=st.t.split(" ").map(function(w){return '<span class="w">'+w+'</span>';}).join(" ");
+var $=function(id){return document.getElementById(id);};
+function tpSave(){try{localStorage.setItem("ill-tp2",JSON.stringify(tp));}catch(e){}}
+function tpShow(on){tp.min=on?0:1;tpSave();tpBox.style.display=on?"flex":"none";tpO.style.display=on?"none":"block";document.body.style.paddingBottom=on?"190px":"24px";if(!on){window.speechSynthesis&&speechSynthesis.cancel();clearHL();}}
+function clearHL(){document.querySelectorAll(".hl").forEach(function(x){x.classList.remove("hl");});}
+function say(t){if(!tp.voz||!window.speechSynthesis)return;speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t.replace(/[^\p{L}\p{N}\s.,:;¿?¡!]/gu,""));u.lang="es-MX";u.rate=[0.8,1,1.3][tp.sp];speechSynthesis.speak(u);}
+function reveal(t){clearInterval(tpTimer);tpT.className="txt"+(tp.big?" big":"");
+  tpT.innerHTML=t.split(" ").map(function(w){return '<span class="w">'+w+'</span>';}).join(" ");
   var ws=tpT.querySelectorAll(".w"),k=0;
   if(rm){ws.forEach(function(w){w.classList.add("on");});}
-  else{tpTimer=setInterval(function(){if(k<ws.length){ws[k++].classList.add("on");}else clearInterval(tpTimer);},260);}
-  document.querySelectorAll(".hl").forEach(function(x){x.classList.remove("hl");});
-  if(st.s){var d=document.getElementById("s-"+st.s);if(d)d.open=true;}
-  if(st.e){var el=document.querySelector(st.e);if(el){el.classList.add("hl");el.scrollIntoView({behavior:rm?"auto":"smooth",block:"center"});}}
-  else if(tpi===0){scrollTo({top:0,behavior:rm?"auto":"smooth"});}
-}
-document.getElementById("tpf").addEventListener("click",function(){if(tpi===TP.length-1){tpShow(false);document.querySelectorAll(".hl").forEach(function(x){x.classList.remove("hl");});return;}tpGo(tpi+1);});
-document.getElementById("tpb").addEventListener("click",function(){tpGo(tpi-1);});
-document.getElementById("tpr").addEventListener("click",function(){tpGo(0);});
-document.getElementById("tpx").addEventListener("click",function(){tpShow(false);});
-tpO.addEventListener("click",function(){tpShow(true);tpGo(tpi);});
-var tpStart=0,tpMin=false;try{tpStart=+(localStorage.getItem("ill-tp")||0);tpMin=localStorage.getItem("ill-tp-min")==="1";}catch(e){}
-if(tpMin){tpShow(false);tpi=tpStart;}else{tpShow(true);tpGo(tpStart);if(tpStart>0)tpT.insertAdjacentHTML("afterbegin",'<span class="w on" style="color:var(--neon)">Bienvenido de nuevo.</span> ');}
+  else tpTimer=setInterval(function(){if(k<ws.length)ws[k++].classList.add("on");else clearInterval(tpTimer);},SP[tp.sp].ms);
+  say(t);}
+function heroMin(on){var h=document.querySelector("header");h.classList.toggle("min",on);$("herot").setAttribute("aria-expanded",on?"false":"true");$("herot").querySelector(".chev").textContent=on?"▾":"▴";try{localStorage.setItem("ill-hero",on?"min":"open");}catch(e){}}
+function marks(){Object.keys(TRK.alumno.st).forEach(function(){});var all=["agente","github","repo","practica"].every(function(k){return tp.done[k];});var d=$("s-empieza");if(d)d.classList.toggle("done",all);}
+function tpChoose(){tp.trk=null;tp.i=0;tpSave();clearHL();
+  $("tpn").textContent="";$("tpd").innerHTML="";$("tpb").disabled=true;$("tpf").style.display="none";$("tpb").parentNode.classList.remove("act");
+  var back=Object.keys(tp.done).length?'Bienvenido de nuevo. ':'';
+  reveal(back+"Hola 👋 Soy el teleprompter æ. Te guío paso a paso, a tu ritmo. ¿Quién eres hoy?");
+  tpC.innerHTML='<button data-k="alumno"><b>ALUMNO</b>Vengo a clase</button><button data-k="docente"><b>DOCENTE</b>Voy a enseñar</button><button data-k="visita"><b>VISITA</b>Solo quiero conocer</button>';
+  tpC.querySelectorAll("button").forEach(function(b){b.onclick=function(){tp.trk=b.dataset.k;tp.i=0;heroMin(true);tpGo(0);};});}
+function tpSummary(){var L=TRK[tp.trk].st,pend=[];L.forEach(function(x,n){if(x.act&&!tp.done[x.id])pend.push(n);});
+  if(!L.some(function(x){return x.act;}))return "";
+  var ok=L.filter(function(x){return x.act&&tp.done[x.id];}).length,tot=L.filter(function(x){return x.act;}).length;
+  return '<div class="sum">Hiciste '+ok+' de '+tot+' pasos.'+(pend.length?' Te falta: '+pend.map(function(n){return '<a data-n="'+n+'">'+L[n].t.split(":")[0].replace(/^Ahora tu repo/,"Tu repo").slice(0,28)+'</a>';}).join(", ")+'.':' ¡Todo listo! 🎉')+'</div>';}
+function tpGo(i){if(!tp.trk)return tpChoose();var L=TRK[tp.trk].st;tp.i=Math.max(0,Math.min(L.length-1,i));tpSave();var st=L[tp.i];
+  tpC.innerHTML="";$("tpf").style.display="";
+  $("tpn").textContent=TRK[tp.trk].n+" "+(tp.i+1)+"/"+L.length;
+  $("tpd").innerHTML=L.map(function(x,n){return '<i class="'+(n===tp.i?"cur":(x.act&&tp.done[x.id])?"ok":(x.act&&tp.skip[x.id])?"skip":"")+'"></i>';}).join("");
+  $("tpb").disabled=false;
+  $("tpb").parentNode.classList.toggle("act",!!st.act);
+  $("tpf").textContent=st.fin?"Terminar ✓":st.act?(tp.done[st.id]?"Hecho ✓ ›":"Ya lo hice ✓"):"Siguiente ›";
+  clearHL();
+  if(st.s){var d=$("s-"+st.s);if(d)d.open=true;}
+  var el=st.e&&document.querySelector(st.e);
+  if(el){el.classList.add("hl");el.scrollIntoView({behavior:rm?"auto":"smooth",block:"center"});}
+  reveal(st.t);
+  if(st.fin)tpC.innerHTML=tpSummary();
+  tpC.querySelectorAll("a[data-n]").forEach(function(a){a.onclick=function(){tpGo(+a.dataset.n);};});}
+function tpNext(){if(!tp.trk)return;var L=TRK[tp.trk].st,st=L[tp.i];
+  if(st.act){tp.done[st.id]=1;delete tp.skip[st.id];marks();}
+  if(st.fin){tpShow(false);return;}tpGo(tp.i+1);}
+$("tpf").addEventListener("click",tpNext);
+$("tpl").addEventListener("click",function(){var st=TRK[tp.trk].st[tp.i];tp.skip[st.id]=1;tpGo(tp.i+1);});
+$("tpb").addEventListener("click",function(){if(tp.i===0)tpChoose();else tpGo(tp.i-1);});
+$("tpr").addEventListener("click",tpChoose);
+$("tpx").addEventListener("click",function(){tpShow(false);});
+$("tps").addEventListener("click",function(){tp.sp=(tp.sp+1)%3;this.textContent=SP[tp.sp].l;tpSave();});
+$("tpv").addEventListener("click",function(){tp.voz=tp.voz?0:1;this.textContent=tp.voz?"🔊":"🔇";tpSave();if(tp.voz)say(tpT.textContent);else window.speechSynthesis&&speechSynthesis.cancel();});
+$("tpa").addEventListener("click",function(){tp.big=tp.big?0:1;tpT.classList.toggle("big",!!tp.big);tpSave();});
+tpO.addEventListener("click",function(){tpShow(true);tp.trk?tpGo(tp.i):tpChoose();});
+$("herot").addEventListener("click",function(){heroMin(!document.querySelector("header").classList.contains("min"));});
+/* deslizar: izquierda = siguiente, derecha = atrás */
+(function(){var x0=null;$("tpbox").addEventListener("touchstart",function(e){x0=e.touches[0].clientX;},{passive:true});
+ $("tpbox").addEventListener("touchend",function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)<60||!tp.trk)return;if(dx<0)$("tpf").click();else $("tpb").click();});})();
+document.addEventListener("keydown",function(e){if(tp.min||document.activeElement===document.getElementById("ci"))return;if(e.key==="ArrowRight")$("tpf").click();if(e.key==="ArrowLeft")$("tpb").click();});
+$("tps").textContent=SP[tp.sp].l;$("tpv").textContent=tp.voz?"🔊":"🔇";if(!window.speechSynthesis)$("tpv").style.display="none";
+/* la portada se colapsa una vez vista */
+try{if(localStorage.getItem("ill-hero")==="min"||localStorage.getItem("ill-hero-seen"))heroMin(true);}catch(e){}
+if("IntersectionObserver" in window){var hio=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting){try{localStorage.setItem("ill-hero-seen","1");}catch(e){}hio.disconnect();}});});hio.observe(document.querySelector("header"));}
+marks();
+if(tp.min)tpShow(false);else{tpShow(true);tp.trk?tpGo(tp.i):tpChoose();}
 /* Ticker con cuenta regresiva */
 var tk=document.getElementById("tickt");function tkU(){tk.textContent="● PRÓXIMA CLASE · "+nextClass()+" · HORA DE TEXAS · EL ENLACE ESTÁ EN TU CLASSROOM · TRAE TU CELULAR CARGADO · ¿PRIMERA VEZ? EL TELEPROMPTER TE GUÍA PASO A PASO ·";}tkU();setInterval(tkU,60000);
 var nx=document.getElementById("next");nx.textContent=nextClass();setInterval(function(){nx.textContent=nextClass();},60000);
@@ -397,7 +481,7 @@ C["módulos"]=C.modulos;C.help=C.ayuda;
 function run(c){c=c.trim();if(!c)return;ln("&gt;_ "+esc(c),"g");var k=c.split(/\s+/)[0].toLowerCase();
   if(k==="limpiar"||k==="clear"){out.innerHTML="";return;}
   if(k==="tema"||k==="theme"){var t=(c.split(/\s+/)[1]||"").toLowerCase().replace("light","claro").replace("dark","oscuro");if(["claro","oscuro","latam"].indexOf(t)<0){ln("tema claro · tema latam · tema oscuro","s");return;}setTheme(t);ln("Tema "+t.toUpperCase()+" ✓","s");return;}
-  if(k==="guia"||k==="guía"){tpShow(true);tpGo(0);ln("Teleprompter abierto ✓","s");return;}
+  if(k==="guia"||k==="guía"){tpShow(true);tpChoose();ln("Teleprompter abierto ✓","s");return;}
   if(C[k]){C[k].forEach(function(x){ln(x,"s");});return;}
   ln("No conozco ese comando. Prueba <span class='g'>ayuda</span>.","r");}
 document.getElementById("cf").addEventListener("submit",function(e){e.preventDefault();var i=document.getElementById("ci");run(i.value);i.value="";});
