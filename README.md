@@ -1,2 +1,2 @@
-# yaeleureka-afk.github.io
+# lutheraninstitute.github.io
 TEOTECH · portada 9:16 · Diplomado en Transformación Digital · æ://
