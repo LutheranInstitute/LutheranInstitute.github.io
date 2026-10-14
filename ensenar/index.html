@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Esto puedo enseñar · Curso 2 · Instituto Luterano Latinoamericano</title>
+<meta name="description" content="Curso 2: cómo enseñarle a alguien lo que tú acabas de aprender. El efecto multiplicador del docente.">
+<meta property="og:title" content="Esto puedo enseñar · Curso 2 · Instituto Luterano Latinoamericano">
+<meta property="og:description" content="Curso 2: cómo enseñarle a alguien lo que tú acabas de aprender. El efecto multiplicador del docente.">
+<meta property="og:url" content="https://yaeleureka-afk.github.io/ensenar/">
+<meta property="og:type" content="website">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
+<meta name="theme-color" content="#07060b">
+<style>
+:root{
+  --void:#07060b;--card:rgba(14,12,20,.92);--gold:#d4af37;--gold-hot:#ffd873;
+  --line:rgba(212,175,55,.22);--line-hot:rgba(255,216,115,.55);
+  --ink:#ece3c6;--ink2:#a59a78;--neon:#00ffaa;--cyan:#5fd8ff;
+  --term:rgba(10,8,15,.96);--well:rgba(0,0,0,.35);--chip:#000;--chip-ink:#ffd873;--glow:rgba(212,175,55,.09);--glow2:transparent;--feat:rgba(212,175,55,.12);--neon-line:rgba(0,255,170,.35);--star:212,175,55;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{background:var(--void)}
+body{min-height:100dvh;background:radial-gradient(ellipse at 50% -10%,var(--glow),transparent 45%),radial-gradient(ellipse at 100% 100%,var(--glow2),transparent 50%),var(--void);color:var(--ink);font:400 16px/1.5 var(--sans)}
+canvas#sky{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+a{color:inherit;text-decoration:none}
+.wrap{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:0 16px calc(24px + env(safe-area-inset-bottom,0px))}
+.tb{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:calc(10px + env(safe-area-inset-top,0px)) 0 10px;background:linear-gradient(var(--void) 70%,transparent);font:700 13px/1 var(--mono)}
+.tb .brand{color:var(--gold-hot);letter-spacing:.06em}
+.pill{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--neon-line);color:var(--neon);border-radius:99px;padding:5px 10px;font:600 12px/1 var(--mono)}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--neon);box-shadow:0 0 6px var(--neon);animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{50%{opacity:.25}}
+header{padding:14px 0 6px}
+.kick{font:700 12px/1.3 var(--mono);letter-spacing:.14em;color:var(--ink2)}
+h1{font:800 30px/1.1 var(--mono);color:var(--gold-hot);letter-spacing:.01em;margin:6px 0 10px}
+.lead{font-size:17px;color:var(--ink)}
+.cycle{margin:18px 0 6px;border:1px solid var(--line);border-radius:14px;background:var(--card);padding:12px 10px;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;gap:4px}
+.cycle .e{font-size:24px;line-height:1.2}
+.cycle .l{font:600 11px/1.25 var(--mono);color:var(--ink2);margin-top:4px}
+.cycle .hot .l{color:var(--gold-hot)}
+.bub{display:flex;gap:10px;align-items:flex-start;margin:22px 0 12px}
+.who{flex-shrink:0;width:34px;height:34px;border-radius:50%;border:1px solid rgba(0,255,170,.5);display:flex;align-items:center;justify-content:center;font:800 15px/1 var(--mono);color:var(--neon);box-shadow:0 0 10px rgba(0,255,170,.15)}
+.msg{border:1px solid var(--line);border-radius:4px 16px 16px 16px;background:var(--card);padding:10px 14px;font-size:16px}
+.msg b{color:var(--gold-hot)}
+h2{font:800 14px/1 var(--mono);letter-spacing:.12em;color:var(--gold);margin:28px 0 12px}
+.step{display:flex;gap:14px;align-items:center;border:1px solid var(--line);border-radius:16px;background:var(--card);padding:14px;margin-bottom:10px;transition:border-color .2s,transform .1s}
+.step:active{transform:scale(.99)}
+.step:hover,.step.first{border-color:var(--line-hot)}
+.n{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:rgba(212,175,55,.12);border:1px solid var(--line-hot);display:flex;align-items:center;justify-content:center;font:800 16px/1 var(--mono);color:var(--gold-hot)}
+.step .t{display:block;font:700 16px/1.25 var(--sans);color:var(--ink)}
+.step .d{display:block;font-size:14px;color:var(--ink2);margin-top:2px}
+.step .go{margin-left:auto;font:700 18px/1 var(--mono);color:var(--gold-hot)}
+.small{font-size:13px;color:var(--ink2);margin:-2px 4px 0}
+.small a{color:var(--cyan);text-decoration:underline}
+.mods{border:1px solid var(--line);border-radius:16px;background:var(--card);overflow:hidden}
+.mod{display:flex;align-items:center;gap:12px;padding:13px 14px;border-top:1px solid var(--line)}
+.mod:first-child{border-top:0}
+.mod .em{font-size:20px;width:26px;text-align:center}
+.mod .t{font:700 15px/1.25 var(--mono);color:var(--gold-hot)}
+.mod .d{font-size:14px;color:var(--ink2)}
+.mod .go{margin-left:auto;color:var(--ink2);font:700 16px/1 var(--mono)}
+.rule{border:1px solid var(--line-hot);border-radius:16px;background:rgba(212,175,55,.06);padding:16px;animation:breathe 3s ease-in-out infinite}
+@keyframes breathe{50%{box-shadow:0 0 18px rgba(212,175,55,.18)}}
+.rule ol{list-style:none;counter-reset:r}
+.rule li{counter-increment:r;padding:5px 0 5px 30px;position:relative;font-size:15px}
+.rule li::before{content:counter(r);position:absolute;left:0;top:5px;width:20px;height:20px;border-radius:50%;border:1px solid var(--line-hot);font:700 11px/19px var(--mono);text-align:center;color:var(--gold-hot)}
+.rule li b{color:var(--gold-hot)}
+.rule .q{margin-top:10px;font:700 13px/1.4 var(--mono);color:var(--gold);letter-spacing:.04em}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.panel{position:relative;border:1px solid var(--line);border-radius:16px;background:var(--card);padding:14px}
+.panel .t{font:800 15px/1.2 var(--mono);color:var(--gold-hot)}
+.panel .d{font-size:13px;color:var(--ink2);margin-top:4px}
+.panel .dot{position:absolute;top:14px;right:14px}
+.term{margin-top:28px;border:1px solid var(--line);border-radius:14px;background:var(--term);overflow:hidden}
+.term .bar{display:flex;justify-content:space-between;padding:8px 12px;border-bottom:1px solid var(--line);font:700 11px/1 var(--mono);letter-spacing:.1em;color:var(--gold)}
+.term .bar b{color:var(--neon)}
+#out{height:118px;overflow-y:auto;padding:10px 12px;font:500 13px/1.45 var(--mono)}
+#out .s{color:var(--ink2)}#out .g{color:var(--gold-hot)}#out .r{color:#ff5a7a}
+#out a{color:var(--cyan);text-decoration:underline}
+.term form{display:flex;border-top:1px solid var(--line)}
+.term input{flex:1;min-width:0;background:var(--well);border:0;color:var(--ink);font:500 16px/1 var(--mono);padding:12px;outline:none}
+.term button{background:rgba(212,175,55,.12);border:0;border-left:1px solid var(--line);color:var(--gold-hot);font:800 13px/1 var(--mono);padding:0 16px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 12px}
+.chips button{border:1px solid var(--line);background:transparent;color:var(--ink2);border-radius:99px;padding:6px 10px;font:600 12px/1 var(--mono)}
+footer{margin-top:28px;padding-top:14px;border-top:1px solid var(--line);text-align:center;font:600 12px/1.6 var(--mono);color:var(--ink2)}
+.agents{margin-bottom:10px}
+.feat{display:flex;gap:14px;align-items:center;border:1px solid var(--line-hot);border-radius:16px;background:linear-gradient(135deg,var(--feat),var(--card));padding:14px;margin-bottom:8px}
+.feat .ic{flex-shrink:0;width:44px;height:44px;border-radius:12px;background:var(--chip);border:1px solid var(--line-hot);display:flex;align-items:center;justify-content:center;font:800 18px/1 var(--mono);color:var(--chip-ink)}
+.feat .t{display:block;font:800 17px/1.2 var(--sans);color:var(--ink)}
+.feat .d{display:block;font-size:14px;color:var(--ink2);margin-top:2px}
+.feat .tag2{display:inline-block;margin-top:6px;font:700 11px/1 var(--mono);color:var(--neon);border:1px solid rgba(0,255,170,.35);border-radius:99px;padding:4px 8px}
+.byo{font:700 12px/1.3 var(--mono);letter-spacing:.08em;color:var(--ink2);margin:12px 2px 8px}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ag a{border:1px solid var(--line);border-radius:14px;background:var(--card);padding:12px}
+.ag a:hover{border-color:var(--line-hot)}
+.ag .t{display:block;font:800 15px/1.2 var(--mono);color:var(--gold-hot)}
+.ag .d{display:block;font-size:13px;color:var(--ink2);margin-top:3px}
+.ag .ref{color:var(--neon)}
+footer b{color:var(--gold)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+
+.hero-org{font:700 12px/1.4 var(--mono);letter-spacing:.12em;color:var(--neon);margin-bottom:4px}
+.facts{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.facts span{border:1px solid var(--line);border-radius:99px;padding:5px 10px;font:600 12px/1 var(--mono);color:var(--ink2)}
+.facts b{color:var(--gold-hot)}
+.prog{display:block;border:1px solid var(--line);border-radius:16px;background:var(--card);padding:14px;margin-bottom:10px}
+.prog:hover{border-color:var(--line-hot)}
+.prog .k{font:700 11px/1 var(--mono);letter-spacing:.1em;color:var(--neon)}
+.prog .k.off{color:var(--ink2)}
+.prog .t{display:block;font:800 16px/1.25 var(--mono);color:var(--gold-hot);margin-top:6px}
+.prog .d{display:block;font-size:14px;color:var(--ink2);margin-top:4px}
+.roster{border:1px solid var(--line);border-radius:16px;background:var(--card);overflow:hidden}
+.ag-row{display:flex;gap:12px;align-items:flex-start;padding:13px 14px;border-top:1px solid var(--line)}
+.ag-row:first-child{border-top:0}
+.ag-row .em{flex-shrink:0;width:34px;height:34px;border-radius:10px;border:1px solid var(--line-hot);display:flex;align-items:center;justify-content:center;font:800 15px/1 var(--mono);color:var(--chip-ink);background:var(--chip)}
+.ag-row .t{font:800 15px/1.2 var(--mono);color:var(--gold-hot)}
+.ag-row .r{font:700 11px/1 var(--mono);color:var(--neon);margin-left:6px;letter-spacing:.06em}
+.ag-row .d{font-size:14px;color:var(--ink2);margin-top:2px}
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.roles div{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:10px 6px;text-align:center;font:800 13px/1.2 var(--mono);color:var(--gold-hot)}
+.roles div span{display:block;font:600 12px/1.3 var(--sans);color:var(--ink2);margin-top:3px}
+.machine{border:1px dashed var(--line-hot);border-radius:16px;padding:14px;background:var(--well)}
+.machine p{font-size:14px;color:var(--ink2);margin-bottom:10px}
+.machine a{display:inline-block;margin:0 6px 6px 0;border:1px solid var(--line);border-radius:99px;padding:6px 10px;font:600 12px/1 var(--mono);color:var(--cyan)}
+.lang{border:1px solid var(--line);border-radius:99px;padding:5px 9px;font:700 12px/1 var(--mono);color:var(--ink2);background:transparent}
+
+[data-theme="claro"]{--void:#f6f1e3;--card:rgba(255,253,246,.96);--gold:#9a7400;--gold-hot:#5e4500;--line:rgba(70,52,10,.18);--line-hot:rgba(140,100,0,.45);--ink:#1c1a14;--ink2:#5a5243;--neon:#007a52;--cyan:#0a5fa0;--term:#fffaf0;--well:rgba(70,52,10,.06);--chip:#1c1a14;--chip-ink:#ffd873;--glow:rgba(212,175,55,.18);--feat:rgba(212,175,55,.2);--neon-line:rgba(0,122,82,.4);--star:154,116,0}
+[data-theme="latam"]{--void:#032a33;--card:rgba(5,62,74,.9);--gold:#ffb703;--gold-hot:#ffd166;--line:rgba(72,202,228,.32);--line-hot:rgba(255,209,102,.65);--ink:#fdf6e3;--ink2:#a8dcd6;--neon:#06d6a0;--cyan:#7ee8fa;--term:rgba(2,36,44,.96);--well:rgba(0,20,26,.35);--chip:#ff6b6b;--chip-ink:#fffaf0;--glow:rgba(0,180,216,.32);--glow2:rgba(255,107,107,.2);--feat:rgba(255,183,3,.18);--neon-line:rgba(6,214,160,.45);--star:255,209,102}
+.th{display:inline-flex;border:1px solid var(--line);border-radius:99px;overflow:hidden}
+.th button{border:0;background:transparent;color:var(--ink2);font:700 12px/1 var(--mono);padding:6px 10px;cursor:pointer}
+.th button[aria-pressed="true"]{background:var(--gold-hot);color:var(--void)}
+
+.tick{position:sticky;top:0;z-index:7;overflow:hidden;background:var(--gold-hot);color:var(--void);font:800 12px/1 var(--mono);letter-spacing:.08em;white-space:nowrap;padding:calc(7px + env(safe-area-inset-top,0px)) 0 7px}
+.tick a{color:inherit;display:block}
+.tick .tr{display:inline-block;padding-left:100%;animation:tk 32s linear infinite}
+@keyframes tk{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+.tb{top:27px!important;padding-top:10px!important}
+details.sec{border-bottom:1px solid var(--line)}
+details.sec>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:4px 0}
+details.sec>summary::-webkit-details-marker{display:none}
+details.sec>summary h2{margin:16px 0}
+details.sec>summary::after{content:"+";font:700 22px/1 var(--mono);color:var(--gold-hot);transition:transform .2s}
+details.sec[open]>summary::after{content:"–"}
+details.sec[open]{padding-bottom:16px}
+.hl{outline:2px solid var(--neon);outline-offset:4px;border-radius:16px;animation:hlp 1.4s ease-in-out 3}
+@keyframes hlp{50%{outline-color:transparent}}
+body{padding-bottom:150px}
+#tp{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;justify-content:center;padding:0 10px calc(10px + env(safe-area-inset-bottom,0px));pointer-events:none}
+#tp .box{pointer-events:auto;width:100%;max-width:480px;border:1px solid var(--line-hot);border-radius:18px;background:var(--term);box-shadow:0 -8px 30px rgba(0,0,0,.35);padding:12px 14px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+#tp .hd{display:flex;justify-content:space-between;align-items:center;font:700 11px/1 var(--mono);letter-spacing:.1em;color:var(--neon)}
+#tp .hd button{background:none;border:0;color:var(--ink2);font:700 16px/1 var(--mono);padding:4px 6px;cursor:pointer}
+#tp .txt{min-height:3.2em;margin:10px 0 12px;font:600 19px/1.4 var(--sans);color:var(--ink)}
+#tp .txt .w{opacity:.18;transition:opacity .25s}
+#tp .txt .w.on{opacity:1}
+#tp .bt{display:flex;gap:8px;align-items:center}
+#tp .bt button{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:99px;padding:9px 14px;font:700 13px/1 var(--mono);cursor:pointer}
+#tp .bt .nx{margin-left:auto;background:var(--gold-hot);color:var(--void);border-color:var(--gold-hot)}
+#tp .bar{height:3px;background:var(--line);border-radius:3px;margin-top:10px;overflow:hidden}
+#tp .bar i{display:block;height:100%;background:var(--neon);width:0;transition:width .3s}
+#tpo{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:20;display:none;border:1px solid var(--line-hot);background:var(--term);color:var(--gold-hot);border-radius:99px;padding:10px 14px;font:800 13px/1 var(--mono);cursor:pointer}
+@media (prefers-reduced-motion:reduce){.tick .tr{animation:none;padding-left:16px}.hl{animation:none}}
+
+.hero-org{display:flex;align-items:center;gap:8px;background:none;border:0;padding:0;cursor:pointer;text-align:left;width:100%}
+.hero-org .chev{margin-left:auto;font-size:14px;color:var(--gold-hot)}
+#herox{overflow:hidden;max-height:600px;transition:max-height .45s ease,opacity .35s ease}
+header.min #herox{max-height:0;opacity:0}
+header.min{padding-bottom:4px}
+#tp .tools{display:flex;gap:2px}
+#tp .tools button{font:700 13px/1 var(--mono);min-width:30px}
+#tp .txt.big{font-size:24px}
+#tp .ch{display:flex;flex-wrap:wrap;gap:8px;margin:-2px 0 12px}
+#tp .ch:empty{display:none}
+#tp .ch button{border:1px solid var(--line-hot);background:var(--feat);color:var(--ink);border-radius:14px;padding:11px 14px;font:700 14px/1.2 var(--sans);cursor:pointer;flex:1 1 40%;text-align:left}
+#tp .ch button b{display:block;color:var(--gold-hot);font:800 11px/1.4 var(--mono);letter-spacing:.08em}
+#tp .bt .lt{display:none}
+#tp .bt.act .lt{display:inline-block}
+#tp .dots{display:flex;gap:5px;margin-top:10px}
+#tp .dots i{flex:1;height:4px;border-radius:3px;background:var(--line)}
+#tp .dots i.cur{background:var(--gold-hot)}
+#tp .dots i.ok{background:var(--neon)}
+#tp .dots i.skip{background:var(--coral,#ff6b6b);opacity:.6}
+#tp .sum{font:500 14px/1.5 var(--sans);color:var(--ink2);margin:-4px 0 10px}
+#tp .sum a{color:var(--cyan);text-decoration:underline;cursor:pointer}
+details.sec.done>summary h2::after{content:" ✓";color:var(--neon)}
+
+#tp .ghf{display:flex;gap:8px;width:100%;margin-top:4px}
+#tp .ghf input{flex:1 1 auto;min-width:0;border:1px solid var(--line-hot);background:var(--well);color:var(--ink);border-radius:12px;padding:10px 12px;font:600 15px/1 var(--mono)}
+#tp .ch .ghf button{flex:0 0 auto;text-align:center;border:0;background:var(--neon);color:var(--void);border-radius:12px;padding:10px 12px;font:800 12px/1 var(--mono);cursor:pointer}
+#tp #ghl{width:100%;margin:8px 0 0}
+#tp .ch .sum{width:100%}
+
+.mult{display:flex;align-items:stretch;gap:6px;border:1px solid var(--line);border-radius:18px;background:var(--card);padding:14px 10px}
+.mult div{flex:1;text-align:center}
+.mult b{display:block;font:800 30px/1 var(--mono);color:var(--gold-hot)}
+.mult span{display:block;font:500 11px/1.3 var(--sans);color:var(--ink2);margin-top:6px}
+.mult i{align-self:center;color:var(--neon);font-style:normal;font:700 16px/1 var(--mono)}
+.prompt p{font:500 15px/1.55 var(--sans);color:var(--ink)}
+.copy{margin-top:12px;border:0;background:var(--gold-hot);color:var(--void);border-radius:99px;padding:10px 14px;font:800 12px/1 var(--mono);letter-spacing:.06em;cursor:pointer}
+.tb a.brand{text-decoration:none}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Instituto Luterano Latinoamericano","alternateName":["Latin American Lutheran Institute","Lutheran Institute"],"foundingDate":"1996","founder":{"@type":"Person","name":"Rev. Moisés Méndez"},"address":{"@type":"PostalAddress","addressLocality":"Donna","addressRegion":"TX","addressCountry":"US"},"url":"https://yaeleureka-afk.github.io/","sameAs":["https://www.linkedin.com/company/institutoluterano/"],"knowsLanguage":["es","en"],"slogan":"Acelerar, éticamente."}
+</script>
+</head>
+<body>
+<canvas id="sky"></canvas>
+<div class="tick" role="marquee" aria-label="Anuncio de la clase"><a href="https://yaeleureka-afk.github.io/"><span class="tr" id="tickt">● CURSO 2 · ESTO PUEDO ENSEÑAR · EL EFECTO MULTIPLICADOR DEL DOCENTE · PRÓXIMAMENTE, DESPUÉS DEL DIPLOMADO · CADA EGRESADO ENSEÑA A UNA PERSONA ·</span></a></div>
+<div class="wrap">
+  <div class="tb">
+    <a class="brand" href="https://yaeleureka-afk.github.io/">← SEDE · æ://</a>
+    <span class="pill"><span class="dot"></span><span>CURSO 2 · PRÓXIMAMENTE</span></span>
+  </div>
+
+  <header>
+    <button type="button" class="hero-org" id="herot" aria-expanded="true" aria-controls="herox">CURSO 2 · INSTITUTO LUTERANO LATINOAMERICANO <span class="chev">▴</span></button>
+    <div id="herox">
+    <h1>Esto puedo enseñar.</h1>
+    <p class="lead" data-es="Cómo enseñarle a alguien lo que tú acabas de aprender. Un docente forma un grupo; cada egresado que enseña lo multiplica." data-en="How to teach someone what you just learned. One teacher trains a group; every graduate who teaches multiplies it.">Cómo enseñarle a alguien lo que tú acabas de aprender. Un docente forma un grupo; cada egresado que enseña lo multiplica.</p>
+    <div class="facts"><span><b>Curso 2</b> · después del diplomado</span><span>#EFECTOMULTIPLICADOR</span><span>#OPENCOURSEWARE</span><button class="lang" id="lang" type="button">EN</button></div>
+    </div>
+    <div class="facts"><span class="th" role="group" aria-label="Tema"><button type="button" data-t="oscuro">OSCURO</button><button type="button" data-t="claro">CLARO</button><button type="button" data-t="latam">LATAM</button></span></div>
+    <div class="cycle" aria-label="El ciclo">
+      <div><div class="e">📚</div><div class="l">aprendí</div></div>
+      <div><div class="e">🛠️</div><div class="l">construí</div></div>
+      <div><div class="e">🌐</div><div class="l">publiqué</div></div>
+      <div class="hot"><div class="e">🫶</div><div class="l">enseñé ♻️</div></div>
+    </div>
+  </header>
+
+  <details class="sec" id="s-idea"><summary><h2>EL EFECTO MULTIPLICADOR</h2></summary>
+  <div class="mult" aria-label="1, 2, 4, 8">
+    <div><b>1</b><span>docente</span></div><i>→</i><div><b>2</b><span>tú enseñas a una persona</span></div><i>→</i><div><b>4</b><span>cada una enseña a otra</span></div><i>→</i><div><b>8</b><span>y sigue ♻️</span></div>
+  </div>
+  <p class="small" style="margin:10px 4px 0">No enseñamos a consumir internet. Enseñamos a ser sus arquitectos, y luego a formar más arquitectos. Cada vez que alguien enseña lo que aprendió, el grupo se duplica.</p>
+  </details>
+
+  <details class="sec" id="s-sesiones"><summary><h2>LAS CUATRO SESIONES</h2></summary>
+  <div class="step first" id="ses1" style="cursor:default"><span class="n">1</span><span><span class="t">Destila</span><span class="d">Lo que aprendiste en una sola idea y tres pasos. Tu agente propone, tú recortas.</span></span></div>
+  <div class="step" id="ses2" style="cursor:default;margin-top:10px"><span class="n">2</span><span><span class="t">Prepara</span><span class="d">Una mini clase de 15 minutos: guion, un ejemplo de tu vida y una práctica corta.</span></span></div>
+  <div class="step" id="ses3" style="cursor:default;margin-top:10px"><span class="n">3</span><span><span class="t">Enseña</span><span class="d">A una persona real: tu familia, tu iglesia o tu comunidad. Que termine con algo hecho por ella.</span></span></div>
+  <div class="step" id="ses4" style="cursor:default;margin-top:10px"><span class="n">4</span><span><span class="t">Publica</span><span class="d">Tu mini clase en tu GitHub.io como OpenCourseWare, y anota en REFLEXION.md qué funcionó.</span></span></div>
+  </details>
+
+  <details class="sec" id="s-prompt"><summary><h2>PROMPT PARA TU AGENTE</h2></summary>
+  <div class="rule prompt">
+    <p id="ptxt">Acabo de aprender: [lo que aprendiste]. Ayúdame a enseñarlo a [quién] en 15 minutos. Dame: 1) la idea en una frase, 2) tres pasos sencillos, 3) un ejemplo de la vida diaria, 4) una práctica para que lo haga con su celular y 5) dos preguntas para saber si entendió. Usa palabras simples. Yo reviso y decido.</p>
+    <button type="button" class="copy" id="pcopy">COPIAR PROMPT</button>
+  </div>
+  </details>
+
+  <details class="sec" id="s-ensenar"><summary><h2>CÓMO ENSEÑAR BIEN</h2></summary>
+  <div class="rule tips">
+    <ol>
+      <li><b>No le quites el celular.</b> Que sus manos hagan el trabajo.</li>
+      <li><b>Regla de 2 minutos:</b> si se traba, guíalo con una pregunta: ¿qué ves en la pantalla?</li>
+      <li><b>Deja que se equivoque.</b> El error también enseña.</li>
+      <li><b>Termina con algo hecho por tu alumno</b>, no por ti.</li>
+    </ol>
+  </div>
+  </details>
+
+  <details class="sec" id="s-entrega"><summary><h2>LA ENTREGA</h2></summary>
+  <div class="rule entrega">
+    <ol>
+      <li>El enlace de <b>tu mini clase</b> publicada.</li>
+      <li>El <b>sitio publicado de tu alumno</b>, si quiere compartirlo.</li>
+      <li>Tu <b>REFLEXION.md</b>: qué funcionó, qué no y qué cambiarías.</li>
+    </ol>
+    <div class="q">Pide permiso antes de mencionar a tu alumno. Nunca publiques sus datos privados.</div>
+  </div>
+  </details>
+
+  <div class="term">
+    <div class="bar"><span>TEO://TERM</span><span><b>HUMANO:PRESENTE</b></span></div>
+    <div id="out"></div>
+    <div class="chips"><button data-c="empezar">empezar</button><button data-c="idea">idea</button><button data-c="prompt">prompt</button><button data-c="ensenar">enseñar</button><button data-c="entrega">entrega</button><button data-c="ayuda">ayuda</button></div>
+    <form id="cf" autocomplete="off"><input id="ci" type="text" spellcheck="false" placeholder=">_ escribe o toca un comando" aria-label="Comando"><button type="submit">RUN</button></form>
+  </div>
+
+  <footer>
+    <b>Instituto Luterano Latinoamericano</b><br>
+    Fundado en 1996 por el Rev. Moisés Méndez · organización sin fines de lucro en Donna, Texas<br>
+    Afiliado al Sínodo Luterano Latinoamericano y a la Misión Luterana Latinoamericana (1936)<br>
+    <a href="https://yaeleureka-afk.github.io/">Sede</a> · <a href="https://www.linkedin.com/company/institutoluterano/">LinkedIn</a> · <a href="https://yaeleureka-afk.github.io/diplomado-agentico/">Diplomado</a> · <a href="https://yaeleureka-afk.github.io/diplomado-agentico/clases/d0-docentes/">Docentes</a> · <a href="https://github.com/yaeleureka-afk">GitHub</a> · CC BY-NC-SA 4.0 · æ://<br>
+    <b>LA EVIDENCIA NO ES AUTORIDAD</b>
+  </footer>
+</div>
+<div id="tp" aria-live="polite"><div class="box" id="tpbox">
+  <div class="hd"><span>æ · TELEPROMPTER <span id="tpn"></span></span><span class="tools"><button type="button" id="tpv" aria-label="Leer en voz alta" title="Voz">🔇</button><button type="button" id="tps" aria-label="Velocidad" title="Velocidad">1×</button><button type="button" id="tpa" aria-label="Tamaño de letra" title="Letra">A</button><button type="button" id="tpx" aria-label="Minimizar">✕</button></span></div>
+  <div class="txt" id="tpt"></div>
+  <div class="ch" id="tpc"></div>
+  <div class="bt"><button type="button" id="tpb">‹</button><button type="button" id="tpr" title="Elegir otro camino">☰</button><button type="button" class="lt" id="tpl">Luego</button><button type="button" class="nx" id="tpf">Siguiente ›</button></div>
+  <div class="dots" id="tpd"></div>
+</div></div>
+<button type="button" id="tpo">▶ GUÍA</button>
+<script>
+(function(){
+var STAR="212,175,55",root=document.documentElement,tb=document.querySelectorAll(".th button");
+function setTheme(t){if(t==="oscuro")root.removeAttribute("data-theme");else root.setAttribute("data-theme",t);
+  STAR=getComputedStyle(root).getPropertyValue("--star").trim()||"212,175,55";
+  var m=document.querySelector('meta[name="theme-color"]');if(m)m.content=getComputedStyle(root).getPropertyValue("--void").trim();
+  tb.forEach(function(b){b.setAttribute("aria-pressed",b.dataset.t===t?"true":"false");});
+  try{localStorage.setItem("ill-theme",t);}catch(e){}}
+tb.forEach(function(b){b.addEventListener("click",function(){setTheme(b.dataset.t);});});
+var saved="oscuro";try{saved=localStorage.getItem("ill-theme")||"oscuro";}catch(e){}setTheme(saved);
+var sky=document.getElementById("sky"),sx=sky.getContext("2d"),stars=[];
+function sz(){var d=Math.min(devicePixelRatio||1,2);sky.width=innerWidth*d;sky.height=innerHeight*d;sx.setTransform(d,0,0,d,0,0);}
+sz();addEventListener("resize",sz);
+for(var i=0;i<50;i++)stars.push({x:Math.random(),y:Math.random(),r:Math.random()*.9+.2,p:Math.random()*6.28,s:.4+Math.random()});
+(function draw(t){var w=innerWidth,h=innerHeight;sx.clearRect(0,0,w,h);
+  for(var i=0;i<stars.length;i++){var s=stars[i],a=.08+.4*Math.abs(Math.sin(t*.001*s.s+s.p));
+  sx.fillStyle="rgba("+STAR+","+a.toFixed(3)+")";sx.beginPath();sx.arc(s.x*w,s.y*h,s.r,0,6.28);sx.fill();}
+  requestAnimationFrame(draw);})(0);
+
+/* Próxima clase: martes 7 pm, hora de Texas (America/Chicago) */
+function nextClass(){
+  try{
+    var p={};new Intl.DateTimeFormat("en-US",{timeZone:"America/Chicago",weekday:"short",hour:"numeric",minute:"numeric",hourCycle:"h23"}).formatToParts(new Date()).forEach(function(x){p[x.type]=x.value;});
+    var wd=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(p.weekday),m=wd*1440+(+p.hour)*60+(+p.minute),tgt=2*1440+19*60;
+    var diff=(tgt-m+10080)%10080;
+    if(diff===0)return "CLASE AHORA · 7 PM TX";
+    if(diff<1440&&wd===2)return "HOY · 7 PM TX";
+    var d=Math.floor(diff/1440),h=Math.floor((diff%1440)/60);
+    if(diff>10080-120)return "CLASE EN CURSO";
+    return "MARTES 7 PM · EN "+(d?d+"D ":"")+h+"H";
+  }catch(e){return "MARTES 7 PM TX";}
+}
+
+/* Teleprompter æ v2: caminos, a tu paso */
+var DOC="https://yaeleureka-afk.github.io/diplomado-agentico/clases/d0-docentes/";
+var TRK={
+ egresado:{n:"EGRESADO",st:[
+  {t:"Ya aprendiste, construiste y publicaste. Ahora viene lo más poderoso: enseñarle a otra persona."},
+  {t:"El efecto multiplicador: un docente forma un grupo. Cada egresado que enseña a una persona lo duplica.",s:"idea",e:".mult"},
+  {id:"destila",lb:"Destila",t:"Sesión 1: destila. Escribe en una frase lo que aprendiste y divídelo en tres pasos. Tu agente propone; tú recortas.",s:"sesiones",e:"#ses1",act:1},
+  {id:"prompt",lb:"Prompt",t:"Copia este prompt, llena los corchetes y pídele a tu agente un guion de 15 minutos.",s:"prompt",e:".prompt",act:1},
+  {id:"prepara",lb:"Prepara",t:"Sesión 2: prepara. Revisa el guion, agrega un ejemplo de tu vida y una práctica corta.",s:"sesiones",e:"#ses2",act:1},
+  {id:"alumno",lb:"Tu alumno",t:"Elige a una persona real: alguien de tu familia, tu iglesia o tu comunidad. Pídele 15 minutos.",act:1},
+  {t:"Al enseñar: no le quites el celular. Si se traba más de 2 minutos, guíalo con una pregunta.",s:"ensenar",e:".tips"},
+  {id:"ensena",lb:"Enseña",t:"Sesión 3: enseña. Que tu alumno termine con algo hecho por él, no por ti.",s:"sesiones",e:"#ses3",act:1},
+  {id:"publica",lb:"Publica",t:"Sesión 4: publica tu mini clase en tu GitHub.io como OpenCourseWare. Si tu alumno quiere, ayúdale a publicar su sitio.",s:"sesiones",e:"#ses4",act:1},
+  {t:"Pide permiso antes de mencionar a tu alumno. Nunca publiques sus datos privados.",s:"entrega",e:".entrega .q"},
+  {id:"reflexion",lb:"Reflexión",t:"Anota en REFLEXION.md qué funcionó, qué no y qué cambiarías la próxima vez.",s:"entrega",e:".entrega",act:1},
+  {fin:1,gh:1,t:"Esto aprendí. Esto construí. Esto publiqué. Esto enseñé. Escribe tu usuario de GitHub y mira tu sitio."}]},
+ docente:{n:"DOCENTE",st:[
+  {t:"Colega: este curso convierte a cada egresado en docente. Te muestro cómo facilitarlo."},
+  {t:"Empieza con tu propio ejemplo: algo que aprendiste y luego enseñaste. El grupo aprende viéndote.",s:"idea",e:".mult"},
+  {t:"Son cuatro sesiones: destila, prepara, enseña y publica. Cada una deja una evidencia.",s:"sesiones",e:"#ses1"},
+  {t:"El prompt de la mini clase es el punto de partida. El egresado revisa y decide.",s:"prompt",e:".prompt"},
+  {t:"La regla de 2 minutos también es para ti: guía con preguntas y no tomes el celular del alumno.",s:"ensenar",e:".tips"},
+  {t:"Evalúa con la entrega: la mini clase, la reflexión y, si hay permiso, el sitio del alumno.",s:"entrega",e:".entrega"},
+  {fin:1,t:"Un docente que forma docentes multiplica la enseñanza. Acelerar, éticamente."}]},
+ visita:{n:"VISITA",st:[
+  {t:"Bienvenido. Este es el Curso 2 del Instituto: aprender a enseñar lo que acabas de aprender."},
+  {t:"La idea es simple: cada persona que aprende enseña a otra, y así el conocimiento se multiplica.",s:"idea",e:".mult"},
+  {t:"Son cuatro sesiones: destila, prepara, enseña y publica.",s:"sesiones",e:"#ses1"},
+  {fin:1,t:"Todo el material es abierto: puedes copiarlo y adaptarlo, citando la fuente."}]}
+};
+var SP=[{l:"½×",ms:420},{l:"1×",ms:260},{l:"2×",ms:120}];
+var tp={trk:null,i:0,done:{},skip:{},sp:1,voz:0,big:0,min:0};
+try{var sv=JSON.parse(localStorage.getItem("ill-tp-c2")||"null");if(sv)for(var k in sv)tp[k]=sv[k];}catch(e){}
+var tpTimer=null,tpBox=document.getElementById("tp"),tpO=document.getElementById("tpo"),tpT=document.getElementById("tpt"),tpC=document.getElementById("tpc");
+var rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+var $=function(id){return document.getElementById(id);};
+function tpSave(){try{localStorage.setItem("ill-tp-c2",JSON.stringify(tp));}catch(e){}}
+function tpShow(on){tp.min=on?0:1;tpSave();tpBox.style.display=on?"flex":"none";tpO.style.display=on?"none":"block";document.body.style.paddingBottom=on?"190px":"24px";if(!on){window.speechSynthesis&&speechSynthesis.cancel();clearHL();}}
+function clearHL(){document.querySelectorAll(".hl").forEach(function(x){x.classList.remove("hl");});}
+function say(t){if(!tp.voz||!window.speechSynthesis)return;speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t.replace(/[^\p{L}\p{N}\s.,:;¿?¡!]/gu,""));u.lang="es-MX";u.rate=[0.8,1,1.3][tp.sp];speechSynthesis.speak(u);}
+function reveal(t){clearInterval(tpTimer);tpT.className="txt"+(tp.big?" big":"");
+  tpT.innerHTML=t.split(" ").map(function(w){return '<span class="w">'+w+'</span>';}).join(" ");
+  var ws=tpT.querySelectorAll(".w"),k=0;
+  if(rm){ws.forEach(function(w){w.classList.add("on");});}
+  else tpTimer=setInterval(function(){if(k<ws.length)ws[k++].classList.add("on");else clearInterval(tpTimer);},SP[tp.sp].ms);
+  say(t);}
+function heroMin(on){var h=document.querySelector("header");h.classList.toggle("min",on);$("herot").setAttribute("aria-expanded",on?"false":"true");$("herot").querySelector(".chev").textContent=on?"▾":"▴";try{localStorage.setItem("ill-hero-c2",on?"min":"open");}catch(e){}}
+function marks(){var all=["destila","prompt","prepara","alumno","ensena","publica","reflexion"].every(function(k){return tp.done[k];});var d=$("s-sesiones");if(d)d.classList.toggle("done",all);}
+function tpChoose(){tp.trk=null;tp.i=0;tpSave();clearHL();
+  $("tpn").textContent="";$("tpd").innerHTML="";$("tpb").disabled=true;$("tpf").style.display="none";$("tpb").parentNode.classList.remove("act");
+  var back=Object.keys(tp.done).length?'Bienvenido de nuevo. ':'';
+  reveal(back+"Hola 👋 Soy el teleprompter æ. Te guío por el Curso 2, a tu ritmo. ¿Quién eres hoy?");
+  tpC.innerHTML='<button data-k="egresado"><b>EGRESADO</b>Quiero enseñar</button><button data-k="docente"><b>DOCENTE</b>Voy a facilitar</button><button data-k="visita"><b>VISITA</b>Solo quiero conocer</button>';
+  tpC.querySelectorAll("button").forEach(function(b){b.onclick=function(){tp.trk=b.dataset.k;tp.i=0;heroMin(true);tpGo(0);};});}
+function tpSummary(){var L=TRK[tp.trk].st,pend=[];L.forEach(function(x,n){if(x.act&&!tp.done[x.id])pend.push(n);});
+  if(!L.some(function(x){return x.act;}))return "";
+  var ok=L.filter(function(x){return x.act&&tp.done[x.id];}).length,tot=L.filter(function(x){return x.act;}).length;
+  return '<div class="sum">Hiciste '+ok+' de '+tot+' pasos.'+(pend.length?' Te falta: '+pend.map(function(n){return '<a data-n="'+n+'">'+(L[n].lb||L[n].t.split(":")[0].replace(/^Ahora tu repo/,"Tu repo").slice(0,24))+'</a>';}).join(", ")+'.':' ¡Todo listo! 🎉')+'</div>';}
+function ghUrl(u){return "https://"+u.toLowerCase()+".github.io/mi-diplomado/";}
+function ghBox(){return '<form id="ghf" class="ghf" autocomplete="off"><input id="ghu" placeholder="tu-usuario" value="'+(tp.gh||"")+'" aria-label="Usuario de GitHub" spellcheck="false" autocapitalize="none"><button type="submit">VER MI SITIO</button></form><div class="sum" id="ghl">'+(tp.gh?'Tu sitio: <a href="'+ghUrl(tp.gh)+'" target="_blank" rel="noopener">'+ghUrl(tp.gh).replace("https://","")+'</a>':'')+'</div>';}
+function ghWire(){var f=$("ghf");if(!f)return;f.onsubmit=function(e){e.preventDefault();var u=$("ghu").value.trim().replace(/^@/,"");
+ if(!/^[A-Za-z0-9](?:[A-Za-z0-9-]{0,37}[A-Za-z0-9])?$/.test(u)){$("ghl").textContent="Ese usuario no parece válido. Solo letras, números y guiones.";return;}
+ tp.gh=u;tpSave();var url=ghUrl(u);$("ghl").innerHTML='Tu sitio: <a href="'+url+'" target="_blank" rel="noopener">'+url.replace("https://","")+'</a> · cópialo a Classroom';say("Tu sitio está en "+u+" punto github punto io");};}
+function tpGo(i){if(!tp.trk)return tpChoose();var L=TRK[tp.trk].st;tp.i=Math.max(0,Math.min(L.length-1,i));tpSave();var st=L[tp.i];
+  tpC.innerHTML="";$("tpf").style.display="";
+  $("tpn").textContent=TRK[tp.trk].n+" "+(tp.i+1)+"/"+L.length;
+  $("tpd").innerHTML=L.map(function(x,n){return '<i class="'+(n===tp.i?"cur":(x.act&&tp.done[x.id])?"ok":(x.act&&tp.skip[x.id])?"skip":"")+'"></i>';}).join("");
+  $("tpb").disabled=false;
+  $("tpb").parentNode.classList.toggle("act",!!st.act);
+  $("tpf").textContent=st.fin?"Terminar ✓":st.act?(tp.done[st.id]?"Hecho ✓ ›":"Ya lo hice ✓"):"Siguiente ›";
+  clearHL();
+  if(st.s){var d=$("s-"+st.s);if(d)d.open=true;}
+  var el=st.e&&document.querySelector(st.e);
+  if(el){el.classList.add("hl");el.scrollIntoView({behavior:rm?"auto":"smooth",block:"center"});}
+  reveal(st.t);
+  if(st.fin)tpC.innerHTML=tpSummary()+(st.gh?ghBox():"");
+  if(st.gh)ghWire();
+  tpC.querySelectorAll("a[data-n]").forEach(function(a){a.onclick=function(){tpGo(+a.dataset.n);};});}
+function tpNext(){if(!tp.trk)return;var L=TRK[tp.trk].st,st=L[tp.i];
+  if(st.act){tp.done[st.id]=1;delete tp.skip[st.id];marks();}
+  if(st.fin){tpShow(false);return;}tpGo(tp.i+1);}
+$("tpf").addEventListener("click",tpNext);
+$("tpl").addEventListener("click",function(){var st=TRK[tp.trk].st[tp.i];tp.skip[st.id]=1;tpGo(tp.i+1);});
+$("tpb").addEventListener("click",function(){if(tp.i===0)tpChoose();else tpGo(tp.i-1);});
+$("tpr").addEventListener("click",tpChoose);
+$("tpx").addEventListener("click",function(){tpShow(false);});
+$("tps").addEventListener("click",function(){tp.sp=(tp.sp+1)%3;this.textContent=SP[tp.sp].l;tpSave();});
+$("tpv").addEventListener("click",function(){tp.voz=tp.voz?0:1;this.textContent=tp.voz?"🔊":"🔇";tpSave();if(tp.voz)say(tpT.textContent);else window.speechSynthesis&&speechSynthesis.cancel();});
+$("tpa").addEventListener("click",function(){tp.big=tp.big?0:1;tpT.classList.toggle("big",!!tp.big);tpSave();});
+tpO.addEventListener("click",function(){tpShow(true);tp.trk?tpGo(tp.i):tpChoose();});
+$("herot").addEventListener("click",function(){heroMin(!document.querySelector("header").classList.contains("min"));});
+/* deslizar: izquierda = siguiente, derecha = atrás */
+(function(){var x0=null;$("tpbox").addEventListener("touchstart",function(e){x0=e.touches[0].clientX;},{passive:true});
+ $("tpbox").addEventListener("touchend",function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)<60||!tp.trk)return;if(dx<0)$("tpf").click();else $("tpb").click();});})();
+document.addEventListener("keydown",function(e){if(tp.min||document.activeElement===document.getElementById("ci"))return;if(e.key==="ArrowRight")$("tpf").click();if(e.key==="ArrowLeft")$("tpb").click();});
+$("tps").textContent=SP[tp.sp].l;$("tpv").textContent=tp.voz?"🔊":"🔇";if(!window.speechSynthesis)$("tpv").style.display="none";
+$("pcopy").addEventListener("click",function(){var b=this,t=$("ptxt").textContent;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent="COPIADO ✓";},function(){var r=document.createRange();r.selectNodeContents($("ptxt"));getSelection().removeAllRanges();getSelection().addRange(r);b.textContent="SELECCIONADO";});setTimeout(function(){b.textContent="COPIAR PROMPT";},2000);});
+/* la portada se colapsa una vez vista */
+try{if(localStorage.getItem("ill-hero-c2")==="min"||localStorage.getItem("ill-hero-seen-c2"))heroMin(true);}catch(e){}
+if("IntersectionObserver" in window){var hio=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting){try{localStorage.setItem("ill-hero-seen-c2","1");}catch(e){}hio.disconnect();}});});hio.observe(document.querySelector("header"));}
+marks();
+if(tp.min)tpShow(false);else{tpShow(true);tp.trk?tpGo(tp.i):tpChoose();}
+/* Ticker con cuenta regresiva */
+var tk=document.getElementById("tickt");
+
+
+var lb=document.getElementById("lang"),en=false;lb.addEventListener("click",function(){en=!en;lb.textContent=en?"ES":"EN";document.querySelectorAll("[data-es]").forEach(function(el){el.textContent=en?el.dataset.en:el.dataset.es;});document.documentElement.lang=en?"en":"es";});
+var out=document.getElementById("out");
+function ln(h,c){var d=document.createElement("div");d.className=c||"";d.innerHTML=h;out.appendChild(d);out.scrollTop=out.scrollHeight;while(out.children.length>30)out.removeChild(out.firstChild);}
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+ln("ILL · æ:// · curso 2 · esto puedo enseñar","s");ln("Toca <span class='g'>empezar</span> para ver las cuatro sesiones.","s");
+var C={
+  empezar:["1 · Destila: una idea, tres pasos","2 · Prepara: mini clase de 15 minutos","3 · Enseña: a una persona real","4 · Publica: tu mini clase en tu GitHub.io"],
+  idea:["1 docente → 2 → 4 → 8 ♻️","Cada egresado que enseña duplica el grupo."],
+  prompt:["Abre la sección <span class='g'>PROMPT PARA TU AGENTE</span> y toca COPIAR PROMPT."],
+  ensenar:["No le quites el celular · regla de 2 minutos · deja que se equivoque · que termine con algo hecho por él"],
+  entrega:["Tu mini clase publicada · el sitio de tu alumno (con permiso) · REFLEXION.md"],
+  sede:["<a href='https://yaeleureka-afk.github.io/'>← volver a la sede</a>"],
+  regla:["el agente propone → tú compruebas → <span class='g'>tú decides</span> → la comunidad aprende ♻️"],
+  guia:["Abriendo el teleprompter…"],
+  ayuda:["guia · tema claro · tema latam · tema oscuro","empezar · idea · prompt · enseñar · entrega · regla · sede · limpiar"]
+};
+C["enseñar"]=C.ensenar;C.help=C.ayuda;
+function run(c){c=c.trim();if(!c)return;ln("&gt;_ "+esc(c),"g");var k=c.split(/\s+/)[0].toLowerCase();
+  if(k==="limpiar"||k==="clear"){out.innerHTML="";return;}
+  if(k==="tema"||k==="theme"){var t=(c.split(/\s+/)[1]||"").toLowerCase().replace("light","claro").replace("dark","oscuro");if(["claro","oscuro","latam"].indexOf(t)<0){ln("tema claro · tema latam · tema oscuro","s");return;}setTheme(t);ln("Tema "+t.toUpperCase()+" ✓","s");return;}
+  if(k==="guia"||k==="guía"){tpShow(true);tpChoose();ln("Teleprompter abierto ✓","s");return;}
+  if(C[k]){C[k].forEach(function(x){ln(x,"s");});return;}
+  ln("No conozco ese comando. Prueba <span class='g'>ayuda</span>.","r");}
+document.getElementById("cf").addEventListener("submit",function(e){e.preventDefault();var i=document.getElementById("ci");run(i.value);i.value="";});
+document.querySelectorAll(".chips button").forEach(function(b){b.addEventListener("click",function(){run(b.dataset.c);});});
+})();
+</script>
+</body>
+</html>
