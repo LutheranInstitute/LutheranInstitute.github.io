@@ -183,6 +183,12 @@ header.min{padding-bottom:4px}
 #tp .sum{font:500 14px/1.5 var(--sans);color:var(--ink2);margin:-4px 0 10px}
 #tp .sum a{color:var(--cyan);text-decoration:underline;cursor:pointer}
 details.sec.done>summary h2::after{content:" ✓";color:var(--neon)}
+
+#tp .ghf{display:flex;gap:8px;width:100%;margin-top:4px}
+#tp .ghf input{flex:1 1 auto;min-width:0;border:1px solid var(--line-hot);background:var(--well);color:var(--ink);border-radius:12px;padding:10px 12px;font:600 15px/1 var(--mono)}
+#tp .ch .ghf button{flex:0 0 auto;text-align:center;border:0;background:var(--neon);color:var(--void);border-radius:12px;padding:10px 12px;font:800 12px/1 var(--mono);cursor:pointer}
+#tp #ghl{width:100%;margin:8px 0 0}
+#tp .ch .sum{width:100%}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"EducationalOrganization","name":"Instituto Luterano Latinoamericano","alternateName":["Latin American Lutheran Institute","Lutheran Institute"],"foundingDate":"1996","founder":{"@type":"Person","name":"Rev. Moisés Méndez"},"address":{"@type":"PostalAddress","addressLocality":"Donna","addressRegion":"TX","addressCountry":"US"},"url":"https://yaeleureka-afk.github.io/","sameAs":["https://www.linkedin.com/company/institutoluterano/"],"knowsLanguage":["es","en"],"slogan":"Acelerar, éticamente."}
@@ -213,7 +219,7 @@ details.sec.done>summary h2::after{content:" ✓";color:var(--neon)}
     </div>
   </header>
 
-  <div class="bub"><div class="who">æ</div><div class="msg">Hola 👋 <b>¿Vienes a clase?</b> Empieza aquí: tres pasos, unos 15 minutos. Avisos y el enlace de cada clase están en tu <a href="https://classroom.google.com/" style="color:var(--cyan);text-decoration:underline">Classroom</a>.</div></div>
+  <div class="bub"><div class="who">æ</div><div class="msg">Hola 👋 <b>¿Vienes a clase?</b> Empieza aquí: cuatro pasos, de tu celular a tu sitio en internet. Avisos y el enlace de cada clase están en tu <a href="https://classroom.google.com/" style="color:var(--cyan);text-decoration:underline">Classroom</a>.</div></div>
   <details class="sec" id="s-empieza"><summary><h2>ALUMNOS · EMPIEZA AQUÍ</h2></summary>
   <div class="step first" style="cursor:default">
     <span class="n">1</span>
@@ -243,6 +249,11 @@ details.sec.done>summary h2::after{content:" ✓";color:var(--neon)}
   <a class="step" href="https://yaeleureka-afk.github.io/diplomado-agentico/modulos/modulo-1.html" style="margin-top:10px">
     <span class="n">3</span>
     <span><span class="t">Haz tu primera práctica</span><span class="d">Módulo 1: hazle la misma pregunta a dos IA y compara.</span></span>
+    <span class="go">→</span>
+  </a>
+  <a class="step" href="https://yaeleureka-afk.github.io/diplomado-agentico/clases/m0-l00/" style="margin-top:10px">
+    <span class="n">4</span>
+    <span><span class="t">Publica tu presencia en internet</span><span class="d">Hecha por ti: tu agente propone, tú decides y GitHub Pages la publica en <code>tu-usuario.github.io/mi-diplomado</code>.</span></span>
     <span class="go">→</span>
   </a>
 
@@ -365,15 +376,18 @@ function nextClass(){
 var DOC="https://yaeleureka-afk.github.io/diplomado-agentico/clases/d0-docentes/";
 var TRK={
  alumno:{n:"ALUMNO",st:[
-  {t:"Perfecto. Son tres pasos, unos 15 minutos. Yo te marco dónde tocar; tú avanzas cuando estés listo."},
-  {id:"agente",t:"Paso 1: baja tu agente. Te recomendamos Hark Pro en el celular. Si ya usas otro, tráelo.",s:"empieza",e:".feat",act:1},
+  {t:"Perfecto. Son cuatro pasos y terminas con tu propio sitio en internet, hecho por ti. Yo te marco dónde tocar; tú avanzas a tu ritmo."},
+  {id:"agente",lb:"Tu agente",t:"Paso 1: baja tu agente. Te recomendamos Hark Pro en el celular. Si ya usas otro, tráelo.",s:"empieza",e:".feat",act:1},
   {t:"¿Primera vez con Hark Pro? La Clase 2 te enseña a usarlo. Ábrela cuando quieras y vuelve aquí.",s:"empieza",e:".agents .small"},
-  {id:"github",t:"Paso 2: crea tu cuenta de GitHub, gratis, con un correo que abras en tu celular.",s:"empieza",e:"#gh-signup",act:1},
-  {id:"repo",t:"Ahora tu repo: abre la plantilla, toca Use this template y ponle mi-diplomado.",s:"empieza",e:'a.step[href*="mi-diplomado"]',act:1},
-  {id:"practica",t:"Paso 3: tu primera práctica. Hazle la misma pregunta a dos IA y compara las respuestas.",s:"empieza",e:'a.step[href*="modulo-1"]',act:1},
+  {id:"github",lb:"GitHub",t:"Paso 2: crea tu cuenta de GitHub, gratis, con un correo que abras en tu celular.",s:"empieza",e:"#gh-signup",act:1},
+  {id:"repo",lb:"Tu repo",t:"Ahora tu repo: abre la plantilla, toca Use this template y ponle mi-diplomado.",s:"empieza",e:'a.step[href*="mi-diplomado"]',act:1},
+  {id:"practica",lb:"Práctica",t:"Paso 3: tu primera práctica. Hazle la misma pregunta a dos IA y compara las respuestas.",s:"empieza",e:'a.step[href*="modulo-1"]',act:1},
   {t:"La regla de oro: el agente propone, tú compruebas, tú decides y anotas la evidencia.",s:"regla",e:".rule"},
-  {t:"Cuando quieras publicar tu sitio, empieza por la Lección 00: tu presencia en internet.",s:"modulos",e:".mods .mod"},
-  {fin:1,t:"Nos vemos el martes a las 7 pm, hora de Texas. El enlace está en tu Classroom."}]},
+  {id:"borrador",lb:"Borrador",t:"Paso 4: tu presencia en internet. Pídele a tu agente un primer borrador de index.md: quién eres, qué haces y qué quieres construir. Sin datos privados.",s:"empieza",e:'a.step[href*="m0-l00"]',act:1},
+  {id:"commit",lb:"Commit",t:"Revisa el borrador, corrige lo que no suene a ti y guárdalo en tu repo con un commit. Tú eres el arquitecto; el agente solo propone.",s:"empieza",e:'a.step[href*="m0-l00"]',act:1},
+  {id:"pages",lb:"GitHub Pages",t:"En tu repo toca Settings, luego Pages, y elige la rama main. En un minuto tu sitio está vivo en internet.",s:"empieza",e:'a.step[href*="m0-l00"]',act:1},
+  {id:"reflexion",lb:"Reflexión",t:"Anota en REFLEXION.md qué propuso el agente, qué cambiaste y por qué. Luego sube el enlace de tu sitio a Classroom.",act:1},
+  {fin:1,gh:1,t:"Esto aprendí. Esto construí. Esto publiqué. Esto puedo enseñar. Escribe tu usuario de GitHub y mira tu sitio."}]},
  docente:{n:"DOCENTE",st:[
   {t:"Bienvenido, colega. Te muestro cómo está armada la sede y dónde está tu guion de clase."},
   {id:"guia",t:"Tu guía docente: guion de 90 minutos, semáforo, regla de 2 minutos y soluciones rápidas.",e:'footer a[href*="d0-docentes"]',act:1},
@@ -409,7 +423,7 @@ function reveal(t){clearInterval(tpTimer);tpT.className="txt"+(tp.big?" big":"")
   else tpTimer=setInterval(function(){if(k<ws.length)ws[k++].classList.add("on");else clearInterval(tpTimer);},SP[tp.sp].ms);
   say(t);}
 function heroMin(on){var h=document.querySelector("header");h.classList.toggle("min",on);$("herot").setAttribute("aria-expanded",on?"false":"true");$("herot").querySelector(".chev").textContent=on?"▾":"▴";try{localStorage.setItem("ill-hero",on?"min":"open");}catch(e){}}
-function marks(){Object.keys(TRK.alumno.st).forEach(function(){});var all=["agente","github","repo","practica"].every(function(k){return tp.done[k];});var d=$("s-empieza");if(d)d.classList.toggle("done",all);}
+function marks(){Object.keys(TRK.alumno.st).forEach(function(){});var all=["agente","github","repo","practica","borrador","commit","pages"].every(function(k){return tp.done[k];});var d=$("s-empieza");if(d)d.classList.toggle("done",all);}
 function tpChoose(){tp.trk=null;tp.i=0;tpSave();clearHL();
   $("tpn").textContent="";$("tpd").innerHTML="";$("tpb").disabled=true;$("tpf").style.display="none";$("tpb").parentNode.classList.remove("act");
   var back=Object.keys(tp.done).length?'Bienvenido de nuevo. ':'';
@@ -419,7 +433,12 @@ function tpChoose(){tp.trk=null;tp.i=0;tpSave();clearHL();
 function tpSummary(){var L=TRK[tp.trk].st,pend=[];L.forEach(function(x,n){if(x.act&&!tp.done[x.id])pend.push(n);});
   if(!L.some(function(x){return x.act;}))return "";
   var ok=L.filter(function(x){return x.act&&tp.done[x.id];}).length,tot=L.filter(function(x){return x.act;}).length;
-  return '<div class="sum">Hiciste '+ok+' de '+tot+' pasos.'+(pend.length?' Te falta: '+pend.map(function(n){return '<a data-n="'+n+'">'+L[n].t.split(":")[0].replace(/^Ahora tu repo/,"Tu repo").slice(0,28)+'</a>';}).join(", ")+'.':' ¡Todo listo! 🎉')+'</div>';}
+  return '<div class="sum">Hiciste '+ok+' de '+tot+' pasos.'+(pend.length?' Te falta: '+pend.map(function(n){return '<a data-n="'+n+'">'+(L[n].lb||L[n].t.split(":")[0].replace(/^Ahora tu repo/,"Tu repo").slice(0,24))+'</a>';}).join(", ")+'.':' ¡Todo listo! 🎉')+'</div>';}
+function ghUrl(u){return "https://"+u.toLowerCase()+".github.io/mi-diplomado/";}
+function ghBox(){return '<form id="ghf" class="ghf" autocomplete="off"><input id="ghu" placeholder="tu-usuario" value="'+(tp.gh||"")+'" aria-label="Usuario de GitHub" spellcheck="false" autocapitalize="none"><button type="submit">VER MI SITIO</button></form><div class="sum" id="ghl">'+(tp.gh?'Tu sitio: <a href="'+ghUrl(tp.gh)+'" target="_blank" rel="noopener">'+ghUrl(tp.gh).replace("https://","")+'</a>':'')+'</div>';}
+function ghWire(){var f=$("ghf");if(!f)return;f.onsubmit=function(e){e.preventDefault();var u=$("ghu").value.trim().replace(/^@/,"");
+ if(!/^[A-Za-z0-9](?:[A-Za-z0-9-]{0,37}[A-Za-z0-9])?$/.test(u)){$("ghl").textContent="Ese usuario no parece válido. Solo letras, números y guiones.";return;}
+ tp.gh=u;tpSave();var url=ghUrl(u);$("ghl").innerHTML='Tu sitio: <a href="'+url+'" target="_blank" rel="noopener">'+url.replace("https://","")+'</a> · cópialo a Classroom';say("Tu sitio está en "+u+" punto github punto io");};}
 function tpGo(i){if(!tp.trk)return tpChoose();var L=TRK[tp.trk].st;tp.i=Math.max(0,Math.min(L.length-1,i));tpSave();var st=L[tp.i];
   tpC.innerHTML="";$("tpf").style.display="";
   $("tpn").textContent=TRK[tp.trk].n+" "+(tp.i+1)+"/"+L.length;
@@ -432,7 +451,8 @@ function tpGo(i){if(!tp.trk)return tpChoose();var L=TRK[tp.trk].st;tp.i=Math.max
   var el=st.e&&document.querySelector(st.e);
   if(el){el.classList.add("hl");el.scrollIntoView({behavior:rm?"auto":"smooth",block:"center"});}
   reveal(st.t);
-  if(st.fin)tpC.innerHTML=tpSummary();
+  if(st.fin)tpC.innerHTML=tpSummary()+(st.gh?ghBox():"");
+  if(st.gh)ghWire();
   tpC.querySelectorAll("a[data-n]").forEach(function(a){a.onclick=function(){tpGo(+a.dataset.n);};});}
 function tpNext(){if(!tp.trk)return;var L=TRK[tp.trk].st,st=L[tp.i];
   if(st.act){tp.done[st.id]=1;delete tp.skip[st.id];marks();}
