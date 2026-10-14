@@ -7,6 +7,7 @@ Rule for every agent: the agent proposes, the human checks, the human decides. E
 ## Programas
 - [Diplomado en Transformación Digital](https://yaeleureka-afk.github.io/diplomado-agentico/): TEOTECH, Tuesdays 7 pm Texas time. Lessons, modules and install guides.
 - [Clases](https://yaeleureka-afk.github.io/diplomado-agentico/clases/): Lección 00 (build your internet presence), Clase 2 (how to use Hark Pro), and more.
+- [Guía docente](https://yaeleureka-afk.github.io/diplomado-agentico/clases/d0-docentes/): teaching script and troubleshooting for GitHub account, template repo, commits and GitHub Pages.
 - [Plantilla del alumno](https://github.com/yaeleureka-afk/mi-diplomado): GitHub template with README, AGENTS.md, REFLEXION.md, STATE.md and cards/.
 
 ## Agentes
