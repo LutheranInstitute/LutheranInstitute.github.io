@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>TEOTECH · Diplomado en Transformación Digital</title>
-<meta name="description" content="Bienvenida al Diplomado en Transformación Digital del Instituto Luterano Latinoamericano. Baja Hark Pro o trae tu propio agente y empieza en 3 pasos.">
-<meta property="og:title" content="TEOTECH · Diplomado en Transformación Digital">
+<title>Instituto Luterano Latinoamericano · Sede de agentes · æ://</title>
+<meta name="description" content="Sede de agentes del Instituto Luterano Latinoamericano: programas, agentes, reglas y el Diplomado en Transformación Digital. Acelerar, éticamente.">
+<meta property="og:title" content="Instituto Luterano Latinoamericano · Sede de agentes">
 <meta property="og:description" content="Empieza aquí: baja Hark Pro o trae tu agente, crea tu repo y haz tu primera práctica. El agente propone, tú compruebas, tú decides.">
 <meta property="og:url" content="https://yaeleureka-afk.github.io/">
 <meta property="og:type" content="website">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
 <meta name="theme-color" content="#07060b">
 <style>
 :root{
@@ -97,21 +98,50 @@ footer{margin-top:28px;padding-top:14px;border-top:1px solid var(--line);text-al
 .ag .ref{color:var(--neon)}
 footer b{color:var(--gold)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+
+.hero-org{font:700 12px/1.4 var(--mono);letter-spacing:.12em;color:var(--neon);margin-bottom:4px}
+.facts{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.facts span{border:1px solid var(--line);border-radius:99px;padding:5px 10px;font:600 12px/1 var(--mono);color:var(--ink2)}
+.facts b{color:var(--gold-hot)}
+.prog{display:block;border:1px solid var(--line);border-radius:16px;background:var(--card);padding:14px;margin-bottom:10px}
+.prog:hover{border-color:var(--line-hot)}
+.prog .k{font:700 11px/1 var(--mono);letter-spacing:.1em;color:var(--neon)}
+.prog .k.off{color:var(--ink2)}
+.prog .t{display:block;font:800 16px/1.25 var(--mono);color:var(--gold-hot);margin-top:6px}
+.prog .d{display:block;font-size:14px;color:var(--ink2);margin-top:4px}
+.roster{border:1px solid var(--line);border-radius:16px;background:var(--card);overflow:hidden}
+.ag-row{display:flex;gap:12px;align-items:flex-start;padding:13px 14px;border-top:1px solid var(--line)}
+.ag-row:first-child{border-top:0}
+.ag-row .em{flex-shrink:0;width:34px;height:34px;border-radius:10px;border:1px solid var(--line-hot);display:flex;align-items:center;justify-content:center;font:800 15px/1 var(--mono);color:var(--gold-hot);background:#000}
+.ag-row .t{font:800 15px/1.2 var(--mono);color:var(--gold-hot)}
+.ag-row .r{font:700 11px/1 var(--mono);color:var(--neon);margin-left:6px;letter-spacing:.06em}
+.ag-row .d{font-size:14px;color:var(--ink2);margin-top:2px}
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.roles div{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:10px 6px;text-align:center;font:800 13px/1.2 var(--mono);color:var(--gold-hot)}
+.roles div span{display:block;font:600 12px/1.3 var(--sans);color:var(--ink2);margin-top:3px}
+.machine{border:1px dashed var(--line-hot);border-radius:16px;padding:14px;background:rgba(0,0,0,.35)}
+.machine p{font-size:14px;color:var(--ink2);margin-bottom:10px}
+.machine a{display:inline-block;margin:0 6px 6px 0;border:1px solid var(--line);border-radius:99px;padding:6px 10px;font:600 12px/1 var(--mono);color:var(--cyan)}
+.lang{border:1px solid var(--line);border-radius:99px;padding:5px 9px;font:700 12px/1 var(--mono);color:var(--ink2);background:transparent}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Instituto Luterano Latinoamericano","alternateName":["Latin American Lutheran Institute","Lutheran Institute"],"foundingDate":"1996","founder":{"@type":"Person","name":"Rev. Moisés Méndez"},"address":{"@type":"PostalAddress","addressLocality":"Donna","addressRegion":"TX","addressCountry":"US"},"url":"https://yaeleureka-afk.github.io/","sameAs":["https://www.linkedin.com/company/institutoluterano/"],"knowsLanguage":["es","en"],"slogan":"Acelerar, éticamente."}
+</script>
 </head>
 <body>
 <canvas id="sky"></canvas>
 <div class="wrap">
   <div class="tb">
-    <span class="brand">TEO://TECH</span>
+    <span class="brand">ILL · æ://</span>
     <span class="pill"><span class="dot"></span><span id="next">MARTES 7 PM TX</span></span>
   </div>
 
   <header>
-    <div class="kick">DIPLOMADO · TRANSFORMACIÓN DIGITAL</div>
-    <h1>Bienvenida, bienvenido.</h1>
-    <p class="lead">Aprenderás a dirigir agentes de IA, comprobar lo que proponen y publicar un proyecto útil para tu comunidad. Todo desde tu celular.</p>
-    <div class="cycle" aria-label="El ciclo del diplomado">
+    <div class="hero-org">INSTITUTO LUTERANO LATINOAMERICANO</div>
+    <h1>Sede de agentes.</h1>
+    <p class="lead" data-es="Educación teológica y tecnológica para lugares de difícil acceso. Aquí viven nuestros agentes, nuestras clases y nuestras reglas. Acelerar, éticamente." data-en="Theological and technological education for hard-to-reach places. Our agents, our classes and our rules live here. Accelerate, ethically.">Educación teológica y tecnológica para lugares de difícil acceso. Aquí viven nuestros agentes, nuestras clases y nuestras reglas. Acelerar, éticamente.</p>
+    <div class="facts"><span><b>1996</b> · Donna, Texas</span><span>#TEOTECH</span><span>#OPENCOURSEWARE</span><span>#EDUTECH</span><button class="lang" id="lang" type="button">EN</button></div>
+    <div class="cycle" aria-label="El ciclo">
       <div><div class="e">æ</div><div class="l">el agente propone</div></div>
       <div><div class="e">🤳</div><div class="l">tú compruebas</div></div>
       <div class="hot"><div class="e">🫵</div><div class="l">tú decides</div></div>
@@ -119,9 +149,8 @@ footer b{color:var(--gold)}
     </div>
   </header>
 
-  <div class="bub"><div class="who">æ</div><div class="msg">Hola 👋 <b>Empieza aquí.</b> Tres pasos, unos 15 minutos. Avisos y el enlace de cada clase están en tu <a href="https://classroom.google.com/" style="color:var(--cyan);text-decoration:underline">Classroom</a>.</div></div>
-
-  <h2>EMPIEZA AQUÍ</h2>
+  <div class="bub"><div class="who">æ</div><div class="msg">Hola 👋 <b>¿Vienes a clase?</b> Empieza aquí: tres pasos, unos 15 minutos. Avisos y el enlace de cada clase están en tu <a href="https://classroom.google.com/" style="color:var(--cyan);text-decoration:underline">Classroom</a>.</div></div>
+  <h2>ALUMNOS · EMPIEZA AQUÍ</h2>
   <div class="step first" style="cursor:default">
     <span class="n">1</span>
     <span><span class="t">Baja tu agente</span><span class="d">Te recomendamos Hark Pro en el celular. Si ya usas otro, tráelo.</span></span>
@@ -162,6 +191,19 @@ footer b{color:var(--gold)}
     <a class="mod" href="https://yaeleureka-afk.github.io/diplomado-agentico/modulos/modulo-4.html"><span class="em">📱</span><span><span class="t">M4 · Construir</span><br><span class="d">Tu repo, tu pull request, tu sitio</span></span><span class="go">›</span></a>
   </div>
 
+  <h2>PROGRAMAS</h2>
+  <a class="prog" href="https://yaeleureka-afk.github.io/diplomado-agentico/"><span class="k">● EN CURSO · MARTES 7 PM TX</span><span class="t">Diplomado en Transformación Digital</span><span class="d">TEOTECH: dirigir agentes, comprobar y publicar un proyecto para tu comunidad.</span></a>
+  <div class="prog"><span class="k off">ESCUELA DE TEOLOGÍA LATAM</span><span class="t">#TEOLOGIALATAM · Teología ai</span><span class="d">Educación teológica sólida para la Iglesia en América Latina, en español e inglés.</span></div>
+  <a class="prog" href="https://github.com/yaeleureka-afk/diplomado-agentico"><span class="k off">OPENCOURSEWARE</span><span class="t">Clases abiertas · CC BY-NC-SA</span><span class="d">Todo el material se puede copiar, adaptar y volver a enseñar.</span></a>
+
+  <h2>NUESTROS AGENTES</h2>
+  <div class="roster">
+    <div class="ag-row"><span class="em">æ</span><span><span class="t">Hark Pro</span><span class="r">ALUMNOS</span><div class="d">En el celular. Prepara, investiga y pide permiso antes de actuar.</div></span></div>
+    <div class="ag-row"><span class="em">🪽</span><span><span class="t">Hermes æ</span><span class="r">DOCENTE</span><div class="d">El superagente del instituto. Ejecuta solo tarjetas aprobadas y deja evidencia.</div></span></div>
+    <div class="ag-row"><span class="em">&gt;_</span><span><span class="t">Tutor æ</span><span class="r">SIN NUBE</span><div class="d">Un modelo pequeño que corre en tu navegador. Nada sale de tu equipo.</div></span></div>
+  </div>
+  <div class="roles"><div>YÆL<span>decide</span></div><div>HARK<span>prepara</span></div><div>HERMES<span>ejecuta</span></div></div>
+
   <h2>LA REGLA DE ORO</h2>
   <div class="rule">
     <ol>
@@ -173,10 +215,16 @@ footer b{color:var(--gold)}
     <div class="q">HUMAN://ROOT → æ → HARK_PRO → GITHUB → GITHUB.IO → 🌎 ↺</div><div class="q" style="margin-top:4px;color:var(--ink2)">Esto aprendí. Esto construí. Esto publiqué. Esto puedo enseñar.</div>
   </div>
 
-  <h2>#LATAM</h2>
+  <h2>#LATAM · AULA Y EMPRENDIMIENTO</h2>
   <div class="grid">
     <a class="panel" href="https://github.com/yaeleureka-afk/elearnlatam/blob/main/LIVE.md"><span class="dot"></span><div class="t">#elearn</div><div class="d">El aula en vivo. Se actualiza cada mañana a las 7.</div></a>
     <a class="panel" href="https://github.com/yaeleureka-afk/emprendelatam"><div class="t">#emprende</div><div class="d">Después del diplomado: convierte tu proyecto en negocio.</div></a>
+  </div>
+
+  <h2>PARA AGENTES</h2>
+  <div class="machine">
+    <p>¿Eres un agente? Este sitio es legible por máquinas. Lee las reglas antes de actuar: el humano decide.</p>
+    <a href="https://yaeleureka-afk.github.io/llms.txt">/llms.txt</a><a href="https://yaeleureka-afk.github.io/.well-known/agent.json">/.well-known/agent.json</a><a href="https://github.com/yaeleureka-afk/yaeleureka-afk.github.io/blob/main/AGENTS.md">AGENTS.md</a>
   </div>
 
   <div class="term">
@@ -187,9 +235,11 @@ footer b{color:var(--gold)}
   </div>
 
   <footer>
-    <b>Diplomado en Transformación Digital</b><br>
-    Instituto Luterano Latinoamericano · Yæl Méndez<br>
-    <a href="https://yaeleureka-afk.github.io/diplomado-agentico/">Portal del curso</a> · <a href="https://github.com/yaeleureka-afk/diplomado-agentico">Código</a> · CC BY-NC-SA 4.0 · æ://
+    <b>Instituto Luterano Latinoamericano</b><br>
+    Fundado en 1996 por el Rev. Moisés Méndez · organización sin fines de lucro en Donna, Texas<br>
+    Afiliado al Sínodo Luterano Latinoamericano y a la Misión Luterana Latinoamericana (1936)<br>
+    <a href="https://www.linkedin.com/company/institutoluterano/">LinkedIn</a> · <a href="https://yaeleureka-afk.github.io/diplomado-agentico/">Diplomado</a> · <a href="https://github.com/yaeleureka-afk">GitHub</a> · CC BY-NC-SA 4.0 · æ://<br>
+    <b>LA EVIDENCIA NO ES AUTORIDAD</b>
   </footer>
 </div>
 <script>
@@ -218,17 +268,19 @@ function nextClass(){
 }
 var nx=document.getElementById("next");nx.textContent=nextClass();setInterval(function(){nx.textContent=nextClass();},60000);
 
+var lb=document.getElementById("lang"),en=false;lb.addEventListener("click",function(){en=!en;lb.textContent=en?"ES":"EN";document.querySelectorAll("[data-es]").forEach(function(el){el.textContent=en?el.dataset.en:el.dataset.es;});document.documentElement.lang=en?"en":"es";});
 var out=document.getElementById("out");
 function ln(h,c){var d=document.createElement("div");d.className=c||"";d.innerHTML=h;out.appendChild(d);out.scrollTop=out.scrollHeight;while(out.children.length>30)out.removeChild(out.firstChild);}
 function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
-ln("TEOTECH · æ://","s");ln("Toca <span class='g'>empezar</span> si es tu primera vez.","s");
+ln("ILL · æ:// · sede de agentes","s");ln("Toca <span class='g'>empezar</span> si es tu primera vez.","s");
 var C={
   empezar:["1 · Baja tu agente: <a href='https://hark.com/download'>Hark Pro</a> o trae el tuyo (escribe <span class='g'>agentes</span>)","2 · Crea tu repo con <a href='https://github.com/yaeleureka-afk/mi-diplomado'>mi-diplomado</a> → Use this template","3 · Haz la práctica del <a href='https://yaeleureka-afk.github.io/diplomado-agentico/modulos/modulo-1.html'>Módulo 1</a>"],
+  instituto:["Instituto Luterano Latinoamericano · 1996 · Donna, Texas","#TEOTECH · #OPENCOURSEWARE · #EDUTECH · acelerar, éticamente","Yæl decide · Hark prepara · Hermes ejecuta"],
   agentes:["<span class='g'>Hark Pro</span> · <a href='https://hark.com/download'>hark.com/download</a> · <a href='https://yaeleureka-afk.github.io/diplomado-agentico/clases/m1-s2/'>Clase 2: cómo usarlo</a>","<span class='g'>Hermes</span> · curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash · <a href='https://portal.nousresearch.com/r/yael'>Nous Portal</a>","<span class='g'>Pi</span> · curl -fsSL https://pi.dev/install.sh | sh","<span class='g'>OpenClaw</span> · curl -fsSL https://openclaw.ai/install.sh | bash","<span class='g'>Claude</span> · <a href='https://claude.ai/download'>claude.ai/download</a>","Cualquiera sirve: todos leen tu AGENTS.md."],
   modulos:["<span class='g'>M1</span> Dirigir agentes","<span class='g'>M2</span> Contexto · AGENTS.md","<span class='g'>M3</span> Agentes con herramientas","<span class='g'>M4</span> Construir, revisar y publicar"],
   regla:["el agente propone → tú compruebas → <span class='g'>tú decides</span> → la comunidad aprende ♻️"],
   clase:["Martes 7 pm, hora de Texas · "+nextClass().toLowerCase(),"El enlace de cada clase está en tu Classroom."],
-  ayuda:["empezar · agentes · modulos · regla · clase · github · limpiar"],
+  ayuda:["empezar · agentes · instituto · modulos · regla · clase · github · limpiar"],
   github:["¿Sin cuenta? <a href='https://github.com/signup'>github.com/signup</a> · es gratis"]
 };
 C["módulos"]=C.modulos;C.help=C.ayuda;
