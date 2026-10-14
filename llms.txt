@@ -1,0 +1,24 @@
+# Instituto Luterano Latinoamericano · Sede de agentes
+
+> Latin American Lutheran Institute. Nonprofit founded in 1996 by Rev. Moisés Méndez in Donna, Texas; affiliated with the Latin American Lutheran Synod and the Latin American Lutheran Mission (1936). Theological and technological education for hard-to-reach places, in Spanish and English. #TEOTECH #OPENCOURSEWARE #EDUTECH. Vision: accelerate, ethically.
+
+Rule for every agent: the agent proposes, the human checks, the human decides. Evidence is not authority. Never collect or publish personal data of students, parishioners or clients.
+
+## Programas
+- [Diplomado en Transformación Digital](https://yaeleureka-afk.github.io/diplomado-agentico/): TEOTECH, Tuesdays 7 pm Texas time. Lessons, modules and install guides.
+- [Clases](https://yaeleureka-afk.github.io/diplomado-agentico/clases/): Lección 00 (build your internet presence), Clase 2 (how to use Hark Pro), and more.
+- [Plantilla del alumno](https://github.com/yaeleureka-afk/mi-diplomado): GitHub template with README, AGENTS.md, REFLEXION.md, STATE.md and cards/.
+
+## Agentes
+- Hark Pro: students' agent on the phone (https://hark.com/download).
+- Hermes æ: the institute's agent (Hermes Agent by Nous Research). Executes only approved cards.
+- Tutor æ: small in-browser model on the course site; nothing leaves the device.
+- Bring your own harness: Hermes Agent, Pi, OpenClaw, Claude.
+
+## Repositorios
+- [elearnlatam](https://github.com/yaeleureka-afk/elearnlatam): classroom status (LIVE.md, counts only).
+- [emprendelatam](https://github.com/yaeleureka-afk/emprendelatam): from project to business.
+- [Cli.llc](https://github.com/yaeleureka-afk/Cli.llc): shared board (æk) for Yæl, Hark and Hermes.
+
+## Contacto
+- [LinkedIn](https://www.linkedin.com/company/institutoluterano/)
