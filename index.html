@@ -189,6 +189,15 @@ details.sec.done>summary h2::after{content:" ✓";color:var(--neon)}
 #tp .ch .ghf button{flex:0 0 auto;text-align:center;border:0;background:var(--neon);color:var(--void);border-radius:12px;padding:10px 12px;font:800 12px/1 var(--mono);cursor:pointer}
 #tp #ghl{width:100%;margin:8px 0 0}
 #tp .ch .sum{width:100%}
+
+:root{--sc-tech:#ffd166;--sc-teo:#4ea8ff;--sc-ench:#06d6a0}
+[data-theme="claro"]{--sc-tech:#b07d00;--sc-teo:#1f5fbf;--sc-ench:#0a8f6a}
+.prog.sc{border-left:6px solid var(--c)}
+.prog.sc .k{color:var(--c)}
+.prog.tech{--c:var(--sc-tech)}.prog.teo{--c:var(--sc-teo)}.prog.ench{--c:var(--sc-ench)}
+.schools{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px;font:800 12px/1 var(--mono);letter-spacing:.08em}
+.schools span{border:1px solid var(--line);border-radius:99px;padding:7px 10px;color:var(--ink)}
+.schools .tt{color:var(--gold-hot);border-color:var(--line-hot)}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"EducationalOrganization","name":"Instituto Luterano Latinoamericano","alternateName":["Latin American Lutheran Institute","Lutheran Institute"],"foundingDate":"1996","founder":{"@type":"Person","name":"Rev. Moisés Méndez"},"address":{"@type":"PostalAddress","addressLocality":"Donna","addressRegion":"TX","addressCountry":"US"},"url":"https://yaeleureka-afk.github.io/","sameAs":["https://www.linkedin.com/company/institutoluterano/"],"knowsLanguage":["es","en"],"slogan":"Acelerar, éticamente."}
@@ -270,12 +279,13 @@ details.sec.done>summary h2::after{content:" ✓";color:var(--neon)}
 
   </details>
 
-  <details class="sec" id="s-programas"><summary><h2>PROGRAMAS</h2></summary>
-  <a class="prog" href="https://yaeleureka-afk.github.io/diplomado-agentico/"><span class="k">● EN CURSO · MARTES 7 PM TX</span><span class="t">Diplomado en Transformación Digital</span><span class="d">TEOTECH: dirigir agentes, comprobar y publicar un proyecto para tu comunidad.</span></a>
-  <a class="prog" href="https://yaeleureka-afk.github.io/ensenar/"><span class="k">● PRÓXIMAMENTE · CURSO 2</span><span class="t">Esto puedo enseñar</span><span class="d">Cómo enseñarle a alguien lo que tú acabas de aprender. El efecto multiplicador del docente.</span></a>
-  <a class="prog" href="https://myaelmendez.github.io/teologia/"><span class="k off">ESCUELA DE TEOLOGÍA LATAM · EN PREPARACIÓN</span><span class="t">#TEOLOGIALATAM · Teología ai</span><span class="d">Por ahora, la Biblioteca Luterana: la base para construir sus cursos.</span></a>
-  <a class="prog" href="https://yaeleureka-afk.github.io/enchiridion/"><span class="k off">TERCERA ESCUELA · EN PREPARACIÓN</span><span class="t">Enchiridion · de 3 a 103 años</span><span class="d">El Catecismo Menor para toda persona: aprenderlo y enseñarlo con sencillez en casa.</span></a>
-  <a class="prog" href="https://github.com/yaeleureka-afk/diplomado-agentico"><span class="k off">OPENCOURSEWARE</span><span class="t">Clases abiertas · CC BY-NC-SA</span><span class="d">Todo el material se puede copiar, adaptar y volver a enseñar.</span></a>
+  <details class="sec" id="s-programas"><summary><h2>NUESTRAS ESCUELAS</h2></summary>
+  <div class="schools"><span>🟨 TECNOLOGÍA</span><span>🟦 TEOLOGÍA</span><span>🟩 ENCHIRIDION</span><span class="tt">TECH TEO 🏵️</span></div>
+  <a class="prog sc tech" href="https://yaeleureka-afk.github.io/diplomado-agentico/"><span class="k">🟨 TECH · EN CURSO · MARTES 7 PM TX</span><span class="t">Diplomado en Transformación Digital</span><span class="d">TEOTECH: dirigir agentes, comprobar y publicar un proyecto para tu comunidad.</span></a>
+  <a class="prog sc tech" href="https://yaeleureka-afk.github.io/ensenar/"><span class="k">🟨 TECH · CURSO 2 · PRÓXIMAMENTE</span><span class="t">Esto puedo enseñar</span><span class="d">Cómo enseñarle a alguien lo que tú acabas de aprender. El efecto multiplicador del docente.</span></a>
+  <a class="prog sc teo" href="https://myaelmendez.github.io/teologia/"><span class="k">🟦 TEO · ESCUELA DE TEOLOGÍA LATAM · EN PREPARACIÓN</span><span class="t">#TEOLOGIALATAM · Teología ai</span><span class="d">Por ahora, la Biblioteca Luterana: la base para construir sus cursos.</span></a>
+  <a class="prog sc ench" href="https://yaeleureka-afk.github.io/enchiridion/"><span class="k">🟩 ENCHIRIDION · EN PREPARACIÓN</span><span class="t">Enchiridion · de 3 a 103 años</span><span class="d">El Catecismo Menor para toda persona: aprenderlo y enseñarlo con sencillez en casa.</span></a>
+  <a class="prog" href="https://github.com/yaeleureka-afk/diplomado-agentico"><span class="k off">🏵️ OPENCOURSEWARE</span><span class="t">Clases abiertas · CC BY-NC-SA</span><span class="d">Todo el material se puede copiar, adaptar y volver a enseñar.</span></a>
 
   </details>
 
