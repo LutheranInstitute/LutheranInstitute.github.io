@@ -412,9 +412,16 @@ h1{font-size:13px}header .sub{font-size:6.5px}
 .mc{font-size:6.5px}.mc .d{font-size:5.5px}
 .molt-row{font-size:6.5px}.ticker-item{font-size:6.5px}
 #term{font-size:7px}.cnode text{font-size:6px}
-.cta{flex-shrink:0;display:grid;grid-template-columns:1fr 1fr;gap:4px}
-.cta a{border:1px solid var(--line-hot);border-radius:5px;background:rgba(212,175,55,.06);text-align:center;padding:5px 2px;font:700 7px/1.2 var(--mono);color:var(--gold-hot);letter-spacing:.05em}
-.cta a span{display:block;font:600 5.5px/1.2 var(--mono);color:var(--ink2);margin-top:1px}
+.cta{flex-shrink:0;display:grid;grid-template-columns:repeat(4,1fr);gap:3px}
+.cta a{position:relative;border:1px solid var(--line);border-radius:7px;background:rgba(212,175,55,.05);text-align:left;padding:4px 4px 4px 5px;font:700 6px/1.2 var(--mono);color:var(--gold-hot);letter-spacing:.03em;text-decoration:none;transition:border-color .2s,background .2s}
+.cta a:hover,.cta a:active{border-color:var(--line-hot);background:rgba(212,175,55,.1)}
+.cta a.on{border-color:var(--line-hot)}
+.cta a span{display:block;font:600 5px/1.2 var(--mono);color:var(--ink2);margin-top:1px}
+.cta a i{position:absolute;top:4px;right:4px;width:3px;height:3px;border-radius:50%;background:var(--neon);box-shadow:0 0 4px var(--neon);animation:blink 1.5s ease-in-out infinite}
+.bub{flex-shrink:0;display:flex;gap:4px;align-items:flex-start}
+.bub .who{flex-shrink:0;width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,255,170,.45);display:flex;align-items:center;justify-content:center;font:800 6px/1 var(--mono);color:var(--neon)}
+.bub .msg{border:1px solid var(--line);border-radius:2px 8px 8px 8px;background:rgba(10,8,15,.9);padding:3px 6px;font:600 5.5px/1.35 var(--mono);color:var(--ink)}
+.bub .msg b{color:var(--gold-hot)}
 footer{font-size:6px}
 </style>
 </head>
@@ -456,8 +463,8 @@ footer{font-size:6px}
           <g class="cnode"><circle cx="200" cy="18" r="2.5"/><text x="200" y="12" text-anchor="middle">æl.net</text></g>
           <g class="cnode"><circle cx="330" cy="28" r="2.5"/><text x="330" y="20" text-anchor="middle">hermes · æ</text></g>
           <g class="cnode"><circle cx="350" cy="85" r="2.5"/><text x="350" y="97" text-anchor="middle">github</text></g>
-          <g class="cnode"><circle cx="150" cy="120" r="2.5"/><text x="150" y="132" text-anchor="middle">classroom</text></g>
-          <g class="cnode"><circle cx="275" cy="118" r="2.5"/><text x="275" y="130" text-anchor="middle">comunidad</text></g>
+          <g class="cnode"><circle cx="150" cy="120" r="2.5"/><text x="150" y="132" text-anchor="middle">classroom live</text></g>
+          <g class="cnode"><circle cx="275" cy="118" r="2.5"/><text x="275" y="130" text-anchor="middle">#latam</text></g>
         </svg>
       </div>
     </div>
@@ -480,15 +487,18 @@ footer{font-size:6px}
       </div>
     </div>
     <div class="ticker-wrap"><div class="ticker-track" id="tickerTrack"></div></div>
+    <div class="bub"><div class="who">æ</div><div class="msg"><b>Hark prepara · tú decides.</b> Cada mañana a las 7 el aula se actualiza sola en <b>LIVE</b>.</div></div>
     <div class="cta">
-      <a href="https://yaeleureka-afk.github.io/diplomado-agentico/">▶ DIPLOMADO<span>ruta y módulos</span></a>
-      <a href="https://github.com/yaeleureka-afk/diplomado-agentico">⌥ REPO<span>código · CC BY-NC-SA</span></a>
+      <a class="on" href="https://yaeleureka-afk.github.io/diplomado-agentico/">▶ DIPLOMADO<span>ruta · módulos</span></a>
+      <a href="https://github.com/yaeleureka-afk/elearnlatam"><i></i>#elearn<span>aula · LIVE</span></a>
+      <a href="https://github.com/yaeleureka-afk/mi-diplomado">#aprende<span>tu repo</span></a>
+      <a href="https://github.com/yaeleureka-afk/emprendelatam">#emprende<span>tu LLC</span></a>
     </div>
     <div class="aepi">
       <div class="tbar"><span>TEO://TERM</span><span><b>HUMANO:PRESENTE</b></span></div>
       <div id="term"></div>
       <form id="cform" autocomplete="off">
-        <input id="cin" type="text" spellcheck="false" placeholder=">_ ayuda · modulos · ciclo · regla">
+        <input id="cin" type="text" spellcheck="false" placeholder=">_ ayuda · modulos · latam · live">
         <button type="submit">RUN</button>
       </form>
     </div>
@@ -509,7 +519,7 @@ for(var i=0;i<45;i++)stars.push({x:Math.random(),y:Math.random(),r:Math.random()
 function pad(n){return("0"+n).slice(-2);}
 function now(){var n=new Date();return pad(n.getHours())+":"+pad(n.getMinutes())+":"+pad(n.getSeconds());}
 setInterval(function(){document.getElementById("clock").textContent=now();},1000);
-var EVENTS=["[M1] conversar → dirigir · BITÁCORA","[M2] contexto → AGENTS.md · BORRADOR","[M3] herramientas → flujo · REVISADO","[M4] commit → PR → Pages · PUBLICADO","[GATE] el agente propone · el humano DECIDE","[æ] Hermes prepara · ESPERA aprobación","[HARK] desde el celular · plan GRATUITO","[MIT] Missing Semester 2026 · ADAPTADO"];
+var EVENTS=["[M1] conversar → dirigir · BITÁCORA","[M2] contexto → AGENTS.md · BORRADOR","[M3] herramientas → flujo · REVISADO","[M4] commit → PR → Pages · PUBLICADO","[GATE] el agente propone · el humano DECIDE","[æ] Hermes prepara · ESPERA aprobación","[HARK] desde el celular · plan GRATUITO","[MIT] Missing Semester 2026 · ADAPTADO","[LIVE] æ://Classroom Live · 7 AM · ACTUALIZADO","[LATAM] #elearnlatam · #aprendelatam · #emprendelatam · ABIERTO","[æk] idea → tarjeta → aprobación → evidencia · DECISIÓN"];
 var track=document.getElementById("tickerTrack"),hh="";
 for(var p=0;p<2;p++)EVENTS.forEach(function(ev){hh+='<span class="ticker-item"><span class="ts">['+now()+']</span> '+ev.replace(/[A-ZÁÉÍÓÚ]{4,}$/,function(m){return"<b>"+m+"</b>";})+"</span>";});
 track.innerHTML=hh;
@@ -526,10 +536,15 @@ function line(h,c){var d=document.createElement("div");d.className="ln "+(c||"")
 function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
 line("TEOTECH · æ:// · 9:16","sys");
 line("Diplomado en <span class='g'>Transformación Digital</span> · martes 7 pm TX","sys");
+line("escribe <span class='g'>latam</span> o <span class='g'>live</span> · Cli in, llc out","sys");
 var M=["<span class='g'>M1</span> De conversar con la IA a dirigir agentes","<span class='g'>M2</span> Contexto e instrucciones","<span class='g'>M3</span> Agentes con herramientas","<span class='g'>M4</span> Construir, revisar y enseñar desde el celular"];
 function run(c){c=c.trim();if(!c)return;line("&gt;_ "+esc(c),"g");var h=c.split(/\s+/)[0].toLowerCase();
   if(h==="clear"||h==="limpiar"){term.innerHTML="";return;}
-  if(h==="ayuda"||h==="help"){line("ayuda modulos ciclo regla agentes promesa quien limpiar","sys");return;}
+  if(h==="ayuda"||h==="help"){line("ayuda modulos ciclo regla agentes promesa latam live aprende emprende quien limpiar","sys");return;}
+  if(h==="latam"){line("<span class='g'>#elearnlatam</span> aprende en el aula · <span class='g'>#aprendelatam</span> construye en tu repo · <span class='g'>#emprendelatam</span> emprende tu LLC","sys");return;}
+  if(h==="live"){line("æ://Classroom Live · cada mañana 7 AM TX · <a style='color:#00ccff' href='https://github.com/yaeleureka-afk/elearnlatam/blob/main/LIVE.md'>LIVE.md</a> · solo conteos, sin nombres","sys");return;}
+  if(h==="aprende"){line("Use this template → <a style='color:#00ccff' href='https://github.com/yaeleureka-afk/mi-diplomado'>mi-diplomado</a> · tu primera tarjeta en cards/","sys");return;}
+  if(h==="emprende"){line("Cli in, llc out → <a style='color:#00ccff' href='https://github.com/yaeleureka-afk/emprendelatam'>emprendelatam</a>","sys");return;}
   if(h==="modulos"||h==="módulos"){M.forEach(function(m){line("  "+m,"sys");});return;}
   if(h==="ciclo"){line("agente propone → alumno comprueba → <span class='g'>humano decide</span> → comunidad aprende ♻️","sys");return;}
   if(h==="regla"){line("descubrir → preparar → <span class='g'>revisión humana</span> → ejecutar → conservar evidencia","sys");return;}
