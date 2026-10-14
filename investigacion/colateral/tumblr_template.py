@@ -11,6 +11,10 @@ COL = {"tech": (242, 196, 0), "teo": (30, 99, 200), "ench": (34, 150, 80), "sede
 ART = {"tech": "art_ens.webp", "teo": "art_sede.webp", "ench": "art_ench.webp", "sede": "art_sede.webp"}
 TAG = {"tech": "🟨 TECNOLOGÍA", "teo": "🟦 TEOLOGÍA", "ench": "🟩 ENCHIRIDION", "sede": "SEDE DE AGENTES"}
 
+for _f in ("Oswald.ttf", "SpaceMono.ttf", "SpaceMono-Bold.ttf"):
+    if not os.path.exists(D + _f):
+        sys.exit("Falta " + _f + ": descárgala de fonts.google.com (Oswald, Space Mono) y ponla junto a este script.")
+
 def osw(sz, w=700):
     f = ImageFont.truetype(D + "Oswald.ttf", sz)
     try: f.set_variation_by_axes([w])
