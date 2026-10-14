@@ -202,6 +202,15 @@ details.sec.done>summary h2::after{content:" ✓";color:var(--neon)}
 .seal{display:block;width:112px;height:112px;border-radius:50%;margin:10px 0 8px;box-shadow:0 0 0 2px var(--gold-hot),0 6px 24px rgba(0,0,0,.35)}
 .motto{font:600 13px/1.4 var(--mono);letter-spacing:.02em;opacity:.85;margin:0 0 12px;max-width:34ch}
 .art{width:100%;aspect-ratio:900/672;margin:14px 0 4px;background:var(--ink);-webkit-mask:url(/art/sede.webp) center/contain no-repeat;mask:url(/art/sede.webp) center/contain no-repeat;opacity:.92}
+.seal{width:156px!important;height:156px!important;margin:14px auto 10px!important}
+header .motto{margin-left:auto;margin-right:auto;text-align:center}
+.go1{display:block;text-align:center;margin:16px 0 4px;padding:16px 14px;border-radius:14px;background:var(--gold-hot);color:var(--void)!important;font:800 20px/1 var(--mono);letter-spacing:.02em;text-decoration:none}
+.go1s{text-align:center;margin:0 0 12px;font:600 12px/1.3 var(--mono);color:var(--ink2)}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 0 12px}
+.tile{display:flex;flex-direction:column;gap:4px;padding:10px 8px;border-radius:12px;border:1px solid var(--line);border-top:4px solid;background:var(--card);text-decoration:none;color:var(--ink)!important}
+.tile b{font:800 11px/1.1 var(--mono)}.tile span{font:500 11px/1.25 var(--mono);color:var(--ink2)}
+.tile.tech{border-top-color:var(--sc-tech)}.tile.teo{border-top-color:var(--sc-teo)}.tile.ench{border-top-color:var(--sc-ench)}
+.lite *{animation:none!important;transition:none!important}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"EducationalOrganization","name":"Instituto Luterano Latinoamericano","alternateName":["Latin American Lutheran Institute","Lutheran Institute"],"foundingDate":"1996","founder":{"@type":"Person","name":"Rev. Moisés Méndez"},"address":{"@type":"PostalAddress","addressLocality":"Donna","addressRegion":"TX","addressCountry":"US"},"url":"https://yaeleureka-afk.github.io/","sameAs":["https://www.linkedin.com/company/institutoluterano/"],"knowsLanguage":["es","en"],"slogan":"Acelerar, éticamente."}
@@ -223,6 +232,13 @@ details.sec.done>summary h2::after{content:" ✓";color:var(--neon)}
     <p class="motto" data-es="L:// — Cinco siglos de herencia educativa luterana, al encuentro de la era agéntica." data-en="L:// — Five centuries of Lutheran educational heritage, meeting the agentic age.">L:// — Cinco siglos de herencia educativa luterana, al encuentro de la era agéntica.</p>
     <h1>Sede de agentes.</h1>
     <p class="lead" data-es="Educación teológica y tecnológica para lugares de difícil acceso. Aquí viven nuestros agentes, nuestras clases y nuestras reglas. Acelerar, éticamente." data-en="Theological and technological education for hard-to-reach places. Our agents, our classes and our rules live here. Accelerate, ethically.">Educación teológica y tecnológica para lugares de difícil acceso. Aquí viven nuestros agentes, nuestras clases y nuestras reglas. Acelerar, éticamente.</p>
+    <a class="go1" href="#s-empieza" id="go1" data-es="Empieza aquí →" data-en="Start here →">Empieza aquí →</a>
+    <p class="go1s" data-es="4 pasos · solo tu celular · gratis" data-en="4 steps · just your phone · free">4 pasos · solo tu celular · gratis</p>
+    <nav class="tiles" aria-label="Nuestras escuelas">
+      <a class="tile tech" href="https://yaeleureka-afk.github.io/diplomado-agentico/"><b>🟨 TECNOLOGÍA</b><span>Diplomado · en curso</span></a>
+      <a class="tile teo" href="https://myaelmendez.github.io/teologia/"><b>🟦 TEOLOGÍA</b><span>Biblioteca Luterana</span></a>
+      <a class="tile ench" href="https://yaeleureka-afk.github.io/enchiridion/"><b>🟩 ENCHIRIDION</b><span>De 3 a 103 años</span></a>
+    </nav>
     <div class="facts"><span><b>1996</b> · Donna, Texas</span><span>#TEOTECH</span><span>#OPENCOURSEWARE</span><span>#EDUTECH</span><button class="lang" id="lang" type="button">EN</button></div>
     </div>
     <div class="facts"><span class="th" role="group" aria-label="Tema"><button type="button" data-t="oscuro">OSCURO</button><button type="button" data-t="claro">CLARO</button><button type="button" data-t="latam">LATAM</button></span></div>
@@ -372,11 +388,14 @@ var sky=document.getElementById("sky"),sx=sky.getContext("2d"),stars=[];
 function sz(){var d=Math.min(devicePixelRatio||1,2);sky.width=innerWidth*d;sky.height=innerHeight*d;sx.setTransform(d,0,0,d,0,0);}
 sz();addEventListener("resize",sz);
 for(var i=0;i<50;i++)stars.push({x:Math.random(),y:Math.random(),r:Math.random()*.9+.2,p:Math.random()*6.28,s:.4+Math.random()});
-(function draw(t){var w=innerWidth,h=innerHeight;sx.clearRect(0,0,w,h);
+var LITE=(navigator.connection&&navigator.connection.saveData)||(navigator.hardwareConcurrency&&navigator.hardwareConcurrency<=4)||(matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches);
+if(LITE){sky.style.display="none";document.documentElement.classList.add("lite");}else (function draw(t){var w=innerWidth,h=innerHeight;sx.clearRect(0,0,w,h);
   for(var i=0;i<stars.length;i++){var s=stars[i],a=.08+.4*Math.abs(Math.sin(t*.001*s.s+s.p));
   sx.fillStyle="rgba("+STAR+","+a.toFixed(3)+")";sx.beginPath();sx.arc(s.x*w,s.y*h,s.r,0,6.28);sx.fill();}
   requestAnimationFrame(draw);})(0);
 
+
+var g1=document.getElementById("go1");if(g1)g1.addEventListener("click",function(e){var d=document.getElementById("s-empieza");if(d){d.open=true;}});
 /* Próxima clase: martes 7 pm, hora de Texas (America/Chicago) */
 function nextClass(){
   try{
