@@ -1,7 +1,7 @@
 {
   "name": "Instituto Luterano Latinoamericano · Sede de agentes",
   "description": "Agent hub of the Latin American Lutheran Institute (Donna, Texas, est. 1996). Theological and technological education for hard-to-reach places. Discovery card only: no live API endpoint is exposed here.",
-  "url": "https://yaeleureka-afk.github.io/",
+  "url": "https://lutheraninstitute.github.io/",
   "languages": ["es", "en"],
   "provider": {"organization": "Instituto Luterano Latinoamericano", "url": "https://www.linkedin.com/company/institutoluterano/"},
   "policy": {
@@ -12,13 +12,13 @@
   "agents": [
     {"name": "Hark Pro", "role": "students", "url": "https://hark.com/download"},
     {"name": "Hermes æ", "role": "institute", "framework": "Hermes Agent (Nous Research)"},
-    {"name": "Tutor æ", "role": "in-browser tutor", "url": "https://yaeleureka-afk.github.io/diplomado-agentico/"}
+    {"name": "Tutor æ", "role": "in-browser tutor", "url": "https://lutheraninstitute.github.io/diplomado-agentico/"}
   ],
   "resources": {
-    "llms_txt": "https://yaeleureka-afk.github.io/llms.txt",
-    "course": "https://yaeleureka-afk.github.io/diplomado-agentico/",
-    "student_template": "https://github.com/yaeleureka-afk/mi-diplomado",
-    "board": "https://github.com/yaeleureka-afk/Cli.llc"
+    "llms_txt": "https://lutheraninstitute.github.io/llms.txt",
+    "course": "https://lutheraninstitute.github.io/diplomado-agentico/",
+    "student_template": "https://github.com/LutheranInstitute/mi-diplomado",
+    "board": "https://github.com/LutheranInstitute/Cli.llc"
   },
   "license": "CC BY-NC-SA 4.0"
 }
