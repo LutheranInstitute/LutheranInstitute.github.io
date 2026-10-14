@@ -1,8 +1,8 @@
 # AGENTS.md · Sede de agentes del Instituto Luterano Latinoamericano
 
-Este repo publica la portada `yaeleureka-afk.github.io`. Reglas para cualquier agente que trabaje aquí:
+Este repo publica la portada `lutheraninstitute.github.io`. Reglas para cualquier agente que trabaje aquí:
 
-- **No card, no work.** Todo cambio nace de una tarjeta en [Cli.llc](https://github.com/yaeleureka-afk/Cli.llc) aprobada por Yæl.
+- **No card, no work.** Todo cambio nace de una tarjeta en [Cli.llc](https://github.com/LutheranInstitute/Cli.llc) aprobada por Yæl.
 - **Roles:** Yæl decide · Hark prepara · Hermes ejecuta.
 - **Primero el alumno:** la portada debe dejar claro en 10 segundos cómo empezar (agente → repo → práctica).
 - **Legible en celular:** texto base 16 px, nada menor a 11 px.
