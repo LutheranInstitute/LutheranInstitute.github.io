@@ -16,7 +16,7 @@
   --void:#07060b;--card:rgba(14,12,20,.92);--gold:#d4af37;--gold-hot:#ffd873;
   --line:rgba(212,175,55,.22);--line-hot:rgba(255,216,115,.55);
   --ink:#ece3c6;--ink2:#a59a78;--neon:#00ffaa;--cyan:#5fd8ff;
-  --term:rgba(10,8,15,.96);--well:rgba(0,0,0,.35);--chip:#000;--chip-ink:#ffd873;--glow:rgba(212,175,55,.09);--glow2:transparent;--feat:rgba(212,175,55,.12);--neon-line:rgba(0,255,170,.35);--star:212,175,55;--bar:none;
+  --term:rgba(10,8,15,.96);--well:rgba(0,0,0,.35);--chip:#000;--chip-ink:#ffd873;--glow:rgba(212,175,55,.09);--glow2:transparent;--feat:rgba(212,175,55,.12);--neon-line:rgba(0,255,170,.35);--star:212,175,55;
   --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
   --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
@@ -126,11 +126,40 @@ footer b{color:var(--gold)}
 .lang{border:1px solid var(--line);border-radius:99px;padding:5px 9px;font:700 12px/1 var(--mono);color:var(--ink2);background:transparent}
 
 [data-theme="claro"]{--void:#f6f1e3;--card:rgba(255,253,246,.96);--gold:#9a7400;--gold-hot:#5e4500;--line:rgba(70,52,10,.18);--line-hot:rgba(140,100,0,.45);--ink:#1c1a14;--ink2:#5a5243;--neon:#007a52;--cyan:#0a5fa0;--term:#fffaf0;--well:rgba(70,52,10,.06);--chip:#1c1a14;--chip-ink:#ffd873;--glow:rgba(212,175,55,.18);--feat:rgba(212,175,55,.2);--neon-line:rgba(0,122,82,.4);--star:154,116,0}
-[data-theme="latam"]{--void:#032a33;--card:rgba(5,62,74,.9);--gold:#ffb703;--gold-hot:#ffd166;--line:rgba(72,202,228,.32);--line-hot:rgba(255,209,102,.65);--ink:#fdf6e3;--ink2:#a8dcd6;--neon:#06d6a0;--cyan:#7ee8fa;--term:rgba(2,36,44,.96);--well:rgba(0,20,26,.35);--chip:#ff6b6b;--chip-ink:#fffaf0;--glow:rgba(0,180,216,.32);--glow2:rgba(255,107,107,.2);--feat:rgba(255,183,3,.18);--neon-line:rgba(6,214,160,.45);--star:255,209,102;--bar:linear-gradient(90deg,#ff6b6b 0 17%,#ff9f1c 17% 34%,#ffd166 34% 50%,#06d6a0 50% 67%,#00b4d8 67% 84%,#0077b6 84%)}
-body::before{content:"";position:fixed;top:0;left:0;right:0;height:5px;background:var(--bar);z-index:10}
+[data-theme="latam"]{--void:#032a33;--card:rgba(5,62,74,.9);--gold:#ffb703;--gold-hot:#ffd166;--line:rgba(72,202,228,.32);--line-hot:rgba(255,209,102,.65);--ink:#fdf6e3;--ink2:#a8dcd6;--neon:#06d6a0;--cyan:#7ee8fa;--term:rgba(2,36,44,.96);--well:rgba(0,20,26,.35);--chip:#ff6b6b;--chip-ink:#fffaf0;--glow:rgba(0,180,216,.32);--glow2:rgba(255,107,107,.2);--feat:rgba(255,183,3,.18);--neon-line:rgba(6,214,160,.45);--star:255,209,102}
 .th{display:inline-flex;border:1px solid var(--line);border-radius:99px;overflow:hidden}
 .th button{border:0;background:transparent;color:var(--ink2);font:700 12px/1 var(--mono);padding:6px 10px;cursor:pointer}
 .th button[aria-pressed="true"]{background:var(--gold-hot);color:var(--void)}
+
+.tick{position:sticky;top:0;z-index:7;overflow:hidden;background:var(--gold-hot);color:var(--void);font:800 12px/1 var(--mono);letter-spacing:.08em;white-space:nowrap;padding:calc(7px + env(safe-area-inset-top,0px)) 0 7px}
+.tick a{color:inherit;display:block}
+.tick .tr{display:inline-block;padding-left:100%;animation:tk 32s linear infinite}
+@keyframes tk{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+.tb{top:27px!important;padding-top:10px!important}
+details.sec{border-bottom:1px solid var(--line)}
+details.sec>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:4px 0}
+details.sec>summary::-webkit-details-marker{display:none}
+details.sec>summary h2{margin:16px 0}
+details.sec>summary::after{content:"+";font:700 22px/1 var(--mono);color:var(--gold-hot);transition:transform .2s}
+details.sec[open]>summary::after{content:"–"}
+details.sec[open]{padding-bottom:16px}
+.hl{outline:2px solid var(--neon);outline-offset:4px;border-radius:16px;animation:hlp 1.4s ease-in-out 3}
+@keyframes hlp{50%{outline-color:transparent}}
+body{padding-bottom:150px}
+#tp{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;justify-content:center;padding:0 10px calc(10px + env(safe-area-inset-bottom,0px));pointer-events:none}
+#tp .box{pointer-events:auto;width:100%;max-width:480px;border:1px solid var(--line-hot);border-radius:18px;background:var(--term);box-shadow:0 -8px 30px rgba(0,0,0,.35);padding:12px 14px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+#tp .hd{display:flex;justify-content:space-between;align-items:center;font:700 11px/1 var(--mono);letter-spacing:.1em;color:var(--neon)}
+#tp .hd button{background:none;border:0;color:var(--ink2);font:700 16px/1 var(--mono);padding:4px 6px;cursor:pointer}
+#tp .txt{min-height:3.2em;margin:10px 0 12px;font:600 19px/1.4 var(--sans);color:var(--ink)}
+#tp .txt .w{opacity:.18;transition:opacity .25s}
+#tp .txt .w.on{opacity:1}
+#tp .bt{display:flex;gap:8px;align-items:center}
+#tp .bt button{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:99px;padding:9px 14px;font:700 13px/1 var(--mono);cursor:pointer}
+#tp .bt .nx{margin-left:auto;background:var(--gold-hot);color:var(--void);border-color:var(--gold-hot)}
+#tp .bar{height:3px;background:var(--line);border-radius:3px;margin-top:10px;overflow:hidden}
+#tp .bar i{display:block;height:100%;background:var(--neon);width:0;transition:width .3s}
+#tpo{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:20;display:none;border:1px solid var(--line-hot);background:var(--term);color:var(--gold-hot);border-radius:99px;padding:10px 14px;font:800 13px/1 var(--mono);cursor:pointer}
+@media (prefers-reduced-motion:reduce){.tick .tr{animation:none;padding-left:16px}.hl{animation:none}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"EducationalOrganization","name":"Instituto Luterano Latinoamericano","alternateName":["Latin American Lutheran Institute","Lutheran Institute"],"foundingDate":"1996","founder":{"@type":"Person","name":"Rev. Moisés Méndez"},"address":{"@type":"PostalAddress","addressLocality":"Donna","addressRegion":"TX","addressCountry":"US"},"url":"https://yaeleureka-afk.github.io/","sameAs":["https://www.linkedin.com/company/institutoluterano/"],"knowsLanguage":["es","en"],"slogan":"Acelerar, éticamente."}
@@ -138,6 +167,7 @@ body::before{content:"";position:fixed;top:0;left:0;right:0;height:5px;backgroun
 </head>
 <body>
 <canvas id="sky"></canvas>
+<div class="tick" role="marquee" aria-label="Anuncio de la clase"><a href="https://classroom.google.com/"><span class="tr" id="tickt">● PRÓXIMA CLASE · MARTES 7 PM, HORA DE TEXAS · EL ENLACE ESTÁ EN TU CLASSROOM · TRAE TU CELULAR CARGADO · ¿PRIMERA VEZ? EL TELEPROMPTER TE GUÍA PASO A PASO ·</span></a></div>
 <div class="wrap">
   <div class="tb">
     <span class="brand">ILL · æ://</span>
@@ -159,7 +189,7 @@ body::before{content:"";position:fixed;top:0;left:0;right:0;height:5px;backgroun
   </header>
 
   <div class="bub"><div class="who">æ</div><div class="msg">Hola 👋 <b>¿Vienes a clase?</b> Empieza aquí: tres pasos, unos 15 minutos. Avisos y el enlace de cada clase están en tu <a href="https://classroom.google.com/" style="color:var(--cyan);text-decoration:underline">Classroom</a>.</div></div>
-  <h2>ALUMNOS · EMPIEZA AQUÍ</h2>
+  <details class="sec" id="s-empieza"><summary><h2>ALUMNOS · EMPIEZA AQUÍ</h2></summary>
   <div class="step first" style="cursor:default">
     <span class="n">1</span>
     <span><span class="t">Baja tu agente</span><span class="d">Te recomendamos Hark Pro en el celular. Si ya usas otro, tráelo.</span></span>
@@ -184,14 +214,16 @@ body::before{content:"";position:fixed;top:0;left:0;right:0;height:5px;backgroun
     <span><span class="t">Crea tu repo</span><span class="d">Abre la plantilla y toca <b>Use this template</b>. Tu agente lee su <code>AGENTS.md</code>.</span></span>
     <span class="go">→</span>
   </a>
-  <p class="small">¿Aún no tienes GitHub? <a href="https://github.com/signup">Crea tu cuenta gratis</a>.</p>
+  <p class="small" id="gh-signup">¿Aún no tienes GitHub? <a href="https://github.com/signup">Crea tu cuenta gratis</a>.</p>
   <a class="step" href="https://yaeleureka-afk.github.io/diplomado-agentico/modulos/modulo-1.html" style="margin-top:10px">
     <span class="n">3</span>
     <span><span class="t">Haz tu primera práctica</span><span class="d">Módulo 1: hazle la misma pregunta a dos IA y compara.</span></span>
     <span class="go">→</span>
   </a>
 
-  <h2>LOS MÓDULOS</h2>
+  </details>
+
+  <details class="sec" id="s-modulos"><summary><h2>LOS MÓDULOS</h2></summary>
   <div class="mods">
     <a class="mod" href="https://yaeleureka-afk.github.io/diplomado-agentico/clases/m0-l00/"><span class="em">🌐</span><span><span class="t">L00 · Tu presencia en internet</span><br><span class="d">🫵 + 🧠 + 📦 + 🌐 · idea → repo → GitHub.io</span></span><span class="go">›</span></a>
     <a class="mod" href="https://yaeleureka-afk.github.io/diplomado-agentico/modulos/modulo-1.html"><span class="em">💬</span><span><span class="t">M1 · Dirigir agentes</span><br><span class="d">De conversar con la IA a darle encargos</span></span><span class="go">›</span></a>
@@ -200,12 +232,16 @@ body::before{content:"";position:fixed;top:0;left:0;right:0;height:5px;backgroun
     <a class="mod" href="https://yaeleureka-afk.github.io/diplomado-agentico/modulos/modulo-4.html"><span class="em">📱</span><span><span class="t">M4 · Construir</span><br><span class="d">Tu repo, tu pull request, tu sitio</span></span><span class="go">›</span></a>
   </div>
 
-  <h2>PROGRAMAS</h2>
+  </details>
+
+  <details class="sec" id="s-programas"><summary><h2>PROGRAMAS</h2></summary>
   <a class="prog" href="https://yaeleureka-afk.github.io/diplomado-agentico/"><span class="k">● EN CURSO · MARTES 7 PM TX</span><span class="t">Diplomado en Transformación Digital</span><span class="d">TEOTECH: dirigir agentes, comprobar y publicar un proyecto para tu comunidad.</span></a>
   <div class="prog"><span class="k off">ESCUELA DE TEOLOGÍA LATAM</span><span class="t">#TEOLOGIALATAM · Teología ai</span><span class="d">Educación teológica sólida para la Iglesia en América Latina, en español e inglés.</span></div>
   <a class="prog" href="https://github.com/yaeleureka-afk/diplomado-agentico"><span class="k off">OPENCOURSEWARE</span><span class="t">Clases abiertas · CC BY-NC-SA</span><span class="d">Todo el material se puede copiar, adaptar y volver a enseñar.</span></a>
 
-  <h2>NUESTROS AGENTES</h2>
+  </details>
+
+  <details class="sec" id="s-agentes"><summary><h2>NUESTROS AGENTES</h2></summary>
   <div class="roster">
     <div class="ag-row"><span class="em">æ</span><span><span class="t">Hark Pro</span><span class="r">ALUMNOS</span><div class="d">En el celular. Prepara, investiga y pide permiso antes de actuar.</div></span></div>
     <div class="ag-row"><span class="em">🪽</span><span><span class="t">Hermes æ</span><span class="r">DOCENTE</span><div class="d">El superagente del instituto. Ejecuta solo tarjetas aprobadas y deja evidencia.</div></span></div>
@@ -213,7 +249,9 @@ body::before{content:"";position:fixed;top:0;left:0;right:0;height:5px;backgroun
   </div>
   <div class="roles"><div>YÆL<span>decide</span></div><div>HARK<span>prepara</span></div><div>HERMES<span>ejecuta</span></div></div>
 
-  <h2>LA REGLA DE ORO</h2>
+  </details>
+
+  <details class="sec" id="s-regla"><summary><h2>LA REGLA DE ORO</h2></summary>
   <div class="rule">
     <ol>
       <li>El agente <b>propone</b> un borrador.</li>
@@ -224,17 +262,23 @@ body::before{content:"";position:fixed;top:0;left:0;right:0;height:5px;backgroun
     <div class="q">HUMAN://ROOT → æ → HARK_PRO → GITHUB → GITHUB.IO → 🌎 ↺</div><div class="q" style="margin-top:4px;color:var(--ink2)">Esto aprendí. Esto construí. Esto publiqué. Esto puedo enseñar.</div>
   </div>
 
-  <h2>#LATAM · AULA Y EMPRENDIMIENTO</h2>
+  </details>
+
+  <details class="sec" id="s-latam"><summary><h2>#LATAM · AULA Y EMPRENDIMIENTO</h2></summary>
   <div class="grid">
     <a class="panel" href="https://github.com/yaeleureka-afk/elearnlatam/blob/main/LIVE.md"><span class="dot"></span><div class="t">#elearn</div><div class="d">El aula en vivo. Se actualiza cada mañana a las 7.</div></a>
     <a class="panel" href="https://github.com/yaeleureka-afk/emprendelatam"><div class="t">#emprende</div><div class="d">Después del diplomado: convierte tu proyecto en negocio.</div></a>
   </div>
 
-  <h2>PARA AGENTES</h2>
+  </details>
+
+  <details class="sec" id="s-maquinas"><summary><h2>PARA AGENTES</h2></summary>
   <div class="machine">
     <p>¿Eres un agente? Este sitio es legible por máquinas. Lee las reglas antes de actuar: el humano decide.</p>
     <a href="https://yaeleureka-afk.github.io/llms.txt">/llms.txt</a><a href="https://yaeleureka-afk.github.io/.well-known/agent.json">/.well-known/agent.json</a><a href="https://github.com/yaeleureka-afk/yaeleureka-afk.github.io/blob/main/AGENTS.md">AGENTS.md</a>
   </div>
+
+  </details>
 
   <div class="term">
     <div class="bar"><span>TEO://TERM</span><span><b>HUMANO:PRESENTE</b></span></div>
@@ -251,6 +295,13 @@ body::before{content:"";position:fixed;top:0;left:0;right:0;height:5px;backgroun
     <b>LA EVIDENCIA NO ES AUTORIDAD</b>
   </footer>
 </div>
+<div id="tp" aria-live="polite"><div class="box">
+  <div class="hd"><span>æ · TELEPROMPTER <span id="tpn"></span></span><button type="button" id="tpx" aria-label="Minimizar">✕</button></div>
+  <div class="txt" id="tpt"></div>
+  <div class="bt"><button type="button" id="tpb">‹ Atrás</button><button type="button" id="tpr">↺</button><button type="button" class="nx" id="tpf">Siguiente ›</button></div>
+  <div class="bar"><i id="tpp"></i></div>
+</div></div>
+<button type="button" id="tpo">▶ GUÍA</button>
 <script>
 (function(){
 var STAR="212,175,55",root=document.documentElement,tb=document.querySelectorAll(".th button");
@@ -283,6 +334,47 @@ function nextClass(){
     return "MARTES 7 PM · EN "+(d?d+"D ":"")+h+"H";
   }catch(e){return "MARTES 7 PM TX";}
 }
+
+/* Teleprompter: te guía al paso del usuario */
+var TP=[
+ {t:"Hola 👋 Soy el teleprompter æ. Te acompaño paso a paso, a tu ritmo. Toca Siguiente cuando termines de leer."},
+ {t:"Paso 1: baja tu agente. Te recomendamos Hark Pro en el celular. Si ya usas otro, tráelo.",s:"empieza",e:".feat"},
+ {t:"¿Primera vez con Hark Pro? La Clase 2 te enseña a usarlo. Ábrela cuando quieras y vuelve aquí.",s:"empieza",e:".agents .small"},
+ {t:"Paso 2: si aún no tienes GitHub, crea tu cuenta gratis con un correo que abras en tu celular.",s:"empieza",e:"#gh-signup"},
+ {t:"Ahora crea tu repo: abre la plantilla, toca Use this template y ponle mi-diplomado.",s:"empieza",e:'a.step[href*="mi-diplomado"]'},
+ {t:"Paso 3: tu primera práctica. Hazle la misma pregunta a dos IA y compara las respuestas.",s:"empieza",e:'a.step[href*="modulo-1"]'},
+ {t:"La regla de oro: el agente propone, tú compruebas, tú decides y anotas la evidencia.",s:"regla",e:".rule"},
+ {t:"Cuando quieras publicar tu sitio, empieza por la Lección 00: tu presencia en internet.",s:"modulos",e:".mods .mod"},
+ {t:"¡Listo! Nos vemos el martes a las 7 pm, hora de Texas. El enlace está en tu Classroom. Esto aprendí. Esto construí. Esto publiqué."}
+];
+var tpi=0,tpTimer=null,tpBox=document.getElementById("tp"),tpO=document.getElementById("tpo"),tpT=document.getElementById("tpt");
+var rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function tpSave(){try{localStorage.setItem("ill-tp",String(tpi));}catch(e){}}
+function tpShow(on){tpBox.style.display=on?"flex":"none";tpO.style.display=on?"none":"block";document.body.style.paddingBottom=on?"150px":"24px";try{localStorage.setItem("ill-tp-min",on?"0":"1");}catch(e){}}
+function tpGo(i){tpi=Math.max(0,Math.min(TP.length-1,i));tpSave();var st=TP[tpi];
+  document.getElementById("tpn").textContent=(tpi+1)+"/"+TP.length;
+  document.getElementById("tpp").style.width=((tpi+1)/TP.length*100)+"%";
+  document.getElementById("tpb").disabled=tpi===0;
+  document.getElementById("tpf").textContent=tpi===TP.length-1?"Terminar ✓":"Siguiente ›";
+  clearInterval(tpTimer);
+  tpT.innerHTML=st.t.split(" ").map(function(w){return '<span class="w">'+w+'</span>';}).join(" ");
+  var ws=tpT.querySelectorAll(".w"),k=0;
+  if(rm){ws.forEach(function(w){w.classList.add("on");});}
+  else{tpTimer=setInterval(function(){if(k<ws.length){ws[k++].classList.add("on");}else clearInterval(tpTimer);},260);}
+  document.querySelectorAll(".hl").forEach(function(x){x.classList.remove("hl");});
+  if(st.s){var d=document.getElementById("s-"+st.s);if(d)d.open=true;}
+  if(st.e){var el=document.querySelector(st.e);if(el){el.classList.add("hl");el.scrollIntoView({behavior:rm?"auto":"smooth",block:"center"});}}
+  else if(tpi===0){scrollTo({top:0,behavior:rm?"auto":"smooth"});}
+}
+document.getElementById("tpf").addEventListener("click",function(){if(tpi===TP.length-1){tpShow(false);document.querySelectorAll(".hl").forEach(function(x){x.classList.remove("hl");});return;}tpGo(tpi+1);});
+document.getElementById("tpb").addEventListener("click",function(){tpGo(tpi-1);});
+document.getElementById("tpr").addEventListener("click",function(){tpGo(0);});
+document.getElementById("tpx").addEventListener("click",function(){tpShow(false);});
+tpO.addEventListener("click",function(){tpShow(true);tpGo(tpi);});
+var tpStart=0,tpMin=false;try{tpStart=+(localStorage.getItem("ill-tp")||0);tpMin=localStorage.getItem("ill-tp-min")==="1";}catch(e){}
+if(tpMin){tpShow(false);tpi=tpStart;}else{tpShow(true);tpGo(tpStart);if(tpStart>0)tpT.insertAdjacentHTML("afterbegin",'<span class="w on" style="color:var(--neon)">Bienvenido de nuevo.</span> ');}
+/* Ticker con cuenta regresiva */
+var tk=document.getElementById("tickt");function tkU(){tk.textContent="● PRÓXIMA CLASE · "+nextClass()+" · HORA DE TEXAS · EL ENLACE ESTÁ EN TU CLASSROOM · TRAE TU CELULAR CARGADO · ¿PRIMERA VEZ? EL TELEPROMPTER TE GUÍA PASO A PASO ·";}tkU();setInterval(tkU,60000);
 var nx=document.getElementById("next");nx.textContent=nextClass();setInterval(function(){nx.textContent=nextClass();},60000);
 
 var lb=document.getElementById("lang"),en=false;lb.addEventListener("click",function(){en=!en;lb.textContent=en?"ES":"EN";document.querySelectorAll("[data-es]").forEach(function(el){el.textContent=en?el.dataset.en:el.dataset.es;});document.documentElement.lang=en?"en":"es";});
@@ -297,13 +389,15 @@ var C={
   modulos:["<span class='g'>M1</span> Dirigir agentes","<span class='g'>M2</span> Contexto · AGENTS.md","<span class='g'>M3</span> Agentes con herramientas","<span class='g'>M4</span> Construir, revisar y publicar"],
   regla:["el agente propone → tú compruebas → <span class='g'>tú decides</span> → la comunidad aprende ♻️"],
   clase:["Martes 7 pm, hora de Texas · "+nextClass().toLowerCase(),"El enlace de cada clase está en tu Classroom."],
-  ayuda:["tema claro · tema latam · tema oscuro","empezar · agentes · instituto · modulos · regla · clase · github · limpiar"],
+  guia:["Abriendo el teleprompter…"],
+  ayuda:["guia · tema claro · tema latam · tema oscuro","empezar · agentes · instituto · modulos · regla · clase · github · limpiar"],
   github:["¿Sin cuenta? <a href='https://github.com/signup'>github.com/signup</a> · es gratis"]
 };
 C["módulos"]=C.modulos;C.help=C.ayuda;
 function run(c){c=c.trim();if(!c)return;ln("&gt;_ "+esc(c),"g");var k=c.split(/\s+/)[0].toLowerCase();
   if(k==="limpiar"||k==="clear"){out.innerHTML="";return;}
   if(k==="tema"||k==="theme"){var t=(c.split(/\s+/)[1]||"").toLowerCase().replace("light","claro").replace("dark","oscuro");if(["claro","oscuro","latam"].indexOf(t)<0){ln("tema claro · tema latam · tema oscuro","s");return;}setTheme(t);ln("Tema "+t.toUpperCase()+" ✓","s");return;}
+  if(k==="guia"||k==="guía"){tpShow(true);tpGo(0);ln("Teleprompter abierto ✓","s");return;}
   if(C[k]){C[k].forEach(function(x){ln(x,"s");});return;}
   ln("No conozco ese comando. Prueba <span class='g'>ayuda</span>.","r");}
 document.getElementById("cf").addEventListener("submit",function(e){e.preventDefault();var i=document.getElementById("ci");run(i.value);i.value="";});
