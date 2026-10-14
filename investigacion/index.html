@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>I+D Institucional · Instituto Luterano Latinoamericano · L://</title>
+<meta name="description" content="Investigación y Desarrollo Institucional del Instituto Luterano Latinoamericano: educación de bajo ancho de banda, agentes con supervisión humana, teología y tecnología. Laboratorio abierto y colateral descargable.">
+<meta property="og:title" content="I+D Institucional · L://">
+<meta property="og:description" content="Institutional Research & Development: laboratorio abierto, líneas de investigación y colateral descargable del Instituto Luterano Latinoamericano.">
+<meta property="og:url" content="https://lutheraninstitute.github.io/investigacion/">
+<meta property="og:image" content="https://lutheraninstitute.github.io/investigacion/colateral/tumblr_ejemplo.png">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f3ede0">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
+<style>
+:root{--paper:#f3ede0;--ink:#1c1a18;--ink2:#5b554c;--grid:#c8c0b0;--y:#f2c400;--b:#1e63c8;--g:#229650;
+--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;--cond:"Oswald","Arial Narrow","Helvetica Neue Condensed",Impact,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--paper)}
+body{color:var(--ink);font:400 16px/1.55 var(--mono);background:radial-gradient(var(--grid) 1.2px,transparent 1.3px) 0 0/22px 22px,var(--paper);min-height:100dvh}
+a{color:inherit}
+.wrap{max-width:520px;margin:0 auto;padding:calc(14px + env(safe-area-inset-top,0px)) 16px calc(28px + env(safe-area-inset-bottom,0px))}
+.frame{border:2px solid var(--ink);position:relative;padding:18px 16px;background:rgba(243,237,224,.88)}
+.frame:before,.frame:after{content:"+";position:absolute;font:700 18px/1 var(--mono);top:-11px;left:-7px}
+.frame:after{left:auto;right:-7px}
+.tb{display:flex;align-items:center;justify-content:space-between;gap:10px;font:700 12px/1.2 var(--mono);letter-spacing:.06em}
+.tb a{text-decoration:none}
+.sq{display:flex;gap:5px}.sq i{width:14px;height:14px;display:block}
+.seal{display:flex;align-items:center;gap:12px;margin:16px 0 4px}
+.seal img{width:64px;height:64px;border-radius:50%;mix-blend-mode:multiply}
+.seal b{font:700 34px/1 var(--cond);letter-spacing:.01em}
+.seal small{display:block;font:700 11px/1.3 var(--mono);letter-spacing:.08em}
+hr{border:0;border-top:2px solid var(--ink);margin:14px 0}
+.chip{display:inline-flex;align-items:center;gap:8px;font:700 12px/1 var(--mono);letter-spacing:.1em}
+.chip i{width:18px;height:18px;background:var(--ink);display:block}
+h1{font:700 clamp(46px,14vw,72px)/.95 var(--cond);text-transform:uppercase;margin:14px 0 6px;letter-spacing:-.005em}
+h1 em{font-style:normal;display:block;font-size:.42em;letter-spacing:.04em;color:var(--ink2);margin-top:6px}
+.lead{font-size:16px;margin:10px 0 4px}
+.en{color:var(--ink2);font-size:13px}
+h2{font:700 26px/1.05 var(--cond);text-transform:uppercase;margin:26px 0 10px;display:flex;align-items:center;gap:10px}
+h2 span{font:700 12px/1 var(--mono);border:2px solid var(--ink);padding:4px 6px}
+.lines{list-style:none;display:grid;gap:10px}
+.lines li{border:2px solid var(--ink);padding:12px;background:var(--paper)}
+.lines b{display:block;font:700 15px/1.3 var(--mono)}
+.lines p{font-size:14px;margin-top:4px}
+.lines .tag{display:inline-block;width:12px;height:12px;margin-right:6px;vertical-align:-1px}
+.lab a{display:flex;justify-content:space-between;gap:10px;text-decoration:none;border-bottom:1px dashed var(--ink);padding:10px 0;font-size:14px}
+.lab a b{font-weight:700}
+.lab a span{color:var(--ink2);text-align:right}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.card{border:2px solid var(--ink);background:var(--paper);text-decoration:none;display:block}
+.card img{display:block;width:100%;height:auto;aspect-ratio:2/3;border-bottom:2px solid var(--ink)}
+.card div{padding:8px;font:700 12px/1.3 var(--mono)}
+.card div small{display:block;font-weight:400;color:var(--ink2)}
+.kit{display:block;margin-top:12px;background:var(--ink);color:var(--paper);text-decoration:none;padding:16px;border:2px solid var(--ink);font:700 15px/1.3 var(--mono)}
+.kit small{display:block;font-weight:400;opacity:.8;margin-top:4px}
+pre{white-space:pre-wrap;font:400 12.5px/1.5 var(--mono);border:2px dashed var(--ink);padding:10px;margin-top:10px;background:var(--paper)}
+.rule{font:700 13px/1.6 var(--mono);text-align:center;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:10px 0;margin:24px 0 0;letter-spacing:.04em}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.btns a{text-align:center;text-decoration:none;border:2px solid var(--ink);padding:12px 8px;font:700 13px/1.2 var(--mono)}
+.btns a:first-child{background:var(--ink);color:var(--paper)}
+footer{font-size:12px;line-height:1.7;margin-top:18px;color:var(--ink2)}
+footer a{color:var(--ink)}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"I+D Institucional","url":"https://lutheraninstitute.github.io/investigacion/","inLanguage":"es","isPartOf":{"@type":"EducationalOrganization","name":"Instituto Luterano Latinoamericano","url":"https://lutheraninstitute.github.io/"},"license":"https://creativecommons.org/licenses/by-nc-sa/4.0/"}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="frame">
+  <div class="tb"><a href="https://lutheraninstitute.github.io/">← L:// SEDE</a><span class="sq"><i style="background:var(--y)"></i><i style="background:var(--b)"></i><i style="background:var(--g)"></i></span></div>
+  <div class="seal"><img src="https://lutheraninstitute.github.io/investigacion/colateral/L_sello.png" alt="Sello L://" width="64" height="64"><div><b>L://</b><small>INSTITUTO LUTERANO LATINOAMERICANO</small></div></div>
+  <hr>
+  <div class="chip"><i></i>I+D · R&amp;D · #OPENCOURSEWARE</div>
+  <h1>I+D Institucional<em>Institutional Research &amp; Development</em></h1>
+  <p class="lead">Aquí el Instituto investiga, prueba y publica en abierto. Todo lo que funciona se vuelve clase, plantilla o herramienta para la comunidad.</p>
+  <p class="en">Where the Institute researches, tests and publishes in the open.</p>
+
+  <h2><span>01</span>Líneas de investigación</h2>
+  <ul class="lines">
+    <li><b><i class="tag" style="background:var(--y)"></i>Escuela de bajo ancho de banda</b><p>Aprender con solo un celular económico y datos limitados: páginas ligeras, modo ahorro y clases que funcionan sin computadora.</p></li>
+    <li><b><i class="tag" style="background:var(--ink)"></i>Agentes con supervisión humana</b><p>El agente propone, tú compruebas, tú decides. Estudiamos cómo enseñar a dirigir agentes dejando evidencia de cada paso.</p></li>
+    <li><b><i class="tag" style="background:var(--b)"></i>Teología y tecnología</b><p>Cinco siglos de herencia educativa luterana al encuentro de la era agéntica: la Biblioteca Luterana y la Escuela de Teología LATAM.</p></li>
+    <li><b><i class="tag" style="background:var(--g)"></i>Enchiridion para toda persona</b><p>El Catecismo Menor de 3 a 103 años: formatos sencillos para aprenderlo y enseñarlo en casa.</p></li>
+    <li><b><i class="tag" style="background:var(--grid)"></i>Cómputo local y soberano</b><p>Modelos pequeños que corren en el navegador o en tu propio equipo, sin renta de nube.</p></li>
+  </ul>
+
+  <h2><span>02</span>Laboratorio abierto</h2>
+  <div class="lab">
+    <a href="https://github.com/LutheranInstitute/diplomado-agentico"><b>diplomado-agentico</b><span>el curso completo</span></a>
+    <a href="https://github.com/LutheranInstitute/mi-diplomado"><b>mi-diplomado</b><span>plantilla del alumno</span></a>
+    <a href="https://github.com/LutheranInstitute/elearnlatam"><b>elearnlatam</b><span>aula en vivo</span></a>
+    <a href="https://github.com/LutheranInstitute/emprendelatam"><b>emprendelatam</b><span>del proyecto al negocio</span></a>
+    <a href="https://github.com/LutheranInstitute/gpu-mcp"><b>gpu-mcp</b><span>cómputo para agentes</span></a>
+    <a href="https://github.com/LutheranInstitute/hermes-agent-cuda-tile"><b>hermes-agent-cuda-tile</b><span>experimento Hermes</span></a>
+  </div>
+
+  <h2 id="colateral"><span>03</span>Colateral · Tumblr</h2>
+  <p>Plantilla oficial para posts: 1280×1920, papel crema, sello L:// y el color de cada escuela. Toca una imagen para descargarla.</p>
+  <div class="grid" style="margin-top:12px">
+    <a class="card" href="colateral/tumblr_template_blank.png" download><img src="colateral/tumblr_template_blank_th.webp" alt="Plantilla en blanco" loading="lazy" width="320" height="480"><div>Plantilla en blanco<small>PNG · con guías</small></div></a>
+    <a class="card" href="colateral/tumblr_ejemplo.png" download><img src="colateral/tumblr_ejemplo_th.webp" alt="Ejemplo Sede: Empieza aquí" loading="lazy" width="320" height="480"><div>Sede<small>Empieza aquí</small></div></a>
+    <a class="card" href="colateral/tumblr_tecnologia.png" download><img src="colateral/tumblr_tecnologia_th.webp" alt="Ejemplo Tecnología: Diplomado" loading="lazy" width="320" height="480"><div>🟨 Tecnología<small>Diplomado</small></div></a>
+    <a class="card" href="colateral/tumblr_enchiridion.png" download><img src="colateral/tumblr_enchiridion_th.webp" alt="Ejemplo Enchiridion" loading="lazy" width="320" height="480"><div>🟩 Enchiridion<small>de 3 a 103 años</small></div></a>
+  </div>
+  <a class="kit" href="colateral/kit-tumblr-L.zip" download>⬇ Kit completo (.zip)<small>Generador en Python, fuentes Oswald y Space Mono, sello y dibujos de una línea.</small></a>
+  <pre>pip install pillow
+python3 tumblr_template.py post.png "TU TÍTULO" "tu subtítulo" ench
+# escuelas: sede · tech · teo · ench</pre>
+
+  <p class="rule">EL AGENTE PROPONE · TÚ COMPRUEBAS · TÚ DECIDES<br>LA EVIDENCIA NO ES AUTORIDAD</p>
+
+  <div class="btns">
+    <a href="https://github.com/LutheranInstitute">Seguir en GitHub</a>
+    <a href="https://buymeacoffee.com/daollc">☕ Apoya</a>
+  </div>
+
+  <footer>
+    <a href="https://lutheraninstitute.github.io/">Sede</a> · <a href="https://lutheraninstitute.github.io/diplomado-agentico/">Diplomado</a> · <a href="https://lutheraninstitute.github.io/ensenar/">Curso 2</a> · <a href="https://lutheraninstitute.github.io/enchiridion/">Enchiridion</a> · <a href="https://www.linkedin.com/company/institutoluterano/">LinkedIn</a><br>
+    Redes: <a href="https://www.youtube.com/@teologialatam" rel="me">YouTube Teología LATAM</a> · <a href="https://www.youtube.com/@clillc" rel="me">YouTube CLI</a> · <a href="https://www.youtube.com/@llmstore" rel="me">YouTube LLM.store</a> · <a href="https://www.tumblr.com/elearnlatam" rel="me">Tumblr eLearn LATAM</a> · <a href="https://llm-store.tumblr.com/" rel="me">Tumblr LLM.store</a> · <a href="https://privatecli.substack.com/" rel="me">Substack Private CLI</a><br>
+    Herramientas: <a href="https://hark.com/download">Hark Pro</a> · <a href="https://portal.nousresearch.com/r/opensource">Hermes Agent</a> · <a href="https://kling.ai/h5-app/invitation?code=7BQYDDMV7RPT">Kling</a><br>
+    Instituto Luterano Latinoamericano · fundado en 1996 · Donna, Texas · CC BY-NC-SA 4.0 · æ://
+  </footer>
+</div>
+</div>
+</body>
+</html>
