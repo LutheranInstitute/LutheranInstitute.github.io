@@ -1,0 +1,42 @@
+{
+  "aeqr": "0.1",
+  "id": "aeqr://lutheraninstitute/coloquio/enchiridion",
+  "kind": "widget",
+  "name": "Enchiridion · 3–103 años",
+  "version": "1.0.0",
+  "parent": "aeqr://lutheraninstitute/coloquio",
+  "entry": "L://COLOQUIO",
+  "location": {
+    "repo": "https://github.com/LutheranInstitute/LutheranInstitute.github.io",
+    "path": "aeqr/enchiridion.json",
+    "render": "https://lutheraninstitute.github.io/enchiridion/",
+    "qr_target": "https://lutheraninstitute.github.io/enchiridion/?aeqr=coloquio/enchiridion"
+  },
+  "context": {
+    "inheritable": [
+      "schema",
+      "style",
+      "public_state"
+    ],
+    "private": "never in manifest"
+  },
+  "capabilities": [
+    {
+      "id": "open_school",
+      "risk": "low",
+      "approval": "none"
+    }
+  ],
+  "authority": {
+    "principal": "HUMAN://LutheranInstitute",
+    "delegation": "revocable",
+    "inherits_to_forks": false,
+    "note": "Scanning opens; it never acts."
+  },
+  "provenance": {
+    "author": "LutheranInstitute",
+    "forked_from": null,
+    "license": "MIT (code) · CC BY-NC-SA 4.0 (content)"
+  },
+  "flow": "Escanear → Elegir escuela → Aprender → Construir → Publicar → Enseñar"
+}
