@@ -1,0 +1,64 @@
+{
+  "schema": "osw.whatsapp.v1",
+  "owner": "LutheranInstitute",
+  "updated": "2026-10-15",
+  "principle": "Context may propagate. Authority does not.",
+  "channels": [
+    {
+      "id": "instituto",
+      "type": "channel",
+      "name": "INSTITUTO",
+      "url": "https://whatsapp.com/channel/0029Vb8EIghJuyABUPq3ky0n",
+      "qr": "https://lutheraninstitute.github.io/assets/instituto-whatsapp-qr.png",
+      "audience": "comunidad del Instituto",
+      "lang": [
+        "es"
+      ],
+      "status": "active",
+      "agent": null
+    },
+    {
+      "id": "yael",
+      "type": "channel",
+      "name": "yael 🗞️",
+      "url": "https://whatsapp.com/channel/0029VbBddx4BPzjWW2ljE91p",
+      "qr": "https://lutheraninstitute.github.io/assets/yael-whatsapp-qr.png",
+      "audience": "noticias de Yæl Méndez · yæl.com",
+      "lang": [
+        "es",
+        "en"
+      ],
+      "status": "active",
+      "agent": null
+    },
+    {
+      "id": "comunidad-tech",
+      "type": "community",
+      "name": "Comunidad Tech",
+      "url": null,
+      "audience": "estudiantes del Diplomado en Transformación Digital",
+      "lang": [
+        "es"
+      ],
+      "status": "private",
+      "agent": null
+    }
+  ],
+  "agent_slots": [
+    {
+      "id": "asistente-inscripciones",
+      "purpose": "responder preguntas e inscribir a escuelas",
+      "status": "planned"
+    },
+    {
+      "id": "catequista-enchiridion",
+      "purpose": "lección diaria del Catecismo Menor",
+      "status": "planned"
+    },
+    {
+      "id": "tutor-diplomado",
+      "purpose": "recordatorios y dudas de clase",
+      "status": "planned"
+    }
+  ]
+}
