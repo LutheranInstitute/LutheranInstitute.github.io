@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>L:// Institute Bookstore · demo</title>
+<meta name="description" content="Librería del Instituto Luterano Latinoamericano: catálogo, flujo y teleprompter en un bucle de 8 segundos. Demostración sin cobro.">
+<meta property="og:title" content="L:// Institute Bookstore"><meta property="og:description" content="buscar → descubrir → componer → aprobar → recibo → enseñar">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--p:#f4efe3;--k:#141414;--y:#f2c230;--b:#2f6fd6;--g:#2fa65a;--m:'Space Mono',monospace;--h:'Oswald',sans-serif}
+*{box-sizing:border-box;margin:0}
+body{background:var(--p);color:var(--k);font-family:var(--m);min-height:100vh;display:flex;justify-content:center;padding:12px}
+main{width:100%;max-width:560px;border:2px solid var(--k);position:relative;overflow:hidden}
+header{display:flex;align-items:center;gap:10px;padding:10px 12px;border-bottom:2px solid var(--k)}
+.seal{display:grid;gap:2px}.seal i{width:13px;height:13px;border:1.5px solid var(--k)}
+.seal i:nth-child(1){background:var(--y)}.seal i:nth-child(2){background:var(--b)}.seal i:nth-child(3){background:var(--g)}
+h1{font-family:var(--h);font-size:26px;text-transform:uppercase;line-height:1}
+h1 small{display:block;font:400 9px var(--m);letter-spacing:1px;margin-top:3px}
+.demo{margin-left:auto;font-size:9px;border:1.5px solid var(--k);padding:2px 6px;text-align:right}
+.demo b{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--y);border:1px solid var(--k);margin-right:4px;animation:pulse 1s infinite}
+.tape{overflow:hidden;white-space:nowrap;border-bottom:2px solid var(--k);font-size:11px}
+.tape.a{background:var(--k);color:var(--p)}
+.tape div{display:inline-block;padding:6px 0;animation:tick 8s linear infinite}
+.tape.r div{animation-direction:reverse}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.emo{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;padding:10px 12px 0}
+.emo button{font-size:20px;padding:6px 0 4px;background:var(--p);border:2px solid var(--k);cursor:pointer;font-family:var(--m);color:var(--k)}
+.emo button small{display:block;font-size:7.5px;letter-spacing:.5px;margin-top:2px}
+.emo button.on{background:var(--y)}
+.lbl{font-size:9px;letter-spacing:1px;text-transform:uppercase;display:flex;justify-content:space-between;margin-bottom:5px}
+.map{padding:10px 12px 0}
+svg{width:100%;display:block;border:2px solid var(--k)}
+.wire{fill:none;stroke:var(--k);stroke-width:1.2;stroke-dasharray:3 4;animation:dash 8s linear infinite}
+.wire.on{stroke-width:2.4;stroke-dasharray:none}
+@keyframes dash{to{stroke-dashoffset:-112}}
+.nd rect{fill:var(--p);stroke:var(--k);stroke-width:2;transition:fill .2s}
+.nd.on rect{fill:var(--y)}
+.nd text{font-size:17px;text-anchor:middle}.nd .t{font:8px var(--m);fill:var(--k)}
+.tp{margin:10px 12px 0;border:2px solid var(--k);padding:10px 12px;min-height:118px}
+.tp h2{font:700 10px var(--m);letter-spacing:2px;margin-bottom:6px}
+.tp p{font-family:var(--h);font-weight:500;font-size:21px;text-transform:uppercase;line-height:1.12;min-height:48px;animation:in .35s}
+.tp p:before{content:">_ ";font:700 13px var(--m)}
+@keyframes in{from{opacity:0;transform:translateY(8px)}}
+.dots{display:flex;gap:4px;margin-top:8px}.dots i{flex:1;height:3px;background:#d9d2c2}.dots i.on{background:var(--k)}
+.ct{margin:10px 12px;font-size:10px;border-top:1.5px dashed var(--k);padding-top:7px;line-height:1.6}
+footer{border-top:2px solid var(--k);padding:8px 12px 10px;font-size:9.5px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+footer a{color:var(--k)}
+.bar{position:absolute;left:0;bottom:0;height:3px;background:var(--k);animation:bar 8s linear infinite}
+@keyframes bar{from{width:0}to{width:100%}}
+@keyframes pulse{50%{opacity:.2}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style></head>
+<body><main>
+<header><div class="seal"><i></i><i></i><i></i></div>
+<h1>L:// Bookstore<small>INSTITUTO LUTERANO LATINOAMERICANO</small></h1>
+<span class="demo"><b></b>DEMO 8s<br>SIN COBRO</span></header>
+
+<div class="tape a"><div id="t1"></div></div>
+<div class="tape r"><div id="t2"></div></div>
+
+<nav class="emo" id="emo"></nav>
+
+<section class="map"><div class="lbl"><span>📚 mapa de la librería</span><span>ilustra el flujo · no vende</span></div>
+<svg id="svg" viewBox="0 0 300 150"></svg></section>
+
+<section class="tp"><h2 id="tt"></h2><p id="tl"></p><div class="dots" id="dots"></div></section>
+<div class="ct" id="ct"></div>
+
+<footer><span>el agente propone · tú compruebas · tú decides 🫵</span><span><a href="https://lutheraninstitute.github.io/enchiridion/">Enchiridion ↗</a> · <a href="https://lutheraninstitute.github.io/">Sede ↗</a></span></footer>
+<div class="bar" id="bar"></div>
+</main>
+<script>
+const M=[
+["BUSCAR","🫵","LECTOR://INTENCIÓN","tu pregunta guía · nadie decide por ti",["¿Qué quieres aprender hoy?","Pides en tus palabras; la librería escucha.","El agente propone. Tú compruebas. Tú decides."]],
+["DESCUBRIR","🧩","CATÁLOGO://L","solo lectura · informa, no conecta",["Enchiridion: el Catecismo Menor para toda persona.","Guía docente: crea tu propia escuela.","Kit de colateral: tu anuncio en 2:3."]],
+["COMPONER","⚙️","LISTA://PROPUESTA","propuesta · sin autoridad",["El agente arma tu lista de lectura.","Por edad, por clase, por tiempo disponible.","La propuesta llega inerte hasta que tú la abres."]],
+["APROBAR","🔐","TÚ://DECIDES","solo este acto · ESC = no",["Revisas la lista, título por título.","Decir que no también es decidir.","En esta demo no hay cobro ni cuenta."]],
+["RECIBO","🧾","RECIBO://LECTURA","evidencia · el recibo no autoriza",["Descarga directa, bajo ancho de banda.","Tu recibo es tu lista: qué, cuándo, por qué.","Solo resultados verificados dicen ENTREGADO."]],
+["ENSEÑAR","♻️","FORK://ESCUELA","se hereda el contexto, no la autoridad",["Lo que aprendiste, lo enseñas.","Haz fork: tu escuela, tu sello, tu clase.","Cinco siglos de herencia educativa, en tu celular."]]];
+const P=[[30,32],[105,75],[185,32],[185,118],[265,75],[105,128]];
+const rep=s=>s+s;
+t1.textContent=rep(["›L:// INSTITUTE BOOKSTORE","MODO:DEMOSTRACIÓN · SIN DATOS EN VIVO","🟩 ENCHIRIDION · EN PREPARACIÓN","📘 GUÍA DOCENTE · §11 CREA TU ESCUELA","🎴 KIT TUMBLR · 1280×1920","🎓 DIPLOMADO AGÉNTICO · ABIERTO","SIN COBRO EN ESTA DEMO",""].join("   ✦   "));
+t2.textContent=rep(["leer","comprobar","decidir","enseñar","de 3 a 103 años","papel crema · bajo ancho de banda","el contexto se comparte · la autoridad no",""].join("   ✦   "));
+let s='';
+for(let i=0;i<5;i++)s+=`<path class="wire" id="w${i}" d="M${P[i]}L${P[i+1]}"/>`;
+s+=`<path class="wire" id="w5" d="M${P[5][0]-26},${P[5][1]} C8,128 8,60 ${P[0][0]},${P[0][1]+16}"/>`;
+s+=`<circle r="3.5" fill="#141414"><animateMotion dur="8s" repeatCount="indefinite" path="M${P.map(p=>p.join(',')).join('L')}Z"/></circle>`;
+M.forEach((m,i)=>s+=`<g class="nd" id="n${i}" style="cursor:pointer" onclick="pick(${i})"><rect x="${P[i][0]-26}" y="${P[i][1]-16}" width="52" height="32"/><text x="${P[i][0]}" y="${P[i][1]+2}">${m[1]}</text><text class="t" x="${P[i][0]}" y="${P[i][1]+13}">${m[0]}</text></g>`);
+svg.innerHTML=s;
+emo.innerHTML=M.map((m,i)=>`<button onclick="pick(${i})" id="b${i}">${m[1]}<small>${m[0]}</small></button>`).join('');
+let cur=0,line=0,auto=true,tick=0,man=0;
+function draw(){const m=M[cur];
+M.forEach((_,i)=>{document.getElementById('n'+i).classList.toggle('on',i===cur);document.getElementById('b'+i).classList.toggle('on',i===cur)});
+for(let i=0;i<6;i++)document.getElementById('w'+i).classList.toggle('on',i===cur||i===cur-1&&i<5);
+tt.textContent=m[2]+(auto?'  · paso '+(cur+1)+'/6':'  · manual');
+tl.textContent=m[4][line];tl.style.animation='none';tl.offsetHeight;tl.style.animation='';
+dots.innerHTML=m[4].map((_,i)=>`<i class="${i<=line?'on':''}"></i>`).join('');
+ct.innerHTML=`cara: ${m[1]} ${m[0]}<br>letra pequeña: ${m[3]}<br>modo demostración: precios, cobro y entrega solo aparecen tras conexiones verificadas`;}
+function pick(i){auto=false;man=0;cur=i;line=0;draw();}
+// 8 s loop: 6 nodes × 1333 ms in auto; manual mode rolls the chosen node's lines
+setInterval(()=>{tick++;
+ if(auto){cur=tick%6;line=0;}
+ else{line=(line+1)%3;if(++man>=6){auto=true;tick=cur;}}
+ draw();},1333);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){auto=true;tick=-1;}});
+draw();
+</script>
+</body></html>
