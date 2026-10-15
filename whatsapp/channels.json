@@ -18,6 +18,19 @@
       "agent": null
     },
     {
+      "id": "teologia",
+      "type": "channel",
+      "name": "TEOLOGÍA",
+      "url": "https://whatsapp.com/channel/0029VazbUxp4dTnKRaf7e03a",
+      "qr": "https://lutheraninstitute.github.io/assets/teologia-whatsapp-qr.png",
+      "audience": "Escuela de Teología · æl.net/teo",
+      "lang": [
+        "es"
+      ],
+      "status": "active",
+      "agent": null
+    },
+    {
       "id": "yael",
       "type": "channel",
       "name": "yael 🗞️",
