@@ -1,0 +1,39 @@
+{
+  "aeqr": "0.1",
+  "id": "aeqr://lutheraninstitute/coloquio/tecnologia/classroom",
+  "kind": "widget",
+  "name": "DIPLOMADO💻 · Google Classroom",
+  "version": "1.0.0",
+  "parent": "aeqr://lutheraninstitute/coloquio/tecnologia",
+  "entry": "L://COLOQUIO",
+  "location": {
+    "render": "https://classroom.google.com/c/NzA3NjQyMTc1MzI2",
+    "qr_target": "https://classroom.google.com/c/NzA3NjQyMTc1MzI2?cjc=fpbc3kw",
+    "enrollment_code": "fpbc3kw",
+    "since": "2024-08-21"
+  },
+  "context": {
+    "inheritable": [
+      "schedule:martes 7pm Texas",
+      "public_description"
+    ],
+    "private": "student names, submissions and grades never in manifest"
+  },
+  "capabilities": [
+    {
+      "id": "join_class",
+      "risk": "low",
+      "approval": "student signs in with Google"
+    }
+  ],
+  "authority": {
+    "principal": "HUMAN://Yael",
+    "delegation": "revocable",
+    "inherits_to_forks": false,
+    "note": "Scanning opens; it never acts."
+  },
+  "provenance": {
+    "author": "LutheranInstitute",
+    "license": "CC BY-NC-SA 4.0 (content)"
+  }
+}
