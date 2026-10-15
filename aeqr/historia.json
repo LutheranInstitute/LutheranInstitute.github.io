@@ -1,0 +1,32 @@
+{
+  "aeqr": "0.1",
+  "id": "aeqr://lutheraninstitute/coloquio/historia",
+  "kind": "widget",
+  "name": "Nuestra historia",
+  "version": "1.0.0",
+  "parent": "aeqr://lutheraninstitute/coloquio",
+  "entry": "L://COLOQUIO",
+  "location": {
+    "repo": "https://github.com/LutheranInstitute/LutheranInstitute.github.io",
+    "path": "historia/index.html",
+    "render": "https://lutheraninstitute.github.io/historia/",
+    "qr_target": "https://lutheraninstitute.github.io/historia/?aeqr=coloquio/historia"
+  },
+  "capabilities": [
+    {
+      "id": "read_history",
+      "risk": "low",
+      "approval": "none"
+    }
+  ],
+  "authority": {
+    "principal": "HUMAN://LutheranInstitute",
+    "delegation": "revocable",
+    "inherits_to_forks": false,
+    "note": "Scanning opens; it never acts."
+  },
+  "provenance": {
+    "author": "LutheranInstitute",
+    "license": "CC BY-NC-SA 4.0"
+  }
+}
