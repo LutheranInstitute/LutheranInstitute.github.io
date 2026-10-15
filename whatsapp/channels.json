@@ -45,27 +45,15 @@
       "agent": null
     },
     {
-      "id": "constructores",
+      "id": "comunidad-tech",
       "type": "group",
-      "name": "Constructores 🏗️🏛️",
+      "name": "Comunidad Tech 🏗️🏛️",
       "url": "https://chat.whatsapp.com/JrInHoMJ76r4xmXLNwva9r",
-      "audience": "constructores de 3 a 103 años · GitHub para todos",
+      "audience": "constructores de 3 a 103 años · Diplomado en Transformación Digital",
       "lang": [
         "es"
       ],
       "status": "active",
-      "agent": null
-    },
-    {
-      "id": "comunidad-tech",
-      "type": "community",
-      "name": "Comunidad Tech",
-      "url": null,
-      "audience": "estudiantes del Diplomado en Transformación Digital",
-      "lang": [
-        "es"
-      ],
-      "status": "private",
       "agent": null
     }
   ],
