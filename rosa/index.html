@@ -1,0 +1,60 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>L:// Una clase abierta · Instituto Luterano Latinoamericano</title>
+<meta name="theme-color" content="#1c2621">
+<link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&family=Architects+Daughter&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;height:100%;background:#111814;display:grid;place-items:center}
+svg{height:100vh;max-width:100vw;aspect-ratio:9/16;display:block;cursor:pointer}
+.ch{fill:none;stroke:#f3f1e8;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;filter:url(#chalk)}
+.d{stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 1.6s ease-in-out forwards;animation-delay:var(--d)}
+@keyframes draw{to{stroke-dashoffset:0}}
+.sq{fill:none;stroke:var(--c);stroke-width:7;filter:url(#chalk);animation:draw 1s ease-in-out forwards var(--d),merge 1.2s ease-in forwards 2.8s}
+@keyframes merge{to{transform:translate(var(--tx),-370px) scale(.2);opacity:0}}
+.sq{transform-box:fill-box;transform-origin:center}
+.petal{fill:#f3f1e8;fill-opacity:0;stroke:#f3f1e8;stroke-width:6;filter:url(#chalk);animation:draw 1.4s ease-in-out forwards var(--d),pf 1.5s forwards calc(var(--d) + 1.2s)}
+@keyframes pf{to{fill-opacity:.22}}
+.field{fill:#3b6fb6;opacity:0;animation:fi 1.5s forwards 3.6s}
+.ring{fill:none;stroke:#e2b84b;stroke-width:9;filter:url(#chalk)}
+.heart{fill:#c0392b;fill-opacity:0;stroke:#e46a5b;stroke-width:7;filter:url(#chalk);animation:draw 1.6s ease-in-out forwards 5.6s,hf 1.2s forwards 6.8s}
+@keyframes hf{to{fill-opacity:.85}}
+.cross{fill:none;stroke:#141414;stroke-width:16;stroke-linecap:round;animation:draw 1.2s ease-in-out forwards 7s}
+@keyframes fi{to{opacity:.55}}
+.t{font-family:"Cabin Sketch",cursive;fill:#f3f1e8;text-anchor:middle;opacity:0;animation:fi2 1.2s forwards;filter:url(#chalk)}
+.s{font-family:"Architects Daughter",cursive;fill:#d9d6c8;text-anchor:middle;opacity:0;animation:fi2 1.2s forwards}
+@keyframes fi2{to{opacity:1}}
+.rose{transform-origin:450px 720px;animation:breathe 6s ease-in-out infinite 9s}
+@keyframes breathe{50%{transform:scale(1.025) rotate(1.5deg)}}
+.cur{animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-delay:0s!important;animation-iteration-count:1!important}}
+</style></head><body>
+<svg viewBox="0 0 900 1600" role="img" aria-label="Tres cuadros, Tecnología, Teología y Enchiridion, se dibujan en tiza y se vuelven una rosa de Lutero. Una clase abierta puede viajar, reproducirse y mejorar.">
+<defs>
+<filter id="chalk"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="5" result="d"/><feComposite in="d" in2="n" operator="arithmetic" k1="0" k2="1" k3="-.35" k4="0"/></filter>
+<filter id="board"><feTurbulence type="fractalNoise" baseFrequency=".012" numOctaves="3"/><feColorMatrix values="0 0 0 0 .11  0 0 0 0 .15  0 0 0 0 .13  0 0 0 .55 0"/></filter>
+</defs>
+<rect width="900" height="1600" fill="#1c2621"/><rect width="900" height="1600" filter="url(#board)" opacity=".9"/>
+<rect x="22" y="22" width="856" height="1556" fill="none" stroke="#6b4a2b" stroke-width="18"/>
+<text class="s" x="450" y="120" font-size="30" style="animation-delay:.1s">ᴸᴬᵀᴵᴺ ₊₁₉₃₆ ᴬᴹᴱᴿᴵᶜᴬᴺ · LUTHERAN MISSION</text>
+<text class="t" x="450" y="210" font-size="76" textLength="790" lengthAdjust="spacingAndGlyphs" style="animation-delay:.3s">INSTITUTO LUTERANO</text>
+<text class="s" x="450" y="262" font-size="32" style="animation-delay:.6s">Latinoamericano · COLOQUIO @LATAM</text>
+<g class="rose">
+<circle class="field" cx="450" cy="720" r="270"/>
+<circle class="d petal" style="--d:4.2s" cx="450.0" cy="580.0" r="112"/><circle class="d petal" style="--d:4.45s" cx="583.1" cy="676.7" r="112"/><circle class="d petal" style="--d:4.7s" cx="532.3" cy="833.3" r="112"/><circle class="d petal" style="--d:4.95s" cx="367.7" cy="833.3" r="112"/><circle class="d petal" style="--d:5.2s" cx="316.9" cy="676.7" r="112"/>
+<path class="heart d" d="M450,815 C410,780 325,725 340,665 C352,615 420,610 450,660 C480,610 548,615 560,665 C575,725 490,780 450,815 Z"/>
+<path class="cross d" d="M450,645 L450,775 M400,695 L500,695"/>
+<circle class="ring d" style="--d:8s;stroke-dasharray:1800;stroke-dashoffset:1800" cx="450" cy="720" r="285"/>
+</g>
+<rect class="d sq" style="--d:0.4s;--c:#f2c94c;--tx:150px" x="255" y="1090" width="90" height="90" rx="4"/><rect class="d sq" style="--d:1.0s;--c:#5aa9e6;--tx:0px" x="405" y="1090" width="90" height="90" rx="4"/><rect class="d sq" style="--d:1.6s;--c:#6fcf97;--tx:-150px" x="555" y="1090" width="90" height="90" rx="4"/>
+<text class="s" x="300" y="1225" font-size="26" style="animation-delay:.8s;animation:fi2 .8s forwards .8s,fo .8s forwards 2.8s">Tecnología</text>
+<text class="s" x="450" y="1225" font-size="26" style="animation:fi2 .8s forwards 1.4s,fo .8s forwards 2.8s">Teología</text>
+<text class="s" x="600" y="1225" font-size="26" style="animation:fi2 .8s forwards 2s,fo .8s forwards 2.8s">Enchiridion</text>
+<style>@keyframes fo{to{opacity:0}}</style>
+<text class="t" x="450" y="1130" font-size="50" style="animation-delay:9s">Una clase abierta puede viajar,</text>
+<text class="t" x="450" y="1200" font-size="50" style="animation-delay:9.6s">reproducirse y mejorar.</text>
+<text class="s" x="450" y="1300" font-size="34" style="animation-delay:10.4s">L:// Aprender · æ:// Construir · æQR:// Compartir</text>
+<text class="s" x="450" y="1390" font-size="28" style="animation-delay:11s">Many Peoples · One Gospel · MANOS DE AMOR ❤️</text>
+<text class="s" x="450" y="1500" font-size="26" style="animation-delay:11.6s">lutheraninstitute.github.io <tspan class="cur">_</tspan></text>
+</svg>
+<script>document.querySelector('svg').addEventListener('click',e=>{const s=e.currentTarget,c=s.cloneNode(true);s.replaceWith(c);c.addEventListener('click',arguments.callee)})</script>
+</body></html>
