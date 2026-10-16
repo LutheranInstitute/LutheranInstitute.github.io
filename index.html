@@ -221,7 +221,7 @@ header .motto{margin-left:auto;margin-right:auto;text-align:center}
 </head>
 <body>
 <canvas id="sky"></canvas>
-<div class="tick" role="marquee" aria-label="Anuncio de la clase"><a href="https://classroom.google.com/"><span class="tr" id="tickt">● PRÓXIMA CLASE · MARTES 7 PM, HORA DE TEXAS · EL ENLACE ESTÁ EN TU CLASSROOM · TRAE TU CELULAR CARGADO · ¿PRIMERA VEZ? EL TELEPROMPTER TE GUÍA PASO A PASO ·</span></a></div>
+<div class="tick" role="marquee" aria-label="Anuncio de la clase"><a href="https://classroom.google.com/"><span class="tr" id="tickt">● PRÓXIMA CLASE · MARTES 7 PM, HORA DE TEXAS · EL ENLACE ESTÁ EN TU CLASSROOM Y EN #eLearnLATAM · TRAE TU CELULAR CARGADO · ¿PRIMERA VEZ? EL TELEPROMPTER TE GUÍA PASO A PASO ·</span></a></div>
 <div class="wrap">
   <div class="tb">
     <span class="brand">ILL · æ://</span>
@@ -258,7 +258,7 @@ header .motto{margin-left:auto;margin-right:auto;text-align:center}
     <div class="art" role="img" aria-label="Capilla, palmera y familia aprendiendo, en una sola línea"></div>
   </header>
 
-  <div class="bub"><div class="who">æ</div><div class="msg">Hola 👋 <b>¿Vienes a clase?</b> Empieza aquí: cuatro pasos, de tu celular a tu sitio en internet. Avisos y el enlace de cada clase están en tu <a href="https://classroom.google.com/" style="color:var(--cyan);text-decoration:underline">Classroom</a>.</div></div>
+  <div class="bub"><div class="who">æ</div><div class="msg">Hola 👋 <b>¿Vienes a clase?</b> Empieza aquí: cuatro pasos, de tu celular a tu sitio en internet. Avisos y el enlace de cada clase están en tu <a href="https://classroom.google.com/" style="color:var(--cyan);text-decoration:underline">Classroom</a> y en el grupo de WhatsApp <a href="https://chat.whatsapp.com/IBfCSjTAA3h6OlppM8mUzh" style="color:var(--cyan);text-decoration:underline">#eLearnLATAM</a>.</div></div>
   <details class="sec" id="s-empieza"><summary><h2>ALUMNOS · EMPIEZA AQUÍ</h2></summary>
   <div class="step first" style="cursor:default">
     <span class="n">1</span>
@@ -526,7 +526,7 @@ if("IntersectionObserver" in window){var hio=new IntersectionObserver(function(e
 marks();
 if(tp.min)tpShow(false);else{tpShow(true);tp.trk?tpGo(tp.i):tpChoose();}
 /* Ticker con cuenta regresiva */
-var tk=document.getElementById("tickt");function tkU(){tk.textContent="● PRÓXIMA CLASE · "+nextClass()+" · HORA DE TEXAS · EL ENLACE ESTÁ EN TU CLASSROOM · TRAE TU CELULAR CARGADO · ¿PRIMERA VEZ? EL TELEPROMPTER TE GUÍA PASO A PASO ·";}tkU();setInterval(tkU,60000);
+var tk=document.getElementById("tickt");function tkU(){tk.textContent="● PRÓXIMA CLASE · "+nextClass()+" · HORA DE TEXAS · EL ENLACE ESTÁ EN TU CLASSROOM Y EN #eLearnLATAM · TRAE TU CELULAR CARGADO · ¿PRIMERA VEZ? EL TELEPROMPTER TE GUÍA PASO A PASO ·";}tkU();setInterval(tkU,60000);
 var nx=document.getElementById("next");nx.textContent=nextClass();setInterval(function(){nx.textContent=nextClass();},60000);
 
 var lb=document.getElementById("lang"),en=false;lb.addEventListener("click",function(){en=!en;lb.textContent=en?"ES":"EN";document.querySelectorAll("[data-es]").forEach(function(el){el.textContent=en?el.dataset.en:el.dataset.es;});document.documentElement.lang=en?"en":"es";});
@@ -540,7 +540,7 @@ var C={
   agentes:["<span class='g'>Hark Pro</span> · <a href='https://hark.com/download'>hark.com/download</a> · <a href='https://lutheraninstitute.github.io/diplomado-agentico/clases/m1-s2/'>Clase 2: cómo usarlo</a>","<span class='g'>Hermes</span> · curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash · <a href='https://portal.nousresearch.com/r/opensource'>Nous Portal</a>","<span class='g'>Pi</span> · curl -fsSL https://pi.dev/install.sh | sh","<span class='g'>OpenClaw</span> · curl -fsSL https://openclaw.ai/install.sh | bash","<span class='g'>Claude</span> · <a href='https://claude.ai/download'>claude.ai/download</a>","Cualquiera sirve: todos leen tu AGENTS.md."],
   modulos:["<span class='g'>M1</span> Dirigir agentes","<span class='g'>M2</span> Contexto · AGENTS.md","<span class='g'>M3</span> Agentes con herramientas","<span class='g'>M4</span> Construir, revisar y publicar"],
   regla:["el agente propone → tú compruebas → <span class='g'>tú decides</span> → la comunidad aprende ♻️"],
-  clase:["Martes 7 pm, hora de Texas · "+nextClass().toLowerCase(),"El enlace de cada clase está en tu Classroom."],
+  clase:["Martes 7 pm, hora de Texas · "+nextClass().toLowerCase(),"El enlace de cada clase está en tu Classroom y en el grupo #eLearnLATAM de WhatsApp."],
   guia:["Abriendo el teleprompter…"],
   ayuda:["guia · tema claro · tema latam · tema oscuro","empezar · agentes · instituto · modulos · regla · clase · github · limpiar"],
   github:["¿Sin cuenta? <a href='https://github.com/signup'>github.com/signup</a> · es gratis"]
