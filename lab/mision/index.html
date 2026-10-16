@@ -62,6 +62,28 @@ footer a{color:var(--ink)}
 .rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1)}
 .rv.on{opacity:1;transform:none}
 [data-en]{}
+
+/* 🧵 thread mode */
+.mesh{opacity:.22}
+h2{margin:48px 0 6px}
+.tl{gap:0}
+.ev{grid-template-columns:44px 1fr;gap:12px;padding:14px 0 18px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:none;position:relative}
+.ev .av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font:800 13px var(--sans);color:#0a0a10;background:var(--k)}
+.ev::before{content:"";position:absolute;left:20px;top:62px;bottom:-2px;width:2px;background:rgba(255,255,255,.14)}
+.ev:last-child::before{display:none}
+.ev .hd{display:flex;gap:6px;align-items:center;font:700 15px var(--sans)}
+.ev .hd span{font-weight:500;color:var(--ink2)}
+.ev .hd .ck{color:var(--t)}
+.ev b{font:inherit;color:var(--ink)}
+.ev p{color:var(--ink);margin-top:2px}
+.act{display:flex;gap:18px;margin-top:10px;font-size:18px;color:var(--ink2)}
+.act button{background:none;border:0;color:inherit;font:inherit;cursor:pointer;transition:transform .15s}
+.act button:active{transform:scale(1.25)}
+.act button.on{color:#ff3b5c}
+.post{display:grid;grid-template-columns:44px 1fr;gap:12px;margin-top:28px;padding:16px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.03)}
+.post .av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--o),var(--v),var(--t))}
+.post .hd{font:700 15px var(--sans)}.post .hd span{color:var(--ink2);font-weight:500}
+.post p{margin-top:2px}
 @media (max-width:720px){.card,.card.w3,.card.w4{grid-column:span 6}.card.half{grid-column:span 3}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
@@ -89,12 +111,13 @@ footer a{color:var(--ink)}
   <div class="card w3 rv" style="--k:var(--y)"><span class="ico">❤️</span><h3 data-es="Servimos" data-en="We love by serving">Servimos</h3><p data-es="Amamos sirviendo, en el nombre de Cristo." data-en="We love by serving, in the name of Christ.">Amamos sirviendo, en el nombre de Cristo.</p></div>
 </section>
 
+<div class="post rv"><div class="av"></div><div><div class="hd">lalm1936 <span>· desde 1936 · Laredo, TX</span></div><p data-es="Manos de Amor 🧶🪡👌 Hilo de nuestra historia 🧵👇" data-en="Manos de Amor 🧶🪡👌 A thread of our story 🧵👇">Manos de Amor 🧶🪡👌 Hilo de nuestra historia 🧵👇</p><div class="act"><button aria-label="Me gusta">♡</button><button aria-label="Responder">💬</button><button aria-label="Repostear">↻</button><button aria-label="Compartir">➤</button></div></div></div>
 <h2 data-es="Nuestra historia" data-en="Our story">Nuestra historia</h2>
 <div class="tl">
-  <div class="ev rv" style="--k:var(--o)"><b data-es="Años 30" data-en="1930s">Años 30</b><p data-es="Nace de la South America Prayer League, en Minneapolis." data-en="Born from the South America Prayer League in Minneapolis.">Nace de la South America Prayer League, en Minneapolis.</p></div>
-  <div class="ev rv" style="--k:var(--v)"><b>1936</b><p data-es="Se funda la Misión Luterana Latinoamericana, una misión luterana independiente." data-en="The Latin American Lutheran Mission is founded as an independent Lutheran mission.">Se funda la Misión Luterana Latinoamericana, una misión luterana independiente.</p></div>
-  <div class="ev rv" style="--k:var(--t)"><b>1942–43</b><p data-es="Su trabajo misionero da origen a la Iglesia Evangélica Luterana de México, que la Misión sigue apoyando." data-en="Its mission work gives rise to the Evangelical Lutheran Church of Mexico, which the Mission still supports.">Su trabajo misionero da origen a la Iglesia Evangélica Luterana de México, que la Misión sigue apoyando.</p></div>
-  <div class="ev rv" style="--k:var(--y)"><b data-es="Hoy" data-en="Today">Hoy</b><p data-es="Desde Laredo, el Evangelio a la frontera y a América Latina, con formación agéntica del Instituto." data-en="From Laredo, the Gospel to the border and Latin America, with agentic training from the Institute.">Desde Laredo, el Evangelio a la frontera y a América Latina, con formación agéntica del Instituto.</p></div>
+  <div class="ev rv" style="--k:var(--o)"><div class="av">LM</div><div><div class="hd">lalm1936 <span class="ck">✓</span> <span>·</span> <b data-es="Años 30" data-en="1930s">Años 30</b></div><p data-es="Nace de la South America Prayer League, en Minneapolis." data-en="Born from the South America Prayer League in Minneapolis.">Nace de la South America Prayer League, en Minneapolis.</p><div class="act"><button aria-label="Me gusta">♡</button><button aria-label="Responder">💬</button><button aria-label="Repostear">↻</button><button aria-label="Compartir">➤</button></div></div></div>
+  <div class="ev rv" style="--k:var(--v)"><div class="av">LM</div><div><div class="hd">lalm1936 <span class="ck">✓</span> <span>·</span> <b>1936</b></div><p data-es="Se funda la Misión Luterana Latinoamericana, una misión luterana independiente." data-en="The Latin American Lutheran Mission is founded as an independent Lutheran mission.">Se funda la Misión Luterana Latinoamericana, una misión luterana independiente.</p><div class="act"><button aria-label="Me gusta">♡</button><button aria-label="Responder">💬</button><button aria-label="Repostear">↻</button><button aria-label="Compartir">➤</button></div></div></div>
+  <div class="ev rv" style="--k:var(--t)"><div class="av">LM</div><div><div class="hd">lalm1936 <span class="ck">✓</span> <span>·</span> <b>1942–43</b></div><p data-es="Su trabajo misionero da origen a la Iglesia Evangélica Luterana de México, que la Misión sigue apoyando." data-en="Its mission work gives rise to the Evangelical Lutheran Church of Mexico, which the Mission still supports.">Su trabajo misionero da origen a la Iglesia Evangélica Luterana de México, que la Misión sigue apoyando.</p><div class="act"><button aria-label="Me gusta">♡</button><button aria-label="Responder">💬</button><button aria-label="Repostear">↻</button><button aria-label="Compartir">➤</button></div></div></div>
+  <div class="ev rv" style="--k:var(--y)"><div class="av">LM</div><div><div class="hd">lalm1936 <span class="ck">✓</span> <span>·</span> <b data-es="Hoy" data-en="Today">Hoy</b></div><p data-es="Desde Laredo, el Evangelio a la frontera y a América Latina, con formación agéntica del Instituto." data-en="From Laredo, the Gospel to the border and Latin America, with agentic training from the Institute.">Desde Laredo, el Evangelio a la frontera y a América Latina, con formación agéntica del Instituto.</p><div class="act"><button aria-label="Me gusta">♡</button><button aria-label="Responder">💬</button><button aria-label="Repostear">↻</button><button aria-label="Compartir">➤</button></div></div></div>
 </div>
 
 <div class="cta">
@@ -104,7 +127,7 @@ footer a{color:var(--ink)}
 </div>
 
 <p class="src"><span data-es="Fuentes" data-en="Sources">Fuentes</span>: <a href="https://app.candid.org/profile/9408822/latin-american-lutheran-mission-41-0827207">Candid · EIN 41-0827207</a> · <a href="https://en.wikipedia.org/wiki/Lutheranism_in_Mexico">Lutheranism in Mexico (Wikipedia)</a>. <span data-es="La evidencia no es autoridad." data-en="Evidence ≠ Authority.">La evidencia no es autoridad.</span></p>
-<p class="note" data-es="LAB · versión moderna de prueba. La página en vivo sigue igual." data-en="LAB · modern test version. The live page is unchanged.">LAB · versión moderna de prueba. La página en vivo sigue igual.</p>
+<p class="note" data-es="LAB · versión 🧵 hilo de prueba. La página en vivo sigue igual." data-en="LAB · 🧵 thread test version. The live page is unchanged.">LAB · versión 🧵 hilo de prueba. La página en vivo sigue igual.</p>
 
 <footer><b>Instituto Luterano Latinoamericano</b> · 1996 · Donna, Texas<br>
 <a href="https://lutheraninstitute.github.io/">Sede</a> · <a href="https://lutheraninstitute.github.io/mision/">Misión</a> · <a href="https://lutheraninstitute.github.io/sinodo/">Sínodo</a> · <a href="https://lutheraninstitute.github.io/enchiridion/">Enchiridion</a> · <a href="https://github.com/LutheranInstitute">GitHub</a> · CC BY-NC-SA 4.0 · æ://</footer>
@@ -115,6 +138,8 @@ var b=document.getElementById('lang'),k='lalm-lang',l=localStorage.getItem(k)||(
 function set(x){l=x;document.documentElement.lang=x;document.querySelectorAll('[data-es]').forEach(function(e){e.textContent=e.getAttribute('data-'+x)});b.textContent=x==='es'?'EN':'ES';localStorage.setItem(k,x)}
 b.onclick=function(){set(l==='es'?'en':'es')};set(l);
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.act button[aria-label="Me gusta"]').forEach(function(x){x.onclick=function(){x.classList.toggle('on');x.textContent=x.classList.contains('on')?'♥':'♡'}});
+document.querySelectorAll('.act button[aria-label="Compartir"]').forEach(function(x){x.onclick=function(){if(navigator.share)navigator.share({title:document.title,url:location.href})}});
 document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
 })();
 </script>
