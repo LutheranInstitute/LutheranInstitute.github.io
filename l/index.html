@@ -1,0 +1,65 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>L:// Escuela de Tecnología · Instituto Luterano Latinoamericano</title>
+<meta name="theme-color" content="#1c2621">
+<link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&family=Architects+Daughter&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;height:100%;background:#111814;display:grid;place-items:center}
+svg{height:100vh;max-width:100vw;aspect-ratio:9/16;display:block;cursor:pointer}
+.ch{fill:none;stroke:#f3f1e8;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;filter:url(#chalk)}
+.d{stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 1.6s ease-in-out forwards;animation-delay:var(--d)}
+@keyframes draw{to{stroke-dashoffset:0}}
+.sq{fill:none;stroke:var(--c);stroke-width:7;filter:url(#chalk);animation:draw 1s ease-in-out forwards var(--d),merge 1.2s ease-in forwards 2.8s}
+@keyframes merge{to{transform:translate(var(--tx),-370px) scale(.2);opacity:0}}
+.sq{transform-box:fill-box;transform-origin:center}
+.petal{fill:#f3f1e8;fill-opacity:0;stroke:#f3f1e8;stroke-width:6;filter:url(#chalk);animation:draw 1.4s ease-in-out forwards var(--d),pf 1.5s forwards calc(var(--d) + 1.2s)}
+@keyframes pf{to{fill-opacity:.22}}
+.field{fill:#3b6fb6;opacity:0;animation:fi 1.5s forwards 3.6s}
+.ring{fill:none;stroke:#e2b84b;stroke-width:9;filter:url(#chalk)}
+.heart{fill:#c0392b;fill-opacity:0;stroke:#e46a5b;stroke-width:7;filter:url(#chalk);animation:draw 1.6s ease-in-out forwards 5.6s,hf 1.2s forwards 6.8s}
+@keyframes hf{to{fill-opacity:.85}}
+.cross{fill:none;stroke:#141414;stroke-width:16;stroke-linecap:round;animation:draw 1.2s ease-in-out forwards 7s}
+@keyframes fi{to{opacity:.55}}
+.t{font-family:"Cabin Sketch",cursive;fill:#f3f1e8;text-anchor:middle;opacity:0;animation:fi2 1.2s forwards;filter:url(#chalk)}
+.s{font-family:"Architects Daughter",cursive;fill:#d9d6c8;text-anchor:middle;opacity:0;animation:fi2 1.2s forwards}
+@keyframes fi2{to{opacity:1}}
+.rose{transform-origin:450px 720px;animation:breathe 6s ease-in-out infinite 9s}
+@keyframes breathe{50%{transform:scale(1.025) rotate(1.5deg)}}
+.cur{animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-delay:0s!important;animation-iteration-count:1!important}}
+</style><style>
+.ph{fill:none;stroke:#f3f1e8;stroke-width:7;stroke-linecap:round;filter:url(#chalk);stroke-dasharray:2600;stroke-dashoffset:2600;animation:draw 2s ease-in-out forwards 3.8s}
+.scr{fill:#2a3a33;opacity:0;animation:fi 1s forwards 5.4s}
+.mono{font-family:"JetBrains Mono",monospace;fill:#f3f1e8;filter:url(#chalk)}
+.ty{opacity:0;animation:fi2 .05s forwards}
+.blk{fill:var(--c);opacity:0;filter:url(#chalk);animation:fi2 .4s forwards var(--d)}
+.ln{opacity:0;animation:fi2 1s forwards}.cmd{font-family:"Architects Daughter",cursive;fill:#f2c94c;text-anchor:middle;opacity:0;animation:fi2 1s forwards}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+</head><body>
+<svg viewBox="0 0 900 1600" role="img" aria-label="Tres cuadros, aprender, construir y compartir, se dibujan en tiza y entran en un teléfono que obedece a la persona. Comando y control de tu teléfono, no a la inversa.">
+<defs>
+<filter id="chalk"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="5" result="d"/><feComposite in="d" in2="n" operator="arithmetic" k1="0" k2="1" k3="-.35" k4="0"/></filter>
+<filter id="board"><feTurbulence type="fractalNoise" baseFrequency=".012" numOctaves="3"/><feColorMatrix values="0 0 0 0 .11  0 0 0 0 .15  0 0 0 0 .13  0 0 0 .55 0"/></filter>
+</defs>
+<rect width="900" height="1600" fill="#1c2621"/><rect width="900" height="1600" filter="url(#board)" opacity=".9"/>
+<rect x="22" y="22" width="856" height="1556" fill="none" stroke="#6b4a2b" stroke-width="18"/>
+<text class="s" x="450" y="120" font-size="30" style="animation-delay:.1s">INSTITUTO LUTERANO LATINOAMERICANO</text>
+<text class="t" x="450" y="210" font-size="76" textLength="760" lengthAdjust="spacingAndGlyphs" style="animation-delay:.3s">L:// TECNOLOGÍA</text>
+<text class="s" x="450" y="262" font-size="32" style="animation-delay:.6s">Diplomado en Transformación Digital · 🟨</text>
+<rect class="ph" x="300" y="360" width="300" height="580" rx="44"/><path class="ph" d="M410 392 L490 392" /><circle class="ph" cx="450" cy="905" r="16"/><rect class="scr" x="322" y="420" width="256" height="460" rx="10"/><rect class="blk" style="--c:#f2c94c;--d:5.6s" x="350" y="455" width="56" height="56" rx="3"/><rect class="blk" style="--c:#5aa9e6;--d:5.85s" x="420" y="455" width="56" height="56" rx="3"/><rect class="blk" style="--c:#6fcf97;--d:6.1s" x="490" y="455" width="56" height="56" rx="3"/><text class="mono" x="345" y="580" font-size="30"><tspan fill="#f2c94c">&gt;_ </tspan><tspan class="ty" style="animation-delay:6.6s">L</tspan><tspan class="ty" style="animation-delay:6.75s">:</tspan><tspan class="ty" style="animation-delay:6.8999999999999995s">/</tspan><tspan class="ty" style="animation-delay:7.05s">/</tspan><tspan class="ty" style="animation-delay:7.199999999999999s"> </tspan><tspan class="ty" style="animation-delay:7.35s">h</tspan><tspan class="ty" style="animation-delay:7.5s">o</tspan><tspan class="ty" style="animation-delay:7.6499999999999995s">l</tspan><tspan class="ty" style="animation-delay:7.8s">a</tspan></text><text class="mono ln" x="345" y="640" font-size="26" style="animation-delay:8.2s">> aprender</text><text class="mono ln" x="345" y="692" font-size="26" style="animation-delay:8.7s">> construir</text><text class="mono ln" x="345" y="744" font-size="26" style="animation-delay:9.2s">> compartir</text><text class="mono cur" x="345" y="820" font-size="30">_</text>
+<rect class="d sq" style="--d:0.4s;--c:#f2c94c;--tx:150px" x="255" y="1090" width="90" height="90" rx="4"/><rect class="d sq" style="--d:1.0s;--c:#5aa9e6;--tx:0px" x="405" y="1090" width="90" height="90" rx="4"/><rect class="d sq" style="--d:1.6s;--c:#6fcf97;--tx:-150px" x="555" y="1090" width="90" height="90" rx="4"/>
+<text class="s" x="300" y="1225" font-size="26" style="animation:fi2 .8s forwards .8s,fo .8s forwards 2.8s">aprender</text>
+<text class="s" x="450" y="1225" font-size="26" style="animation:fi2 .8s forwards 1.4s,fo .8s forwards 2.8s">construir</text>
+<text class="s" x="600" y="1225" font-size="26" style="animation:fi2 .8s forwards 2s,fo .8s forwards 2.8s">compartir</text>
+<style>@keyframes fo{to{opacity:0}} .sq{animation:draw 1s ease-in-out forwards var(--d),merge2 1.2s ease-in forwards 2.8s} @keyframes merge2{to{transform:translate(var(--tx),-600px) scale(.4);opacity:0}}</style>
+<text class="t" x="450" y="1060" font-size="50" style="animation-delay:10s">Comando y control de tu teléfono,</text>
+<text class="t" x="450" y="1125" font-size="50" style="animation-delay:10.6s">y no a la inversa.</text>
+<text class="cmd" x="450" y="1200" font-size="32" style="animation-delay:11.2s">Sin experiencia previa · desde tu celular · gratis</text>
+<text class="s" x="450" y="1290" font-size="30" style="animation-delay:11.8s">El agente propone → tú compruebas → tú decides</text>
+<text class="s" x="450" y="1380" font-size="32" style="animation-delay:12.4s">L:// Aprender · æ:// Construir · æQR:// Compartir</text>
+<text class="s" x="450" y="1460" font-size="28" style="animation-delay:12.9s">Martes 7 p. m. Texas · #eLearnLATAM</text>
+<text class="s" x="450" y="1520" font-size="26" style="animation-delay:13.4s">lutheraninstitute.github.io/diplomado-agentico</text>
+</svg>
+<script>function r(e){const s=e.currentTarget,c=s.cloneNode(true);s.replaceWith(c);c.addEventListener('click',r)}document.querySelector('svg').addEventListener('click',r)</script>
+</body></html>
