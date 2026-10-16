@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>L://MISIÓN · LAB 02 · Manos de Amor</title>
+<title>$æ · L://MISIÓN · Manos de Amor</title>
 <meta name="robots" content="noindex">
-<meta name="description" content="Misión Luterana Latinoamericana · Manos de Amor 2.0. La Misión no es una página que se contempla; es una obra en la que se participa.">
+<meta name="description" content="Latin American Lutheran Mission · desde 1936. Many Peoples · One Gospel. Del hilo a la aguja. De la intención al servicio.">
 <meta name="theme-color" content="#07070c">
 <style>
-:root{--bg:#07070c;--ink:#f6f4ef;--ink2:#a3a2ad;--line:rgba(255,255,255,.1);--o:#ff6b2c;--v:#8b5cff;--t:#1fe0c9;--y:#ffd23f;--r:#ff3b5c;
+:root{--bg:#07070c;--ink:#f6f4ef;--ink2:#a3a2ad;--line:rgba(255,255,255,.1);--o:#ff6b2c;--v:#8b5cff;--t:#1fe0c9;--y:#ffd23f;--r:#ff3b5c;--gold:#D4AF37;
 --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 *{box-sizing:border-box;margin:0;padding:0}
-html{background:var(--bg)}
+html{background:var(--bg);scroll-behavior:smooth}
 body{color:var(--ink);font:400 16px/1.55 var(--sans);min-height:100dvh;overflow-x:hidden}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--t);outline-offset:3px;border-radius:8px}
-.mesh{position:fixed;inset:-20%;z-index:-1;filter:blur(80px);opacity:.28;pointer-events:none}
+.mesh{position:fixed;inset:-20%;z-index:-1;filter:blur(80px);opacity:.26;pointer-events:none}
 .mesh i{position:absolute;width:44vmax;height:44vmax;border-radius:50%;animation:drift 24s ease-in-out infinite alternate}
 .mesh i:nth-child(1){background:var(--o);top:-10%;left:-12%}.mesh i:nth-child(2){background:var(--v);top:12%;right:-16%;animation-delay:-8s}.mesh i:nth-child(3){background:var(--t);bottom:-20%;left:22%;animation-delay:-14s}
 @keyframes drift{to{transform:translate(7vmax,5vmax) scale(1.12)}}
@@ -25,179 +25,196 @@ nav a{text-decoration:none;color:var(--ink2)}
 nav .r{display:flex;gap:6px}
 .chip,nav button{font:inherit;color:var(--ink);background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:99px;padding:8px 11px;cursor:pointer}
 .chip{color:var(--y)}
-header{padding:48px 0 8px}
-.kick{font:700 11px/1.4 var(--mono);letter-spacing:.2em;color:var(--t)}
-.yr{font:800 13px/1 var(--mono);color:var(--ink2);margin-top:14px;letter-spacing:.08em}
-h1{font:900 clamp(54px,15vw,112px)/.86 var(--sans);letter-spacing:-.055em;margin:10px 0 0}
+header{padding:44px 0 6px}
+.kick{font:700 11px/1.5 var(--mono);letter-spacing:.18em;color:var(--t)}
+h1{font:900 clamp(50px,14vw,104px)/.88 var(--sans);letter-spacing:-.055em;margin:12px 0 0}
 h1 em{font-style:normal;background:linear-gradient(100deg,var(--o),var(--v) 55%,var(--t));-webkit-background-clip:text;background-clip:text;color:transparent}
-.thread{display:block;width:100%;height:56px;margin:10px 0 4px}
+.thread{display:block;width:100%;height:52px;margin:8px 0 2px}
 .thread path{fill:none;stroke:url(#g);stroke-width:2.5;stroke-linecap:round;stroke-dasharray:9 9;animation:sew 6s linear infinite}
 @keyframes sew{to{stroke-dashoffset:-180}}
-.lead{font:700 clamp(20px,5vw,26px)/1.25 var(--sans);letter-spacing:-.01em}
-.principle{color:var(--ink2);margin-top:10px}
-.doors{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:26px 0 8px}
-.door{font:800 17px/1.2 var(--sans);text-align:left;padding:18px 16px;border-radius:20px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--ink);cursor:pointer;transition:transform .2s,border-color .2s,background .2s;min-height:88px}
-.door span{display:block;font-size:26px;margin-bottom:6px}
-.door[aria-pressed="true"]{border-color:var(--k);background:linear-gradient(160deg,color-mix(in srgb,var(--k) 28%,transparent),rgba(255,255,255,.03))}
+.lead{font:800 clamp(19px,4.8vw,25px)/1.25 var(--sans);letter-spacing:-.01em}
+.prompt{margin-top:16px;font:700 14px/1 var(--mono);color:var(--gold)}
+.prompt b{animation:blink 1s steps(1) infinite;color:var(--ink)}
+@keyframes blink{50%{opacity:0}}
+.root{margin-top:28px;border:1px solid var(--line);border-radius:22px;padding:20px;background:rgba(255,255,255,.035)}
+.root .tag{font:700 11px/1 var(--mono);letter-spacing:.16em;color:var(--t)}
+.root h2{all:unset;display:block;font:900 clamp(24px,6vw,32px)/1.1 var(--sans);letter-spacing:-.02em;margin:8px 0 8px}
+.root p{color:var(--ink2)}
+.sec{font:700 11px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--ink2);margin:46px 0 14px;display:flex;justify-content:space-between;align-items:center}
+/* carrusel */
+.track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:2px 2px 6px;margin:0 -18px;padding-left:18px;padding-right:18px;scroll-padding:0 18px}
+.track::-webkit-scrollbar{display:none}
+.mv{flex:0 0 84%;scroll-snap-align:start;border:1px solid var(--line);border-radius:24px;padding:22px 20px;min-height:250px;background:linear-gradient(165deg,color-mix(in srgb,var(--k) 22%,transparent),rgba(255,255,255,.03) 60%);display:flex;flex-direction:column}
+.mv .n{font:700 11px/1 var(--mono);letter-spacing:.16em;color:var(--k)}
+.mv .big{font-size:40px;margin:16px 0 6px;line-height:1}
+.mv h3{font:900 24px/1.12 var(--sans);letter-spacing:-.02em;margin-bottom:8px}
+.mv p{color:var(--ink2);font-size:15px}
+.mv .s{margin-top:auto;padding-top:12px;font:600 11px/1.4 var(--mono);color:var(--ink2);opacity:.75}
+.dots{display:flex;justify-content:center;gap:8px;margin-top:12px}
+.dots button{width:8px;height:8px;border-radius:99px;border:0;background:rgba(255,255,255,.2);padding:0;cursor:pointer;transition:width .2s,background .2s}
+.dots button[aria-current="true"]{width:24px;background:var(--gold)}
+.arrows{display:flex;gap:6px}
+.arrows button{font:700 14px/1 var(--mono);width:32px;height:32px;border-radius:99px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--ink);cursor:pointer}
+/* arquitectura */
+.arch{border:1px solid var(--line);border-radius:24px;padding:20px;background:rgba(255,255,255,.03)}
+.entry{text-align:center;padding:16px;border-radius:18px;border:1px solid rgba(212,175,55,.45);background:rgba(212,175,55,.08)}
+.entry .tag{font:700 11px/1 var(--mono);letter-spacing:.14em;color:var(--gold)}
+.entry b{display:block;font:900 20px/1.2 var(--mono);margin:8px 0 4px}
+.entry p{color:var(--ink2);font-size:14px}
+.fan{display:block;width:100%;height:46px}
+.fan path{fill:none;stroke:rgba(255,255,255,.25);stroke-width:1.5;stroke-dasharray:4 5;animation:sew 8s linear infinite}
+.nodes{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.node{text-align:center;padding:14px 4px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.04);text-decoration:none;position:relative;overflow:hidden;transition:transform .2s}
+.node:hover{transform:translateY(-2px)}
+.node::before{content:"";position:absolute;inset:0 0 auto;height:3px;background:var(--k)}
+.node span{font-size:24px;display:block}
+.node small{display:block;font:700 9px/1.3 var(--mono);letter-spacing:.1em;color:var(--ink2);margin-top:8px}
+.node b{display:block;font:800 15px/1.2 var(--sans);margin-top:2px}
+.cycle{text-align:center;margin-top:18px;font:800 13px/1.6 var(--mono);letter-spacing:.06em}
+.cycle .l{color:var(--t);font-size:18px}
+.consent{margin-top:12px;text-align:center;color:var(--ink2);font-size:14px}
+/* entradas */
+.doors{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.door{font:800 16px/1.2 var(--sans);text-align:left;padding:16px 14px;border-radius:18px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--ink);cursor:pointer;min-height:78px;transition:transform .2s,background .2s,border-color .2s}
+.door span{display:block;font-size:24px;margin-bottom:6px}
+.door[aria-pressed="true"]{border-color:var(--k);background:linear-gradient(160deg,color-mix(in srgb,var(--k) 26%,transparent),rgba(255,255,255,.03))}
 .door:hover{transform:translateY(-2px)}
-.route{margin-top:12px;border:1px solid var(--line);border-radius:24px;padding:20px;background:rgba(255,255,255,.035);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-.rh{display:flex;justify-content:space-between;align-items:center;font:700 11px/1 var(--mono);letter-spacing:.14em;color:var(--ink2)}
-.bar{display:flex;gap:6px;margin:12px 0 16px}
-.bar i{flex:1;height:4px;border-radius:4px;background:rgba(255,255,255,.12);transition:background .3s}
-.bar i.on{background:var(--k)}
-.stage .proto{font:700 12px/1 var(--mono);color:var(--k);letter-spacing:.08em}
-.stage h3{font:900 30px/1.05 var(--sans);letter-spacing:-.02em;margin:8px 0 6px}
-.stage p{color:var(--ink2)}
-.stage .go{display:inline-block;margin-top:12px;font:700 14px var(--sans);color:var(--t);text-decoration:none}
-.stage .hold{display:inline-block;margin-top:12px;font:600 12px/1.4 var(--mono);color:var(--y)}
-.nav2{display:flex;justify-content:space-between;margin-top:18px;gap:10px}
-.nav2 button{flex:1;font:800 15px/1 var(--sans);padding:14px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--ink);cursor:pointer}
-.nav2 button.p{background:var(--ink);color:#0a0a10;border-color:var(--ink)}
-.nav2 button:disabled{opacity:.35;cursor:default}
-h2{font:700 11px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--ink2);margin:46px 0 14px}
-.logic{font:800 clamp(17px,4.4vw,22px)/1.3 var(--mono);letter-spacing:-.01em}
-.logic b{color:var(--t)}.logic u{text-decoration:none;color:var(--o)}
-.pil{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-.pil div{border:1px solid var(--line);border-radius:18px;padding:16px;background:rgba(255,255,255,.03);position:relative;overflow:hidden}
-.pil div::before{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:var(--k)}
-.pil b{display:block;font:800 18px/1.2 var(--sans);margin-top:6px}
-.pil span{color:var(--ink2);font-size:14px}
-.cycle{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:14px;font:700 13px/1 var(--mono)}
-.cycle span{padding:9px 11px;border-radius:99px;border:1px solid var(--line);background:rgba(255,255,255,.04)}
-.cycle i{font-style:normal;color:var(--ink2)}
-.cycle .loop{color:var(--t);font-size:18px}
-.tl{display:grid;gap:10px}
-.ev{display:grid;grid-template-columns:104px 1fr;gap:14px;padding:16px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.03)}
-.ev b{font:900 20px/1.1 var(--sans);color:var(--k)}
-.ev p{color:var(--ink2)}
-.ev p strong{color:var(--ink);font-weight:700}
-.rule{margin-top:30px;text-align:center;font:800 12px/1.5 var(--mono);letter-spacing:.16em;color:var(--y);border:1px dashed rgba(255,210,63,.4);border-radius:14px;padding:12px}
-.note{font:500 13px/1.6 var(--sans);color:var(--ink2);margin-top:12px}
-.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.path{margin-top:12px;padding:18px;border-radius:20px;border:1px solid var(--line);background:rgba(255,255,255,.035);display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.path p{flex:1 1 220px;color:var(--ink)}
+.path a{text-decoration:none;font:800 15px/1 var(--sans);padding:14px 18px;border-radius:14px;background:var(--ink);color:#0a0a10;white-space:nowrap}
+.help{margin-top:12px;font-size:14px;color:var(--ink2)}
+.help a{color:var(--r);font-weight:700;text-decoration:none}
+.next{margin-top:46px;border:1px dashed rgba(255,210,63,.4);border-radius:20px;padding:18px}
+.next .tag{font:700 11px/1 var(--mono);letter-spacing:.16em;color:var(--y)}
+.next p{color:var(--ink2);margin-top:8px;font-size:15px}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
 .btn{text-decoration:none;font:800 15px/1 var(--sans);padding:15px 20px;border-radius:14px;background:var(--ink);color:#0a0a10}
 .btn.g{background:rgba(255,255,255,.06);color:var(--ink);border:1px solid var(--line)}
-.src{font:500 12px/1.7 var(--mono);color:var(--ink2);margin-top:20px}
-.src a{color:var(--t)}
 footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font:600 12px/1.8 var(--mono);color:var(--ink2);text-align:center}
-.fade{animation:fd .35s ease}
-@keyframes fd{from{opacity:0;transform:translateY(6px)}}
-@media (max-width:420px){.ev{grid-template-columns:1fr;gap:4px}}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+footer .m{color:var(--ink);font-weight:800}
+.fade{animation:fd .3s ease}@keyframes fd{from{opacity:0;transform:translateY(5px)}}
+@media (max-width:440px){.nodes{grid-template-columns:1fr 1fr}.fan{display:none}.nodes{margin-top:10px}}
+@media (min-width:640px){.mv{flex-basis:46%}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 <div class="mesh" aria-hidden="true"><i></i><i></i><i></i></div>
 <div class="wrap">
-<nav aria-label="Navegación"><a href="https://lutheraninstitute.github.io/">← SEDE · æ://</a><div class="r"><span class="chip">🧪 LAB 02</span><button id="lang" aria-label="Change language to English">EN</button></div></nav>
+<nav aria-label="Navegación"><a href="https://lutheraninstitute.github.io/">← SEDE</a><div class="r"><span class="chip">🧪 LAB 03</span><button id="lang">EN</button></div></nav>
 
 <header>
-  <div class="kick">L://MISIÓN · LAB 02</div>
-  <div class="yr">1936 → 2026</div>
+  <div class="kick">$æ · L://MISIÓN<br><span data-i="since"></span></div>
   <h1>Manos de <em>Amor.</em></h1>
-  <svg class="thread" viewBox="0 0 600 56" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#ff6b2c"/><stop offset=".55" stop-color="#8b5cff"/><stop offset="1" stop-color="#1fe0c9"/></linearGradient></defs><path d="M0 32 C60 4 110 52 170 28 S280 4 340 30 S460 54 520 24 S585 16 600 28"/></svg>
+  <svg class="thread" viewBox="0 0 600 52" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#ff6b2c"/><stop offset=".55" stop-color="#8b5cff"/><stop offset="1" stop-color="#1fe0c9"/></linearGradient></defs><path d="M0 30 C60 4 110 50 170 26 S280 4 340 28 S460 50 520 22 S585 14 600 26"/></svg>
   <p class="lead" data-i="lead"></p>
-  <p class="principle" data-i="principle"></p>
+  <p class="prompt">&gt;_æ://lutheran/mision<b>▍</b></p>
 </header>
 
-<section aria-label="Puertas">
-  <div class="doors" role="group">
-    <button class="door" id="d-servir" style="--k:var(--t)" aria-pressed="true"><span aria-hidden="true">🤲</span><b data-i="d_servir"></b></button>
-    <button class="door" id="d-ayuda" style="--k:var(--r)" aria-pressed="false"><span aria-hidden="true">❤️</span><b data-i="d_ayuda"></b></button>
-  </div>
-  <div class="route" id="route" aria-live="polite">
-    <div class="rh"><span id="rlabel"></span><span id="rcount"></span></div>
-    <div class="bar" id="bar"><i></i><i></i><i></i><i></i></div>
-    <div class="stage" id="stage"></div>
-    <div class="nav2"><button id="prev" data-i="prev"></button><button id="next" class="p" data-i="next"></button></div>
+<section class="root">
+  <div class="tag">HUMAN://ROOT</div>
+  <h2 data-i="root_h"></h2>
+  <p data-i="root_p"></p>
+</section>
+
+<section id="historia" aria-roledescription="carrusel" aria-label="Historia">
+  <div class="sec"><span data-i="h_car"></span><span class="arrows"><button id="pv" aria-label="Anterior">←</button><button id="nx" aria-label="Siguiente">→</button></span></div>
+  <div class="track" id="track"></div>
+  <div class="dots" id="dots"></div>
+</section>
+
+<section>
+  <div class="sec"><span data-i="h_arch"></span></div>
+  <div class="arch">
+    <div class="entry"><div class="tag" data-i="entrada"></div><b>HUMAN://principal 🫵</b><p data-i="entry_p"></p></div>
+    <svg class="fan" viewBox="0 0 400 46" preserveAspectRatio="none" aria-hidden="true"><path d="M200 0 C200 26 50 18 50 46 M200 0 C200 26 150 18 150 46 M200 0 C200 26 250 18 250 46 M200 0 C200 26 350 18 350 46"/></svg>
+    <div class="nodes">
+      <a class="node" style="--k:var(--o)" href="https://lutheraninstitute.github.io/mision/"><span>🤲</span><small data-i="n1"></small><b data-i="n1v"></b></a>
+      <a class="node" style="--k:var(--v)" href="https://lutheraninstitute.github.io/"><span>🎓</span><small data-i="n2"></small><b data-i="n2v"></b></a>
+      <a class="node" style="--k:var(--t)" href="https://lutheraninstitute.github.io/sinodo/"><span>⛪</span><small data-i="n3"></small><b data-i="n3v"></b></a>
+      <a class="node" style="--k:var(--y)" href="https://lutheraninstitute.github.io/regalo/historia/"><span>🧾</span><small data-i="n4"></small><b data-i="n4v"></b></a>
+    </div>
+    <p class="cycle"><span data-i="cyc"></span> <span class="l" aria-hidden="true">↺</span></p>
+    <p class="consent" data-i="consent"></p>
   </div>
 </section>
 
-<h2 data-i="h_logic"></h2>
-<p class="logic"><b>HUMAN://PRINCIPAL</b> → <u>MISIÓN://ACCIÓN</u></p>
-<div class="pil">
-  <div style="--k:var(--o)"><span aria-hidden="true">🤲</span><b data-i="p1"></b><span data-i="p1d"></span></div>
-  <div style="--k:var(--v)"><span aria-hidden="true">🎓</span><b data-i="p2"></b><span data-i="p2d"></span></div>
-  <div style="--k:var(--t)"><span aria-hidden="true">🕊️</span><b data-i="p3"></b><span data-i="p3d"></span></div>
-  <div style="--k:var(--y)"><span aria-hidden="true">✍️</span><b data-i="p4"></b><span data-i="p4d"></span></div>
-</div>
-<div class="cycle" aria-label="Ciclo">
-  <span data-i="c1"></span><i>→</i><span data-i="c2"></span><i>→</i><span data-i="c3"></span><i>→</i><span data-i="c4"></span><i>→</i><span data-i="c5"></span><i class="loop" aria-hidden="true">↺</i>
-</div>
+<section>
+  <div class="sec"><span data-i="h_doors"></span></div>
+  <div class="doors" role="group" id="doors"></div>
+  <div class="path" aria-live="polite"><p id="pathp"></p><a id="patha" href="#"></a></div>
+  <p class="help"><span data-i="help1"></span> <a href="https://whatsapp.com/channel/0029Vb8EIghJuyABUPq3ky0n" data-i="help2"></a></p>
+</section>
 
-<h2 data-i="h_hist"></h2>
-<div class="tl">
-  <div class="ev" style="--k:var(--o)"><b>1936 / 1946</b><p data-i="e1"></p></div>
-  <div class="ev" style="--k:var(--v)"><b>1942–43</b><p data-i="e2"></p></div>
-  <div class="ev" style="--k:var(--t)"><b>1996 / 1999</b><p data-i="e3"></p></div>
-  <div class="ev" style="--k:var(--y)"><b data-i="e4y"></b><p data-i="e4"></p></div>
-</div>
-
-<div class="rule">CONTEXTO PUEDE PROPAGARSE · AUTORIDAD NO</div>
-<p class="note" data-i="note"></p>
+<section class="next">
+  <div class="tag" data-i="next_t"></div>
+  <p data-i="next_p"></p>
+</section>
 
 <div class="cta">
   <a class="btn" href="https://app.candid.org/profile/9408822/latin-american-lutheran-mission-41-0827207" data-i="support"></a>
   <a class="btn g" href="https://linkedin.com/company/thelutheranmission">LinkedIn</a>
-  <a class="btn g" href="https://whatsapp.com/channel/0029Vb8EIghJuyABUPq3ky0n">📣 INSTITUTO</a>
 </div>
-<p class="src"><span data-i="src"></span>: <a href="https://app.candid.org/profile/9408822/latin-american-lutheran-mission-41-0827207">Candid · EIN 41-0827207</a> · <a href="https://en.wikipedia.org/wiki/Lutheranism_in_Mexico">Lutheranism in Mexico (Wikipedia)</a> · <span data-i="src2"></span></p>
 
-<footer><b>Misión Luterana Latinoamericana</b> · Laredo, Texas · desde 1936<br><span data-i="foot"></span><br>
-<a href="https://lutheraninstitute.github.io/mision/">Misión (en vivo)</a> · <a href="https://lutheraninstitute.github.io/">Instituto</a> · <a href="https://lutheraninstitute.github.io/sinodo/">Sínodo</a> · CC BY-NC-SA 4.0 · æ://</footer>
+<footer><span class="m">$æ · Many agents. One principal. Many peoples. One Gospel.</span><br>Manos de Amor · <span data-i="foot1"></span> · Faith passed from hand to hand.<br>
+<span data-i="foot2"></span><br><a href="https://lutheraninstitute.github.io/mision/">Misión (en vivo)</a> · Candid EIN 41-0827207 · CC BY-NC-SA 4.0</footer>
 </div>
 
 <script>
 (function(){
 var T={
-es:{lead:"Muchas personas. Un Evangelio. Una misión que continúa de mano en mano.",principle:"La Misión no es una página que se contempla; es una obra en la que se participa.",
-d_servir:"Quiero servir",d_ayuda:"Necesito ayuda",prev:"Anterior",next:"Continuar",done:"Volver a empezar",route:"RUTA",
-h_logic:"Nuestra lógica",p1:"Servir",p1d:"Atendemos necesidades reales en la frontera.",p2:"Formar",p2d:"Equipamos líderes con el Instituto.",p3:"Enviar",p3d:"Enviamos obreros a congregaciones y comunidades.",p4:"Testimoniar",p4d:"Contamos lo que Dios hace, con evidencia y revisión humana.",
-c1:"Necesidad",c2:"Persona",c3:"Servicio",c4:"Evidencia",c5:"Aprendizaje",
-h_hist:"De mano en mano",
-e1:"Nace de la South America Prayer League, en Minneapolis, y se funda como misión luterana independiente. En 1946 adopta el nombre de <strong>Misión Luterana Latinoamericana</strong>.",
-e2:"Su trabajo misionero da origen a la Iglesia Evangélica Luterana de México, que la Misión sigue apoyando.",
-e3:"El <strong>Rev. Moisés Méndez</strong> funda en Donna, Texas, el Instituto Luterano Latinoamericano, registrado en 1999 según su cronología. El Instituto forma; la Misión sirve. Son obras distintas que caminan juntas.",
-e4y:"2026",e4:"Manos de Amor 2.0: la Misión se vuelve una obra en la que cada persona puede participar.",
-note:"Esta maqueta recorre las dos rutas y sus etapas. No recopila datos personales ni envía solicitudes reales: esas funciones requieren canales institucionales autorizados.",
-support:"Apoya la Misión →",src:"Fuentes",src2:"Fechas 1946 y 1999 según la cronología institucional; fuentes primarias pendientes.",foot:"Prototipo LAB 02 · la página en vivo no cambia hasta que Yæl lo apruebe.",
-hold:"Canal autorizado pendiente · nada se envía desde aquí",
-servir:[["HUMAN://PRINCIPAL","Descubrir","Conoce las necesidades y ministerios de la Misión en la frontera y en América Latina."],["FORMAR://","Prepararte","Fórmate con el Instituto: Diplomado en Transformación Digital, Escuela de Teología y el Catecismo Menor.","https://lutheraninstitute.github.io/","Ver el Instituto →"],["SERVIR://","Servir","Únete por un canal verificable. Una persona de la Misión te acompaña; tú decides cuánto y cómo.","https://whatsapp.com/channel/0029Vb8EIghJuyABUPq3ky0n","Canal INSTITUTO →"],["TESTIMONIAR://","Testimoniar","Cuenta lo que viste y aprendiste. Cada testimonio pasa por revisión humana antes de publicarse.","https://lutheraninstitute.github.io/regalo/historia/","Cómo contar tu historia →"]],
-ayuda:[["NECESIDAD://","Cuéntanos","Tu necesidad importa. Aquí no pedimos datos: la conversación ocurre por un canal institucional, con respeto y privacidad.",null,null,1],["PERSONA://","Una persona","Te atiende una persona con nombre, no un formulario ni un bot. El agente puede orientar; la persona decide.",null,null,1],["SERVICIO://","Un camino concreto","Te conectamos con una congregación o ministerio cercano que pueda acompañarte.",null,null,1],["EVIDENCIA://","Seguimiento","Damos seguimiento y aprendemos de cada caso, sin exponer tu historia sin tu permiso.",null,null,1]]},
-en:{lead:"Many people. One Gospel. A mission that continues from hand to hand.",principle:"The Mission is not a page to look at; it is a work you take part in.",
-d_servir:"I want to serve",d_ayuda:"I need help",prev:"Back",next:"Continue",done:"Start over",route:"ROUTE",
-h_logic:"Our logic",p1:"Serve",p1d:"We meet real needs on the border.",p2:"Form",p2d:"We equip leaders with the Institute.",p3:"Send",p3d:"We send workers to congregations and communities.",p4:"Witness",p4d:"We tell what God is doing, with evidence and human review.",
-c1:"Need",c2:"Person",c3:"Service",c4:"Evidence",c5:"Learning",
-h_hist:"From hand to hand",
-e1:"Born from the South America Prayer League in Minneapolis and founded as an independent Lutheran mission. In 1946 it took the name <strong>Latin American Lutheran Mission</strong>.",
-e2:"Its mission work gave rise to the Evangelical Lutheran Church of Mexico, which the Mission still supports.",
-e3:"<strong>Rev. Moisés Méndez</strong> founded the Latin American Lutheran Institute in Donna, Texas, registered in 1999 per its chronology. The Institute forms; the Mission serves. Two distinct works walking together.",
-e4y:"2026",e4:"Manos de Amor 2.0: the Mission becomes a work every person can take part in.",
-note:"This mockup walks both routes and their stages. It collects no personal data and sends no real requests: those need authorized institutional channels.",
-support:"Support the Mission →",src:"Sources",src2:"1946 and 1999 dates per the institutional chronology; primary sources pending.",foot:"LAB 02 prototype · the live page stays the same until Yæl approves.",
-hold:"Authorized channel pending · nothing is sent from here",
-servir:[["HUMAN://PRINCIPAL","Discover","Learn the needs and ministries of the Mission on the border and across Latin America."],["FORM://","Prepare","Train with the Institute: Digital Transformation Diploma, School of Theology and the Small Catechism.","https://lutheraninstitute.github.io/","See the Institute →"],["SERVE://","Serve","Join through a verifiable channel. A person from the Mission walks with you; you decide how much and how.","https://whatsapp.com/channel/0029Vb8EIghJuyABUPq3ky0n","INSTITUTO channel →"],["WITNESS://","Witness","Tell what you saw and learned. Every testimony gets human review before it is published.","https://lutheraninstitute.github.io/regalo/historia/","How to tell your story →"]],
-ayuda:[["NEED://","Tell us","Your need matters. We ask for no data here: the conversation happens through an institutional channel, with respect and privacy.",null,null,1],["PERSON://","A person","A named person helps you, not a form or a bot. The agent can guide; the person decides.",null,null,1],["SERVICE://","A concrete path","We connect you with a nearby congregation or ministry that can walk with you.",null,null,1],["EVIDENCE://","Follow-up","We follow up and learn from each case, never sharing your story without your permission.",null,null,1]]}};
-var lang=localStorage.getItem('lalm-lang')||((navigator.language||'es').slice(0,2)==='en'?'en':'es'),door='servir',step=0;
-var $=function(s){return document.querySelector(s)},L=$('#lang'),bar=document.querySelectorAll('#bar i');
-function k(){return door==='servir'?'var(--t)':'var(--r)'}
-function render(){var t=T[lang],s=t[door][step];
- $('#route').style.setProperty('--k',k());
- $('#rlabel').textContent=t.route+' '+(step+1)+' / 4';$('#rcount').textContent=door==='servir'?'🤲':'❤️';
- bar.forEach(function(b,i){b.className=i<=step?'on':''});
- var h='<div class="fade"><div class="proto">'+s[0]+'</div><h3>'+s[1]+'</h3><p>'+s[2]+'</p>';
- if(s[3])h+='<a class="go" href="'+s[3]+'">'+s[4]+'</a>';
- if(s[5])h+='<span class="hold">'+t.hold+'</span>';
- $('#stage').innerHTML=h+'</div>';
- $('#prev').disabled=step===0;$('#next').textContent=step===3?t.done:t.next}
+es:{since:"LATIN AMERICAN LUTHERAN MISSION · DESDE 1936",lead:"Many Peoples · One Gospel. Del hilo a la aguja. De la intención al servicio.",
+root_h:"La fe se transmite. El servicio se multiplica.",root_p:"Una institución no es su sitio web. Es una comunidad de personas que aprende, sirve y deja capacidad instalada para la siguiente generación.",
+h_car:"🎠 Una historia, cinco movimientos",h_arch:"$æ · Arquitectura desde primeros principios",entrada:"ENTRADA",entry_p:"Una persona con dignidad, necesidades y capacidad de actuar.",
+n1:"MISIÓN",n1v:"Servir",n2:"INSTITUTO",n2v:"Formar",n3:"SÍNODO",n3v:"Acompañar",n4:"TESTIMONIO",n4v:"Documentar",
+cyc:"SERVICIO → EVIDENCIA → APRENDIZAJE",consent:"El conocimiento se comparte. La autoridad y el consentimiento permanecen con las personas responsables.",
+h_doors:"🫵 Elige tu entrada",open:"Abrir mi ruta",help1:"¿Necesitas ayuda? Una persona te escucha, sin formularios.",help2:"Escríbenos por el canal →",
+next_t:"LA SIGUIENTE VERSIÓN",next_p:"/lab/mision/ evoluciona de una página de presentación a una interfaz de participación: carrusel histórico, rutas humanas de servicio, educación abierta, enlaces verificables y testimonios revisados antes de publicarse. La página en vivo permanece intacta hasta que Yæl lo apruebe.",
+support:"Apoya la Misión →",foot1:"Del hilo a la aguja",foot2:"Fechas según la cronología institucional · fuentes primarias pendientes.",
+mv:[["01 · ORIGEN","🌱","1936 · La semilla","Nace CELMOSA, antecedente de LALM. En 1946 adopta el nombre Latin American Lutheran Mission.","Cronología institucional"],
+["02 · SERVICIO","🤲","Manos de Amor","La fe se hace visible atendiendo necesidades humanas concretas.",""],
+["03 · INSTITUCIÓN","🏛️","1996 · El Instituto","El Rev. Moisés Méndez funda y organiza el Instituto Luterano Latinoamericano en Texas.","Cronología institucional"],
+["04 · EDUCACIÓN","🎓","Aprender y enseñar","Teología, tecnología y formación para líderes, familias y comunidades.",""],
+["05 · CONTINUIDAD","🫵","Tu turno","Cada persona puede aprender, servir, construir y transmitir lo aprendido.",""]],
+doors:[["aprender","🎓","Quiero aprender","var(--v)","Explora las escuelas y recursos del Instituto: Teología, Diplomado en Transformación Digital y Catecismo Menor.","https://lutheraninstitute.github.io/"],
+["servir","🤲","Quiero servir","var(--o)","Únete a Manos de Amor por un canal verificable. Una persona te acompaña; tú decides cuánto y cómo.","https://whatsapp.com/channel/0029Vb8EIghJuyABUPq3ky0n"],
+["historia","📖","Conocer la historia","var(--t)","Recorre los cinco movimientos: de 1936 a tu turno.","#historia"],
+["construir","📦","Quiero construir","var(--y)","Haz fork, propone y abre un PR. Los agentes proponen; las personas deciden qué se publica.","https://github.com/LutheranInstitute/diplomado-agentico"]]},
+en:{since:"LATIN AMERICAN LUTHERAN MISSION · SINCE 1936",lead:"Many Peoples · One Gospel. From thread to needle. From intention to service.",
+root_h:"Faith is passed on. Service multiplies.",root_p:"An institution is not its website. It is a community of people who learn, serve and leave capacity in place for the next generation.",
+h_car:"🎠 One story, five movements",h_arch:"$æ · Architecture from first principles",entrada:"ENTRY",entry_p:"A person with dignity, needs and the ability to act.",
+n1:"MISSION",n1v:"Serve",n2:"INSTITUTE",n2v:"Form",n3:"SYNOD",n3v:"Accompany",n4:"WITNESS",n4v:"Document",
+cyc:"SERVICE → EVIDENCE → LEARNING",consent:"Knowledge is shared. Authority and consent stay with the responsible people.",
+h_doors:"🫵 Choose your entry",open:"Open my path",help1:"Need help? A person listens, no forms.",help2:"Message us on the channel →",
+next_t:"THE NEXT VERSION",next_p:"/lab/mision/ evolves from a presentation page into a participation interface: historical carousel, human service paths, open education, verifiable links and testimonies reviewed before publishing. The live page stays the same until Yæl approves.",
+support:"Support the Mission →",foot1:"From thread to needle",foot2:"Dates per the institutional chronology · primary sources pending.",
+mv:[["01 · ORIGIN","🌱","1936 · The seed","CELMOSA is born, forerunner of LALM. In 1946 it takes the name Latin American Lutheran Mission.","Institutional chronology"],
+["02 · SERVICE","🤲","Manos de Amor","Faith becomes visible by meeting concrete human needs.",""],
+["03 · INSTITUTION","🏛️","1996 · The Institute","Rev. Moisés Méndez founds and organizes the Latin American Lutheran Institute in Texas.","Institutional chronology"],
+["04 · EDUCATION","🎓","Learn and teach","Theology, technology and formation for leaders, families and communities.",""],
+["05 · CONTINUITY","🫵","Your turn","Every person can learn, serve, build and pass on what they learned.",""]],
+doors:[["aprender","🎓","I want to learn","var(--v)","Explore the Institute's schools and resources: Theology, the Digital Transformation Diploma and the Small Catechism.","https://lutheraninstitute.github.io/"],
+["servir","🤲","I want to serve","var(--o)","Join Manos de Amor through a verifiable channel. A person walks with you; you decide how much and how.","https://whatsapp.com/channel/0029Vb8EIghJuyABUPq3ky0n"],
+["historia","📖","Know the story","var(--t)","Walk the five movements: from 1936 to your turn.","#historia"],
+["construir","📦","I want to build","var(--y)","Fork, propose and open a PR. Agents propose; people decide what gets published.","https://github.com/LutheranInstitute/diplomado-agentico"]]}};
+var cols=["var(--o)","var(--t)","var(--v)","var(--y)","var(--r)"];
+var lang=localStorage.getItem('lalm-lang')||((navigator.language||'es').slice(0,2)==='en'?'en':'es'),door=0;
+var $=function(s){return document.querySelector(s)},tr=$('#track'),dots=$('#dots');
+function car(){var t=T[lang];tr.innerHTML=t.mv.map(function(m,i){return '<article class="mv" style="--k:'+cols[i]+'" aria-label="'+(i+1)+' / 5"><div class="n">'+m[0]+'</div><div class="big" aria-hidden="true">'+m[1]+'</div><h3>'+m[2]+'</h3><p>'+m[3]+'</p>'+(m[4]?'<div class="s">'+m[4]+'</div>':'')+'</article>'}).join('');
+ dots.innerHTML=t.mv.map(function(m,i){return '<button aria-label="'+(i+1)+'"'+(i===0?' aria-current="true"':'')+'></button>'}).join('');
+ dots.querySelectorAll('button').forEach(function(b,i){b.onclick=function(){go(i)}})}
+function cur(){var c=tr.children,best=0,d=1e9;for(var i=0;i<c.length;i++){var x=Math.abs(c[i].offsetLeft-tr.offsetLeft-18-tr.scrollLeft);if(x<d){d=x;best=i}}return best}
+function go(i){var c=tr.children;i=Math.max(0,Math.min(c.length-1,i));tr.scrollTo({left:c[i].offsetLeft-tr.offsetLeft-18,behavior:'smooth'})}
+tr.addEventListener('scroll',function(){var i=cur();dots.querySelectorAll('button').forEach(function(b,j){b.setAttribute('aria-current',j===i)})},{passive:true});
+$('#pv').onclick=function(){go(cur()-1)};$('#nx').onclick=function(){go(cur()+1)};
+function doors(){var t=T[lang];$('#doors').innerHTML=t.doors.map(function(d,i){return '<button class="door" style="--k:'+d[3]+'" aria-pressed="'+(i===door)+'" data-d="'+i+'"><span aria-hidden="true">'+d[1]+'</span>'+d[2]+'</button>'}).join('');
+ $('#doors').querySelectorAll('button').forEach(function(b){b.onclick=function(){door=+b.getAttribute('data-d');doors()}});
+ var d=t.doors[door],p=$('#pathp');p.textContent=d[4];p.className='fade';var a=$('#patha');a.textContent=t.open+' →';a.href=d[5]}
 function apply(){var t=T[lang];document.documentElement.lang=lang;
- document.querySelectorAll('[data-i]').forEach(function(e){var v=t[e.getAttribute('data-i')];if(v!=null)e.innerHTML=v});
- L.textContent=lang==='es'?'EN':'ES';L.setAttribute('aria-label',lang==='es'?'Change language to English':'Cambiar idioma a español');
- localStorage.setItem('lalm-lang',lang);render()}
-function pick(d){door=d;step=0;$('#d-servir').setAttribute('aria-pressed',d==='servir');$('#d-ayuda').setAttribute('aria-pressed',d==='ayuda');render()}
-$('#d-servir').onclick=function(){pick('servir')};$('#d-ayuda').onclick=function(){pick('ayuda')};
-$('#prev').onclick=function(){if(step>0){step--;render()}};
-$('#next').onclick=function(){step=step<3?step+1:0;render()};
-L.onclick=function(){lang=lang==='es'?'en':'es';apply()};
+ document.querySelectorAll('[data-i]').forEach(function(e){var v=t[e.getAttribute('data-i')];if(v!=null)e.textContent=v});
+ $('#lang').textContent=lang==='es'?'EN':'ES';$('#lang').setAttribute('aria-label',lang==='es'?'Change language to English':'Cambiar idioma a español');
+ localStorage.setItem('lalm-lang',lang);car();doors()}
+$('#lang').onclick=function(){lang=lang==='es'?'en':'es';apply()};
 apply();
 })();
 </script>
