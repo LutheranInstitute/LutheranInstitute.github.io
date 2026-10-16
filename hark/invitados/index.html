@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Clase 0 · Hark Pro para invitados · Asamblea 2026 · Instituto Luterano Latinoamericano</title>
+<meta name="description" content="Clase de 15 minutos para llegar listo el martes 20 de octubre: descarga Hark Pro, saluda y prueba cinco prompts.">
+<meta property="og:title" content="Clase 0 · Hark Pro para invitados">
+<meta property="og:description" content="15 minutos, desde tu teléfono. Llega listo el martes 20 de octubre.">
+<meta property="og:url" content="https://lutheraninstitute.github.io/hark/invitados/">
+<meta name="theme-color" content="#07060b">
+<style>
+:root{--void:#07060b;--card:rgba(14,12,20,.92);--gold:#d4af37;--gold-hot:#ffd873;--line:rgba(212,175,55,.22);--line-hot:rgba(255,216,115,.55);
+--ink:#ece3c6;--ink2:#a59a78;--neon:#00ffaa;--cyan:#5fd8ff;
+--mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--void)}
+body{min-height:100dvh;background:radial-gradient(ellipse at 50% -10%,rgba(212,175,55,.10),transparent 45%),var(--void);color:var(--ink);font:400 16px/1.55 var(--sans)}
+a{color:var(--cyan)}
+.wrap{max-width:680px;margin:0 auto;padding:0 18px 40px}
+.tb{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;padding:calc(10px + env(safe-area-inset-top,0px)) 0 10px;background:linear-gradient(var(--void) 70%,transparent);font:700 13px/1 var(--mono)}
+.tb a{color:var(--gold-hot);text-decoration:none;letter-spacing:.06em}
+.pill{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(0,255,170,.35);color:var(--neon);border-radius:99px;padding:5px 10px;font:600 12px/1 var(--mono)}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--neon);box-shadow:0 0 6px var(--neon);animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{50%{opacity:.3}}
+.kick{font:700 12px/1.3 var(--mono);letter-spacing:.14em;color:var(--ink2);margin-top:22px}
+h1{font:800 32px/1.1 var(--mono);color:var(--gold-hot);margin:8px 0 10px}
+.lead{font-size:17px}
+h2{font:800 14px/1 var(--mono);letter-spacing:.12em;color:var(--gold);margin:30px 0 12px}
+.dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.btn{display:flex;gap:12px;align-items:center;border:1px solid var(--line-hot);border-radius:16px;background:linear-gradient(135deg,rgba(212,175,55,.12),var(--card));padding:14px;text-decoration:none;color:var(--ink)}
+.btn i{font-style:normal;font-size:26px}
+.btn b{display:block;font:800 15px/1.2 var(--mono);color:var(--gold-hot)}
+.btn span{font-size:13px;color:var(--ink2)}
+.qr{display:flex;gap:16px;align-items:center;margin-top:12px;border:1px solid var(--line);border-radius:16px;background:var(--card);padding:14px}
+.qr img{width:120px;height:120px;border-radius:10px;background:#fff;padding:6px;flex-shrink:0}
+.qr p{font-size:14px;color:var(--ink2)}
+.qr b{color:var(--gold-hot);font-family:var(--mono)}
+.step{display:flex;gap:14px;border:1px solid var(--line);border-radius:16px;background:var(--card);padding:14px;margin-bottom:10px}
+.n{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:rgba(212,175,55,.12);border:1px solid var(--line-hot);display:flex;align-items:center;justify-content:center;font:800 16px/1 var(--mono);color:var(--gold-hot)}
+.step b{display:block;font:700 16px/1.3 var(--sans)}
+.step span{display:block;font-size:14px;color:var(--ink2);margin-top:2px}
+.prompts{border:1px solid var(--line);border-radius:14px;background:rgba(10,8,15,.96);overflow:hidden}
+.prompts .bar{padding:8px 12px;border-bottom:1px solid var(--line);font:700 11px/1 var(--mono);letter-spacing:.1em;color:var(--gold)}
+.prompts p{padding:10px 12px;border-top:1px solid rgba(212,175,55,.08);font:500 14px/1.45 var(--mono);color:var(--ink)}
+.prompts p::before{content:">_ ";color:var(--neon)}
+table{width:100%;border-collapse:collapse;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card);font-size:14px}
+th,td{padding:10px 12px;text-align:left;border-top:1px solid var(--line)}
+th{font:700 12px/1 var(--mono);letter-spacing:.08em;color:var(--gold);border-top:0}
+td b{color:var(--gold-hot);font-family:var(--mono)}
+.tips li{margin:0 0 8px 20px;color:var(--ink)}
+.tips li b{color:var(--gold-hot)}
+.links{display:grid;gap:8px}
+.links a{display:flex;justify-content:space-between;border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--card);text-decoration:none;color:var(--ink);font:600 14px/1.3 var(--mono)}
+.links a::after{content:"→";color:var(--gold-hot)}
+.note{margin-top:16px;font-size:13px;color:var(--ink2);border-left:3px solid var(--line-hot);padding-left:12px}
+footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--line);text-align:center;font:600 12px/1.7 var(--mono);color:var(--ink2)}
+footer a{color:var(--ink)}
+
+.check{list-style:none}.check li{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:14px;background:var(--card);padding:12px 14px;margin-bottom:8px;cursor:pointer}
+.check input{width:22px;height:22px;accent-color:#d4af37;flex-shrink:0}.check li.ok{border-color:rgba(0,255,170,.45)}.check li.ok span{color:var(--neon)}
+.meter{height:8px;border-radius:99px;background:rgba(212,175,55,.12);overflow:hidden;margin:6px 0 4px}.meter i{display:block;height:100%;width:0;background:var(--gold);transition:width .3s}
+.lang{border:1px solid var(--line-hot);background:transparent;color:var(--gold-hot);border-radius:99px;padding:5px 10px;font:700 12px/1 var(--mono);appearance:none;-webkit-appearance:none}
+.prompts p{cursor:pointer}.prompts p small{display:block;font:400 12px/1.3 var(--sans);color:var(--ink2);margin-top:3px}
+@media (prefers-reduced-motion:reduce){.dot{animation:none}}
+</style></head><body><div class="wrap">
+<div class="tb"><a href="../">← L:// RECURSOS</a><button class="lang" id="lang" aria-label="Cambiar idioma">EN</button></div>
+<p class="kick" data-en="CLASS 0 · GUESTS · GENERAL ASSEMBLY 2026">CLASE 0 · INVITADOS · ASAMBLEA 2026</p>
+<h1 data-en="Arrive ready on Tuesday">Llega listo el martes</h1>
+<p class="lead" data-en="15 minutes from your phone, before Tuesday, October 20. Install Hark Pro, say hello and try five prompts, so on Tuesday nothing is new.">15 minutos desde tu teléfono, antes del martes 20 de octubre. Instala Hark Pro, salúdalo y prueba cinco prompts, para que el martes nada sea nuevo.</p>
+<p style="margin-top:12px"><span class="pill"><span class="dot"></span><span data-en="Self-paced · free · Spanish and English">A tu ritmo · gratis · español e inglés</span></span></p>
+
+<h2 data-en="1 · DOWNLOAD (3 MIN)">1 · DESCARGA (3 MIN)</h2>
+<div class="dl">
+<a class="btn" href="https://apps.apple.com/us/app/hark-pro/id6772362941"><i>🍎</i><div><b>iPhone</b><span>App Store</span></div></a>
+<a class="btn" href="https://play.google.com/store/apps/details?id=com.hark.android"><i>🤖</i><div><b>Android</b><span>Google Play</span></div></a>
+<a class="btn" href="https://hark.com/download"><i>🌐</i><div><b data-en="Browser">Navegador</b><span>hark.com/download</span></div></a>
+</div>
+<div class="qr"><img src="../../assets/hark-download-qr.png" alt="QR hark.com/download"><p data-en="On a computer? Scan with your phone's camera to open hark.com/download.">¿Estás en computadora? Escanea con la cámara de tu teléfono para abrir <b>hark.com/download</b>.</p></div>
+
+<h2 data-en="2 · SAY HELLO (2 MIN)">2 · SALÚDALO (2 MIN)</h2>
+<div class="step"><div class="n">1</div><div><b data-en="Create your account">Crea tu cuenta</b><span data-en="Open Hark Pro and sign in with your email or Google.">Abre Hark Pro y entra con tu correo o con Google.</span></div></div>
+<div class="step"><div class="n">2</div><div><b data-en="Write like you'd text a friend">Escribe como le escribirías a un amigo</b><span data-en="Spanish, English or both. You can also talk to it.">En español, inglés o los dos. También puedes hablarle.</span></div></div>
+
+<h2 data-en="3 · FIVE PROMPTS FOR TUESDAY (8 MIN)">3 · CINCO PROMPTS PARA EL MARTES (8 MIN)</h2>
+<div class="prompts"><div class="bar" data-en="TAP TO COPY · PASTE IN HARK">TOCA PARA COPIAR · PÉGALO EN HARK</div>
+<p data-en="Hi Hark, I'm a guest at the Assembly on Tuesday, October 20. What can you do for me?">Hola Hark, soy invitado(a) de la Asamblea del martes 20 de octubre. ¿Qué puedes hacer por mí?</p>
+<p data-en="Remind me on Tuesday, October 20, 15 minutes before the Assembly starts.">Recuérdame el martes 20 de octubre, 15 minutos antes de que empiece la Asamblea.</p>
+<p data-en="Translate into Spanish: Many Peoples, One Gospel.">Traduce al inglés: Muchos pueblos, un solo Evangelio.</p>
+<p data-en="Summarize this document in 5 points (attach a PDF or photo).">Resume este documento en 5 puntos (adjunta un PDF o una foto).</p>
+<p data-en="Here are my notes: … Turn them into a short summary to share.">Estas son mis notas: … Conviértelas en un resumen corto para compartir.</p>
+</div>
+<p class="note" id="copied" aria-live="polite"></p>
+
+<h2 data-en="4 · GOOD PRACTICES (2 MIN)">4 · BUENAS PRÁCTICAS (2 MIN)</h2>
+<ul class="tips">
+<li data-en="&lt;b&gt;You decide.&lt;/b&gt; Hark asks before sending, buying or booking anything for you."><b>Tú decides.</b> Hark pregunta antes de enviar, comprar o reservar algo por ti.</li>
+<li data-en="&lt;b&gt;Never type passwords or cards in the chat.&lt;/b&gt; Hark uses secure forms for that."><b>Nunca escribas contraseñas ni tarjetas en el chat.</b> Hark usa formularios seguros para eso.</li>
+<li data-en="&lt;b&gt;Check what matters.&lt;/b&gt; Names, dates and figures: confirm them before sharing."><b>Verifica lo importante.</b> Nombres, fechas y cifras: confírmalos antes de compartir.</li>
+<li data-en="&lt;b&gt;Private stays private.&lt;/b&gt; Don't paste confidential documents you aren't authorized to share."><b>Lo privado, privado.</b> No pegues documentos confidenciales que no te toca compartir.</li>
+</ul>
+
+<h2 data-en="5 · READY FOR TUESDAY?">5 · ¿LISTO PARA EL MARTES?</h2>
+<div class="meter"><i id="bar"></i></div><p class="note" style="margin:0 0 10px;border:0;padding:0" id="count"></p>
+<ul class="check" id="list">
+<li><input type="checkbox" id="c1"><span data-en="Hark Pro installed">Hark Pro instalado</span></li>
+<li><input type="checkbox" id="c2"><span data-en="I signed in and said hello">Entré y lo saludé</span></li>
+<li><input type="checkbox" id="c3"><span data-en="I set my Tuesday reminder">Puse mi recordatorio del martes</span></li>
+<li><input type="checkbox" id="c4"><span data-en="I tried translate and summarize">Probé traducir y resumir</span></li>
+<li><input type="checkbox" id="c5"><span data-en="I know: Hark asks, I decide">Lo sé: Hark pregunta, yo decido</span></li>
+</ul>
+<p class="note" data-en="On Tuesday: bring your phone with Hark open. We'll use prompts 3 to 5 together.">El martes: trae tu teléfono con Hark abierto. Usaremos juntos los prompts 3 a 5.</p>
+
+<h2 data-en="QUESTIONS?">¿DUDAS?</h2>
+<div class="links">
+<a href="https://hark.com/using-hark" data-en="How to use Hark (official)">Cómo usar Hark (oficial)</a>
+<a href="../" data-en="Institute resource guide">Guía de recursos del Instituto</a>
+<a href="https://whatsapp.com/channel/0029Vb8EIghJuyABUPq3ky0n" data-en="Institute WhatsApp channel">Canal de WhatsApp del Instituto</a>
+</div>
+
+<footer>Instituto Luterano Latinoamericano · L:// Aprender · æ:// Construir · æQR:// Compartir<br>
+<a href="https://buymeacoffee.com/daollc">☕ Apoya al Instituto</a> · ☩ Soli Deo Gloria</footer>
+</div>
+<script>
+const els=[...document.querySelectorAll('[data-en]')];els.forEach(e=>e.dataset.es=e.innerHTML);
+let en=false;document.getElementById('lang').onclick=()=>{en=!en;document.documentElement.lang=en?'en':'es';
+els.forEach(e=>e.innerHTML=en?e.dataset.en:e.dataset.es);document.getElementById('lang').textContent=en?'ES':'EN';upd()};
+document.querySelectorAll('.prompts p').forEach(p=>p.onclick=()=>{const t=p.textContent;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>{document.getElementById('copied').textContent=en?'Copied ✓ Paste it in Hark.':'Copiado ✓ Pégalo en Hark.'}).catch(()=>{})});
+const K='hark-invitados-2026';const st=JSON.parse(localStorage.getItem(K)||'{}');
+const boxes=[...document.querySelectorAll('#list input')];
+function upd(){const n=boxes.filter(b=>b.checked).length;boxes.forEach(b=>b.parentElement.classList.toggle('ok',b.checked));
+document.getElementById('bar').style.width=(n/boxes.length*100)+'%';
+document.getElementById('count').textContent=n===boxes.length?(en?'Ready for Tuesday ✓':'Listo para el martes ✓'):(en?`${n} of ${boxes.length}`:`${n} de ${boxes.length}`)}
+boxes.forEach(b=>{b.checked=!!st[b.id];b.onchange=()=>{st[b.id]=b.checked;localStorage.setItem(K,JSON.stringify(st));upd()}});
+document.querySelectorAll('#list li').forEach(li=>li.onclick=e=>{if(e.target.tagName!=='INPUT'){const b=li.querySelector('input');b.checked=!b.checked;b.onchange()}});
+upd();
+</script></body></html>
