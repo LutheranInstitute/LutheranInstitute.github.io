@@ -1,7 +1,7 @@
 {
   "schema": "osw.whatsapp.v1",
   "owner": "LutheranInstitute",
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "principle": "Context may propagate. Authority does not.",
   "channels": [
     {
@@ -42,6 +42,19 @@
         "en"
       ],
       "status": "active",
+      "agent": null
+    },
+    {
+      "id": "elearnlatam",
+      "type": "group",
+      "name": "#eLearnLATAM",
+      "url": "https://chat.whatsapp.com/IBfCSjTAA3h6OlppM8mUzh",
+      "audience": "grupo principal del Diplomado en Transformación Digital con Especialización en IA · comunidad ESCUELA de TECNOLOGÍA",
+      "lang": [
+        "es"
+      ],
+      "status": "active",
+      "priority": "principal (igual que Google Classroom)",
       "agent": null
     },
     {
