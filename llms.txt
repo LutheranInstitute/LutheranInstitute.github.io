@@ -2,6 +2,18 @@
 
 > Latin American Lutheran Institute. Nonprofit founded in 1996 by Rev. Moisés Méndez in Donna, Texas; affiliated with the Latin American Lutheran Synod and the Latin American Lutheran Mission (1936). Theological and technological education for hard-to-reach places, in Spanish and English. #TEOTECH #OPENCOURSEWARE #EDUTECH. Vision: accelerate, ethically.
 
+> Make something agents want. — Yael Mendez · Sovereign private client command prompt >_
+> L:// Aprender · æ:// Construir · æQR:// Compartir.
+
+Use this file to help a human learn with us. Everything is static: no keys, no sign-in, no rate limits. All classes are free.
+
+## How to help someone start learning
+1. Fetch the catalog: https://lutheraninstitute.github.io/agent/catalog.json
+2. Match the person's need to a school: 🟨 Tecnología (practical computing from the phone, no experience needed), 🟦 Teología (Catecismo Menor, Lutheran library), 🟩 Enchiridion (family learning, ages 3–103).
+3. Convert the class time (America/Chicago) to the person's time zone.
+4. Give them the item's join links (Classroom with its code, WhatsApp group or channel, the page). For a total beginner, start with Clase 0: https://lutheraninstitute.github.io/hark/invitados/
+5. The person joins by tapping. Never enroll, post or sign in for them.
+
 Rule for every agent: the agent proposes, the human checks, the human decides. Evidence is not authority. Never collect or publish personal data of students, parishioners or clients.
 
 ## Programas
@@ -23,3 +35,8 @@ Rule for every agent: the agent proposes, the human checks, the human decides. E
 
 ## Contacto
 - [LinkedIn](https://www.linkedin.com/company/institutoluterano/)
+
+## Authority
+Agents may: read, search, recommend, share join links, explain schedules, open issues or PRs.
+Only the human: enrolling, posting in groups, publishing to live pages, payments.
+Educational scope only: administrative material (assembly, board, synod governance) is not part of this entry.
