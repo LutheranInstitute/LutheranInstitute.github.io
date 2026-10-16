@@ -96,12 +96,25 @@ footer .m{color:var(--ink);font-weight:800}
 @media (max-width:440px){.nodes{grid-template-columns:1fr 1fr}.fan{display:none}.nodes{margin-top:10px}}
 @media (min-width:640px){.mv{flex-basis:46%}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+html[data-th="y"]{--o:#F2C200;--v:#ff8a00;--t:#ffe066;--gold:#F2C200;--bg:#0d0a02}
+html[data-th="b"]{--o:#1E5BD8;--v:#5b8cff;--t:#4cc3ff;--gold:#7fb0ff;--bg:#030712}
+html[data-th="g"]{--o:#1FA45A;--v:#0bd18a;--t:#9be15d;--gold:#5ee08f;--bg:#020b06}
+html,body{transition:background .5s}
+.th{display:flex;gap:5px;align-items:center}
+.th button{width:16px;height:16px;padding:0;border-radius:3px;border:1.5px solid rgba(255,255,255,.35);cursor:pointer;opacity:.55;transition:transform .2s,opacity .2s}
+.th button[aria-pressed="true"]{opacity:1;transform:scale(1.2);border-color:#fff}
+.th .y{background:#F2C200}.th .b{background:#1E5BD8}.th .g{background:#1FA45A}
+.th .rc{width:auto;height:auto;background:none;border:0;font-size:15px;line-height:1;opacity:.75}
+.th .rc[aria-pressed="true"]{animation:spin 6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (max-width:380px){nav .chip{display:none}}
 </style>
 </head>
 <body>
 <div class="mesh" aria-hidden="true"><i></i><i></i><i></i></div>
 <div class="wrap">
-<nav aria-label="Navegación"><a href="https://lutheraninstitute.github.io/">← SEDE</a><div class="r"><span class="chip">🧪 LAB 03</span><button id="lang">EN</button></div></nav>
+<nav aria-label="Navegación"><a href="https://lutheraninstitute.github.io/">← SEDE</a><div class="r"><span class="th" role="group" aria-label="Tono"><button class="y" data-t="y" aria-label="Amarillo"></button><button class="b" data-t="b" aria-label="Azul"></button><button class="g" data-t="g" aria-label="Verde"></button><button class="rc" data-t="rc" aria-label="Ciclo de tonos">♻️</button></span><span class="chip">🧪 LAB 03</span><button id="lang">EN</button></div></nav>
 
 <header>
   <div class="kick">$æ · L://MISIÓN<br><span data-i="since"></span></div>
@@ -215,6 +228,12 @@ function apply(){var t=T[lang];document.documentElement.lang=lang;
  $('#lang').textContent=lang==='es'?'EN':'ES';$('#lang').setAttribute('aria-label',lang==='es'?'Change language to English':'Cambiar idioma a español');
  localStorage.setItem('lalm-lang',lang);car();doors()}
 $('#lang').onclick=function(){lang=lang==='es'?'en':'es';apply()};
+var ths=['y','b','g'],thm=localStorage.getItem('lalm-th')||'',cyc=null;
+function setTh(t){document.documentElement.setAttribute('data-th',t);document.querySelectorAll('.th button').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-t')===t||(b.getAttribute('data-t')==='rc'&&!!cyc))})}
+function pickTh(t){clearInterval(cyc);cyc=null;if(t==='rc'){var i=0;cyc=setInterval(function(){i=(i+1)%3;setTh(ths[i])},5000);setTh(ths[0]);localStorage.setItem('lalm-th','');return}
+ if(document.documentElement.getAttribute('data-th')===t){t=''}localStorage.setItem('lalm-th',t);setTh(t)}
+document.querySelectorAll('.th button').forEach(function(b){b.onclick=function(){pickTh(b.getAttribute('data-t'))}});
+setTh(thm);
 apply();
 })();
 </script>
