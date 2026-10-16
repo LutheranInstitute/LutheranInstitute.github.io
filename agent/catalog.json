@@ -1,0 +1,337 @@
+{
+  "schema": "ae.catalog/0.1",
+  "id": "aeqr://lutheraninstitute/agent/catalog",
+  "name": "Instituto Luterano Latinoamericano · catálogo para agentes",
+  "motto": "Make something agents want. — Yael Mendez · Sovereign private client command prompt >_",
+  "updated": "2026-10-16",
+  "principle": "Agents propose; the human checks; the human decides. Context can be inherited. Authority cannot.",
+  "entry": "L://COLOQUIO",
+  "flow": [
+    "Escanear",
+    "Elegir escuela",
+    "Aprender",
+    "Construir",
+    "Publicar",
+    "Enseñar"
+  ],
+  "schools": {
+    "tecnologia": "🟨 Tecnología · Diplomado",
+    "teologia": "🟦 Teología · Escuela de Teología",
+    "enchiridion": "🟩 Enchiridion · 3–103 años"
+  },
+  "authority": {
+    "agents_may": [
+      "read",
+      "search",
+      "recommend",
+      "share join links with the person who asked",
+      "explain schedules in the person's time zone",
+      "open issues or PRs"
+    ],
+    "human_only": [
+      "enrolling on someone's behalf",
+      "posting in groups",
+      "publishing to live pages",
+      "any payment"
+    ],
+    "never": [
+      "collect or publish personal data of students, parishioners or clients"
+    ]
+  },
+  "items": [
+    {
+      "id": "sede",
+      "kind": "hub",
+      "name": "Sede del Instituto",
+      "school": null,
+      "url": "https://lutheraninstitute.github.io/",
+      "lang": [
+        "es",
+        "en"
+      ],
+      "cost": "free",
+      "action": {
+        "open": "https://lutheraninstitute.github.io/"
+      }
+    },
+    {
+      "id": "clase-0",
+      "kind": "class",
+      "name": "Clase 0 · Hark Pro para invitados (15 min)",
+      "school": "tecnologia",
+      "audience": "sin experiencia previa, desde el teléfono",
+      "url": "https://lutheraninstitute.github.io/hark/invitados/",
+      "lang": [
+        "es",
+        "en"
+      ],
+      "cost": "free",
+      "action": {
+        "open": "https://lutheraninstitute.github.io/hark/invitados/"
+      }
+    },
+    {
+      "id": "diplomado",
+      "kind": "program",
+      "name": "Diplomado en Transformación Digital · TEOTECH",
+      "school": "tecnologia",
+      "color": "🟨",
+      "schedule": {
+        "weekday": "Tuesday",
+        "time": "19:00",
+        "tz": "America/Chicago"
+      },
+      "url": "https://lutheraninstitute.github.io/diplomado-agentico/",
+      "lang": [
+        "es"
+      ],
+      "cost": "free",
+      "summary": "Uso práctico de las computadoras sin necesidad de experiencia: comando y control de tu teléfono, no a la inversa.",
+      "action": {
+        "join_classroom": "https://classroom.google.com/c/NzA3NjQyMTc1MzI2?cjc=fpbc3kw",
+        "classroom_code": "fpbc3kw",
+        "join_whatsapp": "https://chat.whatsapp.com/IBfCSjTAA3h6OlppM8mUzh",
+        "template_repo": "https://github.com/LutheranInstitute/mi-diplomado"
+      }
+    },
+    {
+      "id": "clase-m0-l00",
+      "kind": "lesson",
+      "name": "Construye tu presencia en internet",
+      "school": "tecnologia",
+      "parent": "diplomado",
+      "url": "https://lutheraninstitute.github.io/diplomado-agentico/clases/m0-l00/",
+      "lang": [
+        "es"
+      ],
+      "cost": "free",
+      "action": {
+        "open": "https://lutheraninstitute.github.io/diplomado-agentico/clases/m0-l00/"
+      }
+    },
+    {
+      "id": "clase-m1-s1",
+      "kind": "lesson",
+      "name": "Qué es (y qué no es) un modelo de lenguaje",
+      "school": "tecnologia",
+      "parent": "diplomado",
+      "url": "https://lutheraninstitute.github.io/diplomado-agentico/clases/m1-s1/",
+      "lang": [
+        "es"
+      ],
+      "cost": "free",
+      "action": {
+        "open": "https://lutheraninstitute.github.io/diplomado-agentico/clases/m1-s1/"
+      }
+    },
+    {
+      "id": "clase-m1-s2",
+      "kind": "lesson",
+      "name": "Cómo usar Hark Pro",
+      "school": "tecnologia",
+      "parent": "diplomado",
+      "url": "https://lutheraninstitute.github.io/diplomado-agentico/clases/m1-s2/",
+      "lang": [
+        "es"
+      ],
+      "cost": "free",
+      "action": {
+        "open": "https://lutheraninstitute.github.io/diplomado-agentico/clases/m1-s2/"
+      }
+    },
+    {
+      "id": "clase-m1-s3",
+      "kind": "lesson",
+      "name": "GitHub para todos · aprender y enseñar",
+      "school": "tecnologia",
+      "parent": "diplomado",
+      "url": "https://lutheraninstitute.github.io/diplomado-agentico/clases/m1-s3/",
+      "lang": [
+        "es"
+      ],
+      "cost": "free",
+      "action": {
+        "open": "https://lutheraninstitute.github.io/diplomado-agentico/clases/m1-s3/"
+      }
+    },
+    {
+      "id": "clase-m1-s4",
+      "kind": "lesson",
+      "name": "Escuela de Hermes · mezcla de modelos gratis",
+      "school": "tecnologia",
+      "parent": "diplomado",
+      "url": "https://lutheraninstitute.github.io/diplomado-agentico/clases/m1-s4/",
+      "lang": [
+        "es"
+      ],
+      "cost": "free",
+      "action": {
+        "open": "https://lutheraninstitute.github.io/diplomado-agentico/clases/m1-s4/"
+      }
+    },
+    {
+      "id": "clase-m4-c1",
+      "kind": "lesson",
+      "name": "Git como historia",
+      "school": "tecnologia",
+      "parent": "diplomado",
+      "url": "https://lutheraninstitute.github.io/diplomado-agentico/clases/m4-c1/",
+      "lang": [
+        "es"
+      ],
+      "cost": "free",
+      "action": {
+        "open": "https://lutheraninstitute.github.io/diplomado-agentico/clases/m4-c1/"
+      }
+    },
+    {
+      "id": "clase-m4-c2",
+      "kind": "lesson",
+      "name": "GitHub y colaboración",
+      "school": "tecnologia",
+      "parent": "diplomado",
+      "url": "https://lutheraninstitute.github.io/diplomado-agentico/clases/m4-c2/",
+      "lang": [
+        "es"
+      ],
+      "cost": "free",
+      "action": {
+        "open": "https://lutheraninstitute.github.io/diplomado-agentico/clases/m4-c2/"
+      }
+    },
+    {
+      "id": "clase-m4-c3",
+      "kind": "lesson",
+      "name": "Programación agéntica",
+      "school": "tecnologia",
+      "parent": "diplomado",
+      "url": "https://lutheraninstitute.github.io/diplomado-agentico/clases/m4-c3/",
+      "lang": [
+        "es"
+      ],
+      "cost": "free",
+      "action": {
+        "open": "https://lutheraninstitute.github.io/diplomado-agentico/clases/m4-c3/"
+      }
+    },
+    {
+      "id": "clase-m4-c4",
+      "kind": "lesson",
+      "name": "Proyecto para mi comunidad",
+      "school": "tecnologia",
+      "parent": "diplomado",
+      "url": "https://lutheraninstitute.github.io/diplomado-agentico/clases/m4-c4/",
+      "lang": [
+        "es"
+      ],
+      "cost": "free",
+      "action": {
+        "open": "https://lutheraninstitute.github.io/diplomado-agentico/clases/m4-c4/"
+      }
+    },
+    {
+      "id": "clase-d0-docentes",
+      "kind": "lesson",
+      "name": "Guía docente · Onboarding y publicación",
+      "school": "tecnologia",
+      "parent": "diplomado",
+      "url": "https://lutheraninstitute.github.io/diplomado-agentico/clases/d0-docentes/",
+      "lang": [
+        "es"
+      ],
+      "cost": "free",
+      "action": {
+        "open": "https://lutheraninstitute.github.io/diplomado-agentico/clases/d0-docentes/"
+      }
+    },
+    {
+      "id": "escuela-teologia",
+      "kind": "program",
+      "name": "Escuela de Teología · Catecismo Menor",
+      "school": "teologia",
+      "color": "🟦",
+      "schedule": {
+        "weekday": "Saturday",
+        "time": "19:00",
+        "tz": "America/Chicago"
+      },
+      "url": "https://lutheraninstitute.github.io/escuela-teologia/",
+      "lang": [
+        "es"
+      ],
+      "cost": "free",
+      "action": {
+        "join_classroom": "https://classroom.google.com/c/ODA2NjU2ODIxNTg0?cjc=edejxhep",
+        "classroom_code": "edejxhep",
+        "follow_whatsapp": "https://whatsapp.com/channel/0029VazbUxp4dTnKRaf7e03a"
+      }
+    },
+    {
+      "id": "biblioteca",
+      "kind": "library",
+      "name": "Biblioteca Luterana",
+      "school": "teologia",
+      "url": "https://lutheraninstitute.github.io/teologia/",
+      "lang": [
+        "es"
+      ],
+      "cost": "free",
+      "action": {
+        "open": "https://lutheraninstitute.github.io/teologia/"
+      }
+    },
+    {
+      "id": "enchiridion",
+      "kind": "program",
+      "name": "Enchiridion · 3–103 años",
+      "school": "enchiridion",
+      "color": "🟩",
+      "summary": "Aprendizaje familiar y en casa para varias generaciones.",
+      "url": "https://lutheraninstitute.github.io/enchiridion/",
+      "lang": [
+        "es"
+      ],
+      "cost": "free",
+      "action": {
+        "open": "https://lutheraninstitute.github.io/enchiridion/"
+      }
+    },
+    {
+      "id": "ensenar",
+      "kind": "page",
+      "name": "Esto puedo enseñar",
+      "school": null,
+      "url": "https://lutheraninstitute.github.io/ensenar/",
+      "lang": [
+        "es"
+      ],
+      "cost": "free",
+      "action": {
+        "open": "https://lutheraninstitute.github.io/ensenar/"
+      }
+    },
+    {
+      "id": "comunidad-tech",
+      "kind": "community",
+      "name": "Comunidad Tech 🏗️🏛️ (WhatsApp)",
+      "school": "tecnologia",
+      "audience": "constructores de 3 a 103 años",
+      "url": "https://chat.whatsapp.com/JrInHoMJ76r4xmXLNwva9r",
+      "action": {
+        "join_whatsapp": "https://chat.whatsapp.com/JrInHoMJ76r4xmXLNwva9r"
+      }
+    },
+    {
+      "id": "canal-instituto",
+      "kind": "community",
+      "name": "Canal INSTITUTO (WhatsApp)",
+      "school": null,
+      "url": "https://whatsapp.com/channel/0029Vb8EIghJuyABUPq3ky0n",
+      "action": {
+        "follow_whatsapp": "https://whatsapp.com/channel/0029Vb8EIghJuyABUPq3ky0n"
+      }
+    }
+  ],
+  "donate": "https://buymeacoffee.com/daollc",
+  "license": "CC BY-NC-SA 4.0"
+}
