@@ -210,6 +210,7 @@ header .motto{margin-left:auto;margin-right:auto;text-align:center}
 .tile{display:flex;flex-direction:column;gap:4px;padding:10px 8px;border-radius:12px;border:1px solid var(--line);border-top:4px solid;background:var(--card);text-decoration:none;color:var(--ink)!important}
 .tile b{font:800 11px/1.1 var(--mono)}.tile span{font:500 11px/1.25 var(--mono);color:var(--ink2)}
 .tile.tech{border-top-color:var(--sc-tech)}.tile.teo{border-top-color:var(--sc-teo)}.tile.ench{border-top-color:var(--sc-ench)}
+.prog .pq{float:right;width:72px;height:72px;margin:0 0 6px 10px;background:#fff;border-radius:6px}.envq{display:flex;gap:12px;align-items:center;margin:0 4px 12px}.envq img{width:120px;height:120px;background:#fff;border-radius:8px;flex:none}.envq i{font:600 11px/1.3 var(--mono);font-style:normal;color:var(--ink2)}
 .tile .qr{display:block;width:100%;max-width:96px;height:auto;aspect-ratio:1;margin:6px auto 0;background:#fff;border-radius:6px}.tile i{font:600 8px/1.2 var(--mono);color:var(--ink2);text-align:center;font-style:normal;word-break:break-all}
 .lite *{animation:none!important;transition:none!important}
 .ghfollow{display:flex;align-items:center;justify-content:center;gap:8px;margin:0 0 12px;padding:12px;border-radius:12px;border:1px solid var(--line-hot,var(--line));background:var(--card);color:var(--ink)!important;font:700 14px/1 var(--mono);text-decoration:none}
@@ -321,12 +322,12 @@ header .motto{margin-left:auto;margin-right:auto;text-align:center}
   </details>
 
   <details class="sec" id="s-envivo"><summary><h2>EN VIVO · NUESTRO MAPA</h2></summary>
-  <p class="small" style="margin:0 4px 10px">Una sola cadena: medir → diseñar → publicar → vender → autorizar. Cada paso deja un recibo y tú decides al final.</p>
-  <a class="prog" href="https://lutheraninstitute.github.io/conectoma/"><span class="k">① MEDIR · EN VIVO</span><span class="t">Conectoma del Instituto</span><span class="d">44 forks, 31 equipos que nos enseñan con su código y lo que ya construimos encima. Recibo SHA-256 verificable.</span></a>
-  <a class="prog sc tech" href="https://lutheraninstitute.github.io/aeee-lab/lab/diseno/"><span class="k">② DISEÑAR · LABORATORIO</span><span class="t">Taller paramétrico</span><span class="d">Diseña con código en tu celular y exporta un .3dm real para Rhino, con su recibo.</span></a>
+  <div class="envq"><img src="aeqr/envivo.svg" alt="æQR En vivo · nuestro mapa" width="120" height="120" loading="lazy"><span><span class="small" style="display:block;margin:0 0 6px">Una sola cadena: medir → diseñar → publicar → vender → autorizar. Cada paso deja un recibo y tú decides al final.</span><i>æQR://L/nuevo · escanéalo o compártelo: siempre lleva a lo más nuevo. <a href="aeqr/post/">Descargar para publicar</a></i></span></div>
+  <a class="prog" href="https://lutheraninstitute.github.io/conectoma/"><img class="pq" src="aeqr/conectoma.svg" alt="æQR conectoma" width="72" height="72" loading="lazy"><span class="k">① MEDIR · EN VIVO</span><span class="t">Conectoma del Instituto</span><span class="d">44 forks, 31 equipos que nos enseñan con su código y lo que ya construimos encima. Recibo SHA-256 verificable.</span></a>
+  <a class="prog sc tech" href="https://lutheraninstitute.github.io/aeee-lab/lab/diseno/"><img class="pq" src="aeqr/taller.svg" alt="æQR taller" width="72" height="72" loading="lazy"><span class="k">② DISEÑAR · LABORATORIO</span><span class="t">Taller paramétrico</span><span class="d">Diseña con código en tu celular y exporta un .3dm real para Rhino, con su recibo.</span></a>
   <a class="prog sc tech" href="https://lutheraninstitute.github.io/diplomado-agentico/clases/m0-l00/"><span class="k">③ PUBLICAR · EN CURSO</span><span class="t">Tu presencia en internet</span><span class="d">Tu agente propone, tú decides y GitHub Pages publica.</span></a>
-  <a class="prog sc tech" href="https://lutheraninstitute.github.io/aeee-lab/lab/instant-pos/"><span class="k">④ VENDER · LABORATORIO</span><span class="t">Instant POS</span><span class="d">Nombre y menú → tienda con æQR. El agente prepara, el comprador paga. Dinero de práctica.</span></a>
-  <a class="prog" href="https://privateclient.ai/key/"><span class="k">⑤ AUTORIZAR · COLABORACIÓN I+D</span><span class="t">PRIVATE CLIENT · pc://key</span><span class="d">Tu rostro o tu huella firman cada acto. Los secretos se cifran en tu dispositivo. Colaboración con Yæl Méndez, director de I+D.</span></a>
+  <a class="prog sc tech" href="https://lutheraninstitute.github.io/aeee-lab/lab/instant-pos/"><img class="pq" src="aeqr/pos.svg" alt="æQR pos" width="72" height="72" loading="lazy"><span class="k">④ VENDER · LABORATORIO</span><span class="t">Instant POS</span><span class="d">Nombre y menú → tienda con æQR. El agente prepara, el comprador paga. Dinero de práctica.</span></a>
+  <a class="prog" href="https://privateclient.ai/key/"><img class="pq" src="aeqr/pckey.svg" alt="æQR pckey" width="72" height="72" loading="lazy"><span class="k">⑤ AUTORIZAR · COLABORACIÓN I+D</span><span class="t">PRIVATE CLIENT · pc://key</span><span class="d">Tu rostro o tu huella firman cada acto. Los secretos se cifran en tu dispositivo. Colaboración con Yæl Méndez, director de I+D.</span></a>
 
   </details>
 
@@ -566,5 +567,6 @@ document.getElementById("cf").addEventListener("submit",function(e){e.preventDef
 document.querySelectorAll(".chips button").forEach(function(b){b.addEventListener("click",function(){run(b.dataset.c);});});
 })();
 </script>
+<script>(function(){function o(){var h=location.hash.slice(1);if(h){var d=document.getElementById(h);if(d&&d.tagName==="DETAILS"){d.open=true;d.scrollIntoView();}}}window.addEventListener("hashchange",o);o();})();</script>
 </body>
 </html>
