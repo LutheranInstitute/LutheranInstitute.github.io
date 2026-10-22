@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Conectoma · L:// Instituto Luterano Latinoamericano</title>
+<meta name="description" content="Conectoma medido del Instituto Luterano Latinoamericano en GitHub: forks, upstreams y trabajo propio. #OpenCourseWare">
+<style>
+:root{--void:#07080a;--ink:#e9e4d6;--dim:#9a968a;--gold:#D4AF37;--green:#5fbf7f;--line:#2a2b2e;--grey:#5d615e}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--void);color:var(--ink);font:16px/1.5 ui-monospace,"JetBrains Mono",SFMono-Regular,Menlo,monospace}
+a{color:var(--gold)}
+header{padding:20px 18px 8px;max-width:980px;margin:0 auto}
+.k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+h1{font:800 clamp(28px,7vw,46px)/1.05 system-ui,-apple-system,"Helvetica Neue",sans-serif;letter-spacing:-.01em;margin:6px 0 8px;text-transform:uppercase}
+h1 b{color:var(--gold);font-weight:800}
+.lede{color:var(--dim);margin:0 0 12px;max-width:62ch}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;max-width:980px;margin:0 auto;padding:0 18px}
+.stat{border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.stat b{display:block;font-size:22px;color:var(--ink)}
+.stat span{font-size:12px;color:var(--dim)}
+.stat.gold b{color:var(--gold)}
+main{max-width:980px;margin:0 auto;padding:12px 18px 40px}
+.bar{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.chip{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:8px 12px;font:inherit;font-size:13px;min-height:40px;cursor:pointer}
+.chip[aria-pressed=true]{border-color:var(--gold);color:var(--gold)}
+.stage{position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;aspect-ratio:9/12;max-height:78vh;width:100%;background:radial-gradient(circle at 50% 50%,#121318 0,#07080a 70%)}
+@media (min-width:760px){.stage{aspect-ratio:16/10}}
+canvas{display:block;width:100%;height:100%;touch-action:none}
+.hud{position:absolute;left:10px;bottom:8px;font-size:11px;color:var(--dim);pointer-events:none}
+.panel{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:10px;min-height:84px}
+.panel h2{font-size:16px;margin:0 0 4px;color:var(--gold)}
+.panel p{margin:2px 0;font-size:14px}
+.panel ul{margin:6px 0 0;padding-left:18px;font-size:14px}
+.own{color:var(--gold)}
+section{margin-top:22px}
+section h3{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin:0 0 8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
+.card{border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14px}
+.card b{color:var(--green)}
+.card small{display:block;color:var(--dim);font-size:12px}
+.receipt{border:1px dashed var(--gold);border-radius:12px;padding:12px 14px;font-size:13px;word-break:break-all}
+.receipt button{margin-top:8px}
+.ok{color:var(--green)}.bad{color:#e06b5b}
+footer{max-width:980px;margin:0 auto;padding:0 18px 30px;color:var(--dim);font-size:13px}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--dim);margin-top:6px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+</style>
+</head>
+<body>
+<header>
+  <div class="k">L:// · Instituto Luterano Latinoamericano · #OpenCourseWare</div>
+  <h1>Conectoma <b>del Instituto</b></h1>
+  <p class="lede">Sobre hombros de gigantes. Cada orbe es un equipo que nos enseñó con su código; cada línea, un fork del Instituto. Lo dorado es donde ya pusimos trabajo propio.</p>
+</header>
+<div class="stats" id="stats"></div>
+<main>
+  <div class="bar" id="modes" role="group" aria-label="Filtro">
+    <button class="chip" data-f="all" aria-pressed="true">Todos</button>
+    <button class="chip" data-f="own" aria-pressed="false">Solo con trabajo propio</button>
+  </div>
+  <div class="bar" id="langs" role="group" aria-label="Lenguaje"></div>
+  <div class="stage"><canvas id="cv" aria-label="Conectoma: forks del Instituto hacia sus upstreams"></canvas><div class="hud" id="hud"></div></div>
+  <div class="legend"><span><i class="dot" style="background:#D4AF37"></i>trabajo propio</span><span><i class="dot" style="background:#5d615e"></i>fork para estudiar</span><span><i class="dot" style="background:#5fbf7f"></i>obra original del Instituto</span></div>
+  <div class="panel" id="panel" aria-live="polite"><h2>Toca un orbe</h2><p>El centro es L://. Alrededor, los dueños de cada upstream, del tamaño de sus estrellas.</p></div>
+
+  <section>
+    <h3>Obra original · repos que nacieron en el Instituto</h3>
+    <div class="grid" id="orig"></div>
+  </section>
+
+  <section>
+    <h3>Recibo de medición</h3>
+    <div class="receipt">
+      <div>medido · no en vivo · <span id="when"></span></div>
+      <div>SHA-256(GENESIS | datos) = <span id="h"></span></div>
+      <div id="method" style="color:var(--dim);margin-top:6px"></div>
+      <button class="chip" id="verify">Verificar recibo</button> <span id="vres"></span>
+    </div>
+  </section>
+</main>
+<footer>
+  <p>Datos públicos de GitHub, sin datos de alumnos. La evidencia no es autoridad: la supervisión informa, el humano decide.</p>
+  <p>Many agents. One principal. · Fork freely. Preserve attribution. · <a href="https://github.com/LutheranInstitute" rel="noopener">github.com/LutheranInstitute</a> · <a href="../">Portada</a></p>
+</footer>
+<script type="application/json" id="data">{"account":"LutheranInstitute","forks":[["aeee-lab","MYaelMendez/MYaelMendez.github.io","MYaelMendez",1,"HTML",1,1],["aeqr","MYaelMendez/aeqr","MYaelMendez",0,"Python",0,0],["AlibabaWebAgent","alibaba/page-agent","alibaba",29540,"TypeScript",0,0],["AT_proto_Client","sprksocial/client","sprksocial",97,"Dart",2,0],["autoreason","NousResearch/autoreason","NousResearch",608,"TeX",0,0],["axi","kunchenguid/axi","kunchenguid",2242,"TypeScript",0,0],["banana-straightener","velvet-shark/banana-straightener","velvet-shark",39,"Python",0,0],["biblioteca-luterana","MYaelMendez/teologia","MYaelMendez",0,"HTML",0,0],["cell-architecture-studio","cclank/cell-architecture-studio","cclank",1741,"TypeScript",0,0],["city2graph","c2g-dev/city2graph","c2g-dev",1945,"Python",0,0],["claude-code","anthropics/claude-code","anthropics",152775,"TypeScript",0,0],["clicky","farzaa/clicky","farzaa",7743,"Swift",0,0],["composioMCP","ComposioHQ/composio","ComposioHQ",30676,"TypeScript",0,0],["compute.rhino3d","mcneel/compute.rhino3d","mcneel",405,"C#",1,44],["copilot-cli-for-beginners","github/copilot-cli-for-beginners","github",2894,"Tape",0,0],["DigitalTwin","cloudflare/agents","cloudflare",5866,"TypeScript",0,0],["excalidraw","excalidraw/excalidraw","excalidraw",134344,"TypeScript",0,0],["exo","exo-explore/exo","exo-explore",48006,"Python",0,0],["FastVideo","hao-ai-lab/FastVideo","hao-ai-lab",4677,"Python",0,0],["financial-services","anthropics/financial-services","anthropics",40663,"Python",0,0],["FreeCAD","FreeCAD/FreeCAD","FreeCAD",34637,"C++",0,0],["gibberlink","PennyroyalTea/gibberlink","PennyroyalTea",4918,"TypeScript",0,0],["gpu-mcp","MYaelMendez/gpu-mcp","MYaelMendez",0,"Python",0,0],["hermes-agent-cuda-tile","NVIDIA/cuda-tile","NVIDIA",1044,"C++",0,0],["hermes-telegram-miniapp","clawvader-tech/hermes-telegram-miniapp","clawvader-tech",267,"TypeScript",0,0],["HermesQueenB","pollen-robotics/reachy_mini","pollen-robotics",1573,"Python",0,0],["Htmlvideodemo","heygen-com/website-to-hyperframes-demo","heygen-com",72,"HTML",0,0],["local_agent","MYaelMendez/local_agent","MYaelMendez",0,"Python",0,0],["mcp-agent-langchainjs","Azure-Samples/mcp-agent-langchainjs","Azure-Samples",204,"TypeScript",0,0],["MCP.js","mrdoob/three.js","mrdoob",116748,"JavaScript",0,0],["mech","mech-lang/mech","mech-lang",301,"Rust",0,0],["PharmaSim","TheVisualHub/DrugHunting","TheVisualHub",39,"Python",0,0],["Pika-Skills","Pika-Labs/Pika-Skills","Pika-Labs",1164,"Python",2,0],["Reactdemos","enzomanuelmangano/demos","enzomanuelmangano",3231,"TypeScript",0,0],["rhino3dm","mcneel/rhino3dm","mcneel",766,"C#",0,0],["RhinoCycles","mcneel/RhinoCycles","mcneel",32,"C#",0,0],["RhinoUSD","mcneel/RhinoUSD","mcneel",27,"C++",0,0],["Robot","menloresearch/menlo-sdk","menloresearch",26,"Python",0,0],["spec-kit","github/spec-kit","github",142335,"Python",0,0],["supervisionvidaeo","MYaelMendez/supervisionvidaeo","MYaelMendez",0,"Python",0,0],["tilus","NVIDIA/tilus","NVIDIA",495,"Python",0,0],["vaeult","MYaelMendez/vaeult","MYaelMendez",0,"Python",0,0],["vidaeo","MYaelMendez/vidaeo","MYaelMendez",0,"Python",0,0],["webmcp","GoogleChromeLabs/webmcp-tools","GoogleChromeLabs",693,"TypeScript",0,0]],"measured":"2026-10-21T23:45-05:00","method":"GitHub REST: repos del usuario + parent de cada fork + compare upstream:default...fork:default. Trabajo propio = commits por delante (ahead>0) o historia propia (sin ancestro común).","originals":[["annual-meeting","HTML",1,"Asamblea General 2026 · LALM · LALS · LALI · Bright Horizons LATAM! · Manos de A"],["aprendelatam","",0,"#aprendelatam → usa la plantilla mi-diplomado"],["bookstores","HTML",1,"Red de tiendas · Gospel Bookstore · desarrollo compartido del Instituto Luterano"],["Cli.llc","",0,"Https://www.cli.llc"],["coloquio","HTML",1,"Coloquio Luterano · #LUTERANA LIVE · Día de la Asamblea General 2026 · LALM · LA"],["diplomado-agentico","HTML",1,"Nivelación agéntica del Diplomado en Transformación Digital · Hark + Hermes æ · "],["elearnlatam","",0,"#elearnlatam · Aula abierta del Diplomado en Transformación Digital · LIVE.md di"],["emprendelatam","",0,"#emprendelatam · #startabusiness: de la idea a tu LLC con agentes · Cli in, llc "],["escuela-teologia","",1,"🟦 Escuela de Teología · Instituto Luterano Latinoamericano · Catecismo Menor · s"],["HANS","HTML",1,"HANS · robotface de #OSW ante la IOA, en honor a Hans Nielsen Hauge. Read-only D"],["LutheranInstitute","",0,"L:// Instituto Luterano Latinoamericano · perfil · #TEOTECH #OPENCOURSEWARE"],["LutheranInstitute.github.io","HTML",1,"TEOTECH · portada 9:16 · Diplomado en Transformación Digital · æ://"],["mendez-lab","HTML",0,"Laboratorio de los hermanos Méndez · Yael, Priscila y Daniel · LutheranInstitute"],["mi-diplomado","",0,"#aprendelatam · Plantilla del alumno · Use this template · README, AGENTS.md, RE"],["neuromitosis","Rust",0,"💿 Neuromitosis — A learning network powered by llm.store. Skills divide. Knowled"],["opc-starter","HTML",1,">_æ^æ://#opc · 一人公司 starter · Fork it. Claim your x0:y0:z0:æ0. Many agents, one "],["teotech-theme","JavaScript",1,"æ://neuromitosis/teotech · Theme Jekyll 9:16 con WebGPU y tutor WebLLM para #Ope"]],"schema":"ae.connectome/0.1"}</script>
+<script>
+(function(){
+var RAW=document.getElementById('data').textContent, D=JSON.parse(RAW), HASH="090495a882ce4e1216a0f18bccca0edf55bc73e4cb5fdc263a838d36c442e9f4";
+var F=D.forks.map(function(r){return{fork:r[0],parent:r[1],owner:r[2],stars:r[3],lang:r[4]||'—',own:r[5],ahead:r[6]}});
+var owners={};F.forEach(function(f){var o=owners[f.owner]||(owners[f.owner]={name:f.owner,forks:[],stars:0,own:0,ups:{}});o.forks.push(f);if(!o.ups[f.parent]){o.ups[f.parent]=1;o.stars+=f.stars}if(f.own)o.own++});
+var O=Object.keys(owners).map(function(k){return owners[k]}).sort(function(a,b){return b.stars-a.stars});
+var ups={},tot=0;F.forEach(function(f){if(!ups[f.parent]){ups[f.parent]=1;tot+=f.stars}});
+var ownN=F.filter(function(f){return f.own}).length;
+function fmt(n){return n.toLocaleString('en-US')}
+var st=[[F.length,'forks del Instituto'],[Object.keys(ups).length,'upstreams'],[O.length,'dueños'],[fmt(tot)+' ⭐','estrellas upstream'],[ownN,'con trabajo propio','gold'],[D.originals.length,'repos originales']];
+document.getElementById('stats').innerHTML=st.map(function(s){return'<div class="stat '+(s[2]||'')+'"><b>'+s[0]+'</b><span>'+s[1]+'</span></div>'}).join('');
+document.getElementById('when').textContent='21 oct 2026, 11:45 PM CDT';
+document.getElementById('h').textContent=HASH;
+document.getElementById('method').textContent=D.method;
+document.getElementById('orig').innerHTML=D.originals.map(function(r){return'<div class="card"><b>'+r[0]+'</b>'+(r[2]?' · <a href="https://lutheraninstitute.github.io/'+(r[0]==='LutheranInstitute.github.io'?'':r[0]+'/')+'" rel="noopener">Pages</a>':'')+'<small>'+(r[1]||'sin lenguaje')+(r[3]?' · '+r[3].replace(/</g,'&lt;'):'')+'</small></div>'}).join('');
+
+var langs={};F.forEach(function(f){langs[f.lang]=(langs[f.lang]||0)+1});
+var LK=Object.keys(langs).sort(function(a,b){return langs[b]-langs[a]}).slice(0,7);
+var filt='all',lang=null;
+document.getElementById('langs').innerHTML=LK.map(function(l){return'<button class="chip" data-l="'+l+'" aria-pressed="false">'+l+' · '+langs[l]+'</button>'}).join('');
+document.getElementById('modes').onclick=function(e){var b=e.target.closest('[data-f]');if(!b)return;filt=b.dataset.f;[].forEach.call(this.children,function(c){c.setAttribute('aria-pressed',c===b)});draw()};
+document.getElementById('langs').onclick=function(e){var b=e.target.closest('[data-l]');if(!b)return;lang=(lang===b.dataset.l)?null:b.dataset.l;[].forEach.call(this.children,function(c){c.setAttribute('aria-pressed',c.dataset.l===lang)});draw()};
+
+var cv=document.getElementById('cv'),cx=cv.getContext('2d'),W=0,H=0,dpr=1,nodes=[],sel=null,t0=performance.now();
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function vis(o){return o.forks.some(function(f){return(filt==='all'||f.own)&&(!lang||f.lang===lang)})}
+function layout(){var r=cv.getBoundingClientRect();dpr=Math.min(window.devicePixelRatio||1,3);W=r.width;H=r.height;cv.width=W*dpr;cv.height=H*dpr;
+  var R=Math.min(W,H)*0.40,n=O.length;nodes=O.map(function(o,i){var a=-Math.PI/2+i*2*Math.PI/n,ring=(i%2?0.80:1);return{o:o,a:a,x:W/2+Math.cos(a)*R*ring,y:H/2+Math.sin(a)*R*ring,r:Math.max(5,Math.min(22,3+Math.log10(o.stars+1)*3.4))}});draw()}
+function draw(){var now=performance.now(),ph=reduce?0:(now-t0)/1000;cx.setTransform(dpr,0,0,dpr,0,0);cx.clearRect(0,0,W,H);
+  var c={x:W/2,y:H/2},shown=0;
+  nodes.forEach(function(n){var v=vis(n.o);if(!v)return;shown++;var own=n.o.own>0&&(filt==='own'||true);
+    cx.strokeStyle=own?'rgba(212,175,55,.75)':'rgba(140,143,139,.28)';cx.lineWidth=own?1.6:1;cx.beginPath();cx.moveTo(c.x,c.y);
+    var mx=(c.x+n.x)/2+Math.sin(n.a)*14,my=(c.y+n.y)/2-Math.cos(n.a)*14;cx.quadraticCurveTo(mx,my,n.x,n.y);cx.stroke();
+    if(own&&!reduce){var p=(ph*0.35+n.a)%1;p=p<0?p+1:p;var px=(1-p)*(1-p)*c.x+2*(1-p)*p*mx+p*p*n.x,py=(1-p)*(1-p)*c.y+2*(1-p)*p*my+p*p*n.y;cx.fillStyle='#D4AF37';cx.beginPath();cx.arc(px,py,2.2,0,7);cx.fill()}});
+  nodes.forEach(function(n){var v=vis(n.o);cx.globalAlpha=v?1:0.12;var own=n.o.own>0;
+    cx.fillStyle=own?'#D4AF37':'#5d615e';cx.beginPath();cx.arc(n.x,n.y,n.r,0,7);cx.fill();
+    if(sel===n){cx.strokeStyle='#e9e4d6';cx.lineWidth=2;cx.beginPath();cx.arc(n.x,n.y,n.r+4,0,7);cx.stroke()}
+    if(v&&(n.r>11||own||sel===n)){cx.fillStyle=own?'#D4AF37':'#cfcabd';cx.font='11px ui-monospace,Menlo,monospace';cx.textAlign=n.x<W/2?'right':'left';cx.fillText(n.o.name,n.x+(n.x<W/2?-n.r-4:n.r+4),n.y+4)}
+    cx.globalAlpha=1});
+  cx.fillStyle='#07080a';cx.strokeStyle='#5fbf7f';cx.lineWidth=2;cx.beginPath();cx.arc(c.x,c.y,26,0,7);cx.fill();cx.stroke();
+  cx.fillStyle='#5fbf7f';cx.font='bold 14px ui-monospace,Menlo,monospace';cx.textAlign='center';cx.fillText('L://',c.x,c.y+5);
+  document.getElementById('hud').textContent=shown+' de '+O.length+' dueños · medido, no en vivo';
+}
+function loop(){draw();requestAnimationFrame(loop)}
+function pick(e){var r=cv.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,best=null,bd=1e9;
+  if(Math.hypot(x-W/2,y-H/2)<30){sel=null;center();return}
+  nodes.forEach(function(n){var d=Math.hypot(n.x-x,n.y-y)-n.r;if(d<bd){bd=d;best=n}});if(bd<18){sel=best;show(best.o)}if(reduce)draw()}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function show(o){var p=document.getElementById('panel');
+  p.innerHTML='<h2>'+esc(o.name)+'</h2><p>'+o.forks.length+(o.forks.length===1?' fork':' forks')+' · '+fmt(o.stars)+' ⭐ upstream'+(o.own?' · <span class="own">'+o.own+' con trabajo propio</span>':'')+'</p><ul>'+
+  o.forks.map(function(f){return'<li><a href="https://github.com/LutheranInstitute/'+esc(f.fork)+'" rel="noopener">'+esc(f.fork)+'</a> ← <a href="https://github.com/'+esc(f.parent)+'" rel="noopener">'+esc(f.parent)+'</a> · '+esc(f.lang)+(f.own===1?' · <span class="own">+'+f.ahead+' commits propios</span>':f.own===2?' · <span class="own">historia propia</span>':'')+'</li>'}).join('')+'</ul>'}
+function center(){document.getElementById('panel').innerHTML='<h2>L:// · Instituto</h2><p>'+F.length+' forks hacia '+O.length+' dueños. '+ownN+' ya llevan trabajo propio y '+D.originals.length+' repos nacieron aquí.</p>'}
+cv.addEventListener('click',pick);
+if(window.ResizeObserver)new ResizeObserver(layout).observe(cv);else window.addEventListener('resize',layout);
+layout();if(!reduce)requestAnimationFrame(loop);
+document.getElementById('verify').onclick=function(){var out=document.getElementById('vres');
+  if(!(window.crypto&&crypto.subtle)){out.textContent='este navegador no tiene crypto.subtle';return}
+  crypto.subtle.digest('SHA-256',new TextEncoder().encode('GENESIS|'+RAW)).then(function(b){var h=[].map.call(new Uint8Array(b),function(x){return('0'+x.toString(16)).slice(-2)}).join('');
+    out.innerHTML=h===HASH?'<span class="ok">✓ el recibo coincide</span>':'<span class="bad">✗ no coincide</span>'})};
+})();
+</script>
+</body>
+</html>
