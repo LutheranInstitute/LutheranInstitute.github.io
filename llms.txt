@@ -29,6 +29,8 @@ Rule for every agent: the agent proposes, the human checks, the human decides. E
 - [PRIVATE CLIENT · pc://key](https://privateclient.ai/key/): R&D collaboration (Yæl Méndez, director of R&D). Passkey-signed acts and an end-to-end encrypted vault. Not run by the Institute.
 
 ## Agentes
+- [⚪️ pico](https://lutheraninstitute.github.io/aeee-lab/lab/pico/): the institute's own agent (pico-agent^expert_in_subagents). Routes to the right subagent and says why; no authority. Registry: https://lutheraninstitute.github.io/aeee-lab/lab/pico/subagents.json
+- [Agent 1uan 🤗](https://lutheraninstitute.github.io/aeee-lab/lab/1uan/): rule-based nano agent in the browser; reads this file and guides to what is new.
 - Hark Pro: students' agent on the phone (https://hark.com/download).
 - Hermes æ: the institute's agent (Hermes Agent by Nous Research). Executes only approved cards.
 - Tutor æ: small in-browser model on the course site; nothing leaves the device.
