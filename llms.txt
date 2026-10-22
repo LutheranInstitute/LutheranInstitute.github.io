@@ -22,6 +22,12 @@ Rule for every agent: the agent proposes, the human checks, the human decides. E
 - [Guía docente](https://lutheraninstitute.github.io/diplomado-agentico/clases/d0-docentes/): teaching script and troubleshooting for GitHub account, template repo, commits and GitHub Pages.
 - [Plantilla del alumno](https://github.com/LutheranInstitute/mi-diplomado): GitHub template with README, AGENTS.md, REFLEXION.md, STATE.md and cards/.
 
+## En vivo · nuestro mapa
+- [Conectoma](https://lutheraninstitute.github.io/conectoma/): measured map of the Institute's GitHub forks, upstreams and own work (not live; SHA-256 receipt).
+- [Taller paramétrico](https://lutheraninstitute.github.io/aeee-lab/lab/diseno/): lab. Parametric design in the browser with rhino3dm; exports .3dm with a receipt.
+- [Instant POS](https://lutheraninstitute.github.io/aeee-lab/lab/instant-pos/): lab. Agent-ready storefront with æQR; practice money only.
+- [PRIVATE CLIENT · pc://key](https://privateclient.ai/key/): R&D collaboration (Yæl Méndez, director of R&D). Passkey-signed acts and an end-to-end encrypted vault. Not run by the Institute.
+
 ## Agentes
 - Hark Pro: students' agent on the phone (https://hark.com/download).
 - Hermes æ: the institute's agent (Hermes Agent by Nous Research). Executes only approved cards.
